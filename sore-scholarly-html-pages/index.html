@@ -98,16 +98,23 @@
 
     <section id="Root">
       <!-- review? -->
-      <h3>Frontend( de scris si Authentication service: ? T )</h3>
+      <h3>Frontend</h3>
       <p>
-        Create a page for the user to choose some preferences that we he has for the website. This page may be
-        optionally as
-        the application can build the RDF for an user from his descriptions. The preference page may help to make better
-        suggestions.
+        The angular framework will be used for the frontend due to its modular and component-based architecture.
+        Main Angular components are:
+        - authentication (login and logout)
+        - dashboard(list of interesting events, places and people based of user’s preferences)
+        - preference page (user can choose some favorite topics to get relevant recommendations from the website)
       </p>
       <p>
-        The <code>head</code> must contain <code>&lt;meta charset="utf-8"&gt;</code> element and a
-        <code>title</code> element.
+        Services:
+        - authentication service (for user login, token retrieval (JWT Token), and token storage)
+        - people, events and places services (using HttpClient service for making HTTP requests)
+
+      </p>
+      <p>
+        Unit tests:
+        - jest testing framework, in combination with the Spectator library.
       </p>
     </section>
     <section id="article">
@@ -138,6 +145,11 @@
       <p>
         MongoDB to save information about our users and items that we may create if we decide to create personal data
         for the items of a topic.
+      </p>
+      <p>
+        External datasets may be used in order to create items of interest or we can create our own date and save it in
+        MongoDB.
+        Scrapping is an alternative to retrieve social items of interests from other platforms.
       </p>
     </section>
   </section>
@@ -203,7 +215,7 @@
     <p>
       <li>View recommended items</li>
     </p>
-    <img src="./images/viewitems.png">
+    <img src="./images/VIEWLIST.png">
     <p>
       <li>View profile and edit profile
       </li>In this case, the user can access his profile and edit preferences.
