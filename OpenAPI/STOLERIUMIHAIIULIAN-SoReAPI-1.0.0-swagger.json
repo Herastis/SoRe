@@ -1,0 +1,339 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Social Recommender API",
+    "version" : "1.0.0",
+    "description" : "API for a Web Modular System for the management of the platform"
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/STOLERIUMIHAIIULIAN/SoReAPI/1.0.0"
+  }, {
+    "url" : "http://localhost:8080",
+    "description" : "Local server"
+  } ],
+  "paths" : {
+    "/sore/auth/register" : {
+      "post" : {
+        "summary" : "User Registration",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "username" : {
+                    "type" : "string"
+                  },
+                  "email" : {
+                    "type" : "string"
+                  },
+                  "password" : {
+                    "type" : "string"
+                  },
+                  "address" : {
+                    "type" : "string"
+                  },
+                  "country" : {
+                    "type" : "string"
+                  },
+                  "city" : {
+                    "type" : "string"
+                  }
+                },
+                "required" : [ "username", "password", "email" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "User successfully registered"
+          },
+          "400" : {
+            "description" : "Invalid request payload"
+          }
+        }
+      }
+    },
+    "/sore/auth/addPreferences" : {
+      "post" : {
+        "summary" : "Optionally add some interests",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Added preferences"
+          }
+        }
+      }
+    },
+    "/sore/auth/login" : {
+      "post" : {
+        "summary" : "User Login",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "username" : {
+                    "type" : "string"
+                  },
+                  "password" : {
+                    "type" : "string"
+                  }
+                },
+                "required" : [ "username", "password" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "User successfully logged in"
+          },
+          "401" : {
+            "description" : "Invalid credentials"
+          }
+        }
+      }
+    },
+    "/sore/home" : {
+      "get" : {
+        "summary" : "Show home screen",
+        "responses" : {
+          "200" : {
+            "description" : "Home retrieved"
+          },
+          "404" : {
+            "description" : "User not found"
+          }
+        }
+      }
+    },
+    "/sore/home/profile" : {
+      "get" : {
+        "summary" : "Get User Profile",
+        "parameters" : [ {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "User profile retrieved"
+          },
+          "404" : {
+            "description" : "User not found"
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update User Profile",
+        "parameters" : [ {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "profile" : {
+                    "type" : "object"
+                  }
+                },
+                "required" : [ "profile" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "User profile updated"
+          },
+          "404" : {
+            "description" : "User not found"
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete User Profile",
+        "parameters" : [ {
+          "name" : "user_id",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "User profile deleted"
+          },
+          "404" : {
+            "description" : "User not found"
+          }
+        }
+      }
+    },
+    "/sore/home/dashboard" : {
+      "get" : {
+        "summary" : "View for recommended items. The view of the recommended items will be grouped on specific topics News Events ( worldwide , Sports) Music Movies - may include Reels ( short - form videos ) Health and Wellness Technology and Gadgets Lifestyle and Travel Humor and Memes Education and Learning",
+        "parameters" : [ {
+          "name" : "topic",
+          "in" : "query",
+          "description" : "Preferred topic for recommendations",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success feed created"
+          },
+          "404" : {
+            "description" : "Failed feed not created"
+          }
+        }
+      }
+    },
+    "/sore/home/dashboard/showItems" : {
+      "get" : {
+        "summary" : "Data vizualization",
+        "parameters" : [ {
+          "name" : "item",
+          "in" : "query",
+          "description" : "item",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success feed created"
+          },
+          "404" : {
+            "description" : "Failed feed not created"
+          }
+        }
+      }
+    },
+    "/sore/home/dashboard/itemAction" : {
+      "put" : {
+        "summary" : "Clickable action",
+        "requestBody" : {
+          "description" : "Boolean if recommended item is good or bad",
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "like" : {
+                    "type" : "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success feed created"
+          },
+          "404" : {
+            "description" : "Failed feed not created"
+          }
+        }
+      }
+    },
+    "/sore/home/network" : {
+      "get" : {
+        "summary" : "Network of users",
+        "parameters" : [ {
+          "name" : "network",
+          "in" : "query",
+          "description" : "Network of users with common interest",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success network retrieved"
+          },
+          "404" : {
+            "description" : "Failed retrieving network"
+          }
+        }
+      }
+    },
+    "/sore/home/network/addUser" : {
+      "put" : {
+        "summary" : "Add user",
+        "parameters" : [ {
+          "name" : "network",
+          "in" : "query",
+          "description" : "Network of users with common interest",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success added user"
+          },
+          "404" : {
+            "description" : "Faied when adding user"
+          }
+        }
+      }
+    },
+    "/sore/home/network/removeUser" : {
+      "delete" : {
+        "summary" : "Remove user",
+        "parameters" : [ {
+          "name" : "network",
+          "in" : "query",
+          "description" : "Network of users with common interest",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success removed user"
+          },
+          "404" : {
+            "description" : "Failed when removing user"
+          }
+        }
+      }
+    }
+  }
+}
