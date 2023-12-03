@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Social Recommender API",
-    "description": "API for a Web Modular System for the management of the platform",
+    "description": "General API for SoRe platform",
     "version": "1.0.0"
   },
   "servers": [
@@ -16,7 +16,7 @@
     }
   ],
   "paths": {
-    "/sore/auth/register": {
+    "/api/auth/register": {
       "post": {
         "summary": "User Registration",
         "requestBody": {
@@ -33,12 +33,12 @@
             "description": "User successfully registered"
           },
           "400": {
-            "description": "Invalid request payload"
+            "description": "Bad request, invalid input data"
           }
         }
       }
     },
-    "/sore/auth/addPreferences": {
+    "/api/auth/preferences": {
       "post": {
         "summary": "Optionally add some interests",
         "requestBody": {
@@ -55,12 +55,15 @@
         },
         "responses": {
           "200": {
-            "description": "Added preferences"
+            "description": "Preferences updated successfully"
+          },
+          "400": {
+            "description": "Bad request, invalid input data"
           }
         }
       }
     },
-    "/sore/auth/login": {
+    "/api/auth/login": {
       "post": {
         "summary": "User Login",
         "requestBody": {
@@ -77,25 +80,12 @@
             "description": "User successfully logged in"
           },
           "401": {
-            "description": "Invalid credentials"
+            "description": "Unauthorized, invalid credentials"
           }
         }
       }
     },
-    "/sore/home": {
-      "get": {
-        "summary": "Show home screen",
-        "responses": {
-          "200": {
-            "description": "Home retrieved"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      }
-    },
-    "/sore/home/profile": {
+    "/api/profile": {
       "get": {
         "summary": "Get User Profile",
         "parameters": [
@@ -139,7 +129,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/home_profile_body"
+                "$ref": "#/components/schemas/api_profile_body"
               }
             }
           }
@@ -178,9 +168,9 @@
         }
       }
     },
-    "/sore/home/dashboard": {
+    "/api/dashboard/getTopicRecommendations": {
       "get": {
-        "summary": "View for recommended items. The view of the recommended items will be grouped on specific topics News Events ( worldwide , Sports) Music Movies - may include Reels ( short - form videos ) Health and Wellness Technology and Gadgets Lifestyle and Travel Humor and Memes Education and Learning",
+        "summary": "Get items for a specific topic. The view of the recommended items will be grouped on specific topics News Events ( worldwide , Sports) Music Movies - may include Reels ( short - form videos ) Health and Wellness Technology and Gadgets Lifestyle and Travel Humor and Memes Education and Learning",
         "parameters": [
           {
             "name": "topic",
@@ -196,49 +186,23 @@
         ],
         "responses": {
           "200": {
-            "description": "Success feed created"
+            "description": "Items for the topic retrieved"
           },
           "404": {
-            "description": "Failed feed not created"
+            "description": "Topic not found"
           }
         }
       }
     },
-    "/sore/home/dashboard/showItems": {
-      "get": {
-        "summary": "Data vizualization",
-        "parameters": [
-          {
-            "name": "item",
-            "in": "query",
-            "description": "item",
-            "required": true,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success feed created"
-          },
-          "404": {
-            "description": "Failed feed not created"
-          }
-        }
-      }
-    },
-    "/sore/home/dashboard/itemAction": {
+    "/api/dashboard/itemQuickFeedback": {
       "put": {
         "summary": "Clickable action",
         "requestBody": {
-          "description": "Boolean if recommended item is good or bad",
+          "description": "Boolean if recommended item is good or bad for ML service",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/dashboard_itemAction_body"
+                "$ref": "#/components/schemas/dashboard_itemQuickFeedback_body"
               }
             }
           },
@@ -246,15 +210,39 @@
         },
         "responses": {
           "200": {
-            "description": "Success feed created"
+            "description": "Success like sent"
           },
           "404": {
-            "description": "Failed feed not created"
+            "description": "Failed accesing BE"
           }
         }
       }
     },
-    "/sore/home/network": {
+    "/api/feedback": {
+      "post": {
+        "summary": "Feedback about recommended items",
+        "requestBody": {
+          "description": "Form questions about recommended items",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_feedback_body"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success feedback sent"
+          },
+          "404": {
+            "description": "Error contacting the BE"
+          }
+        }
+      }
+    },
+    "/api/network": {
       "get": {
         "summary": "Network of users",
         "parameters": [
@@ -280,7 +268,7 @@
         }
       }
     },
-    "/sore/home/network/addUser": {
+    "/api/network/addUser": {
       "put": {
         "summary": "Add user",
         "parameters": [
@@ -306,7 +294,7 @@
         }
       }
     },
-    "/sore/home/network/removeUser": {
+    "/api/network/removeUser": {
       "delete": {
         "summary": "Remove user",
         "parameters": [
@@ -378,7 +366,7 @@
           }
         }
       },
-      "home_profile_body": {
+      "api_profile_body": {
         "required": [
           "profile"
         ],
@@ -389,10 +377,27 @@
           }
         }
       },
-      "dashboard_itemAction_body": {
+      "dashboard_itemQuickFeedback_body": {
         "type": "object",
         "properties": {
           "like": {
+            "type": "boolean"
+          }
+        }
+      },
+      "api_feedback_body": {
+        "type": "object",
+        "properties": {
+          "question1": {
+            "type": "boolean"
+          },
+          "question2": {
+            "type": "boolean"
+          },
+          "question3": {
+            "type": "boolean"
+          },
+          "questionN": {
             "type": "boolean"
           }
         }
