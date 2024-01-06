@@ -3,14 +3,17 @@ a {
     color: grey;
     font-size: large;
     margin-bottom: 20px;
+    padding: 5px 5px; 
 }
 
 a:hover {
     background-color: rgb(220, 220, 220);
+    border-radius: 20px;
+    padding: 5px 5px; 
 }
 
 .selected {
-    background-color: rgb(202, 247, 202);
+    font-weight: bold;
 }
 
 nav {

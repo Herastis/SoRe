@@ -13,7 +13,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { SidenavComponent } from 'src/features/sidenav/sidenav.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HomepageComponent } from 'src/features/homepage/homepage.component';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
