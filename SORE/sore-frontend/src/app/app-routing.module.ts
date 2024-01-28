@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from 'src/features/dashboard';
-import { HomepageComponent } from 'src/features/homepage/page/homepage.component';
-import { LoginComponent } from 'src/features/login/pages/login.component';
+import { DashboardComponent } from './features/dashboard';
+import { HomepageComponent } from './features/homepage/page/homepage.component';
+import { LoginComponent } from './features/login/pages/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' }, // Default route
