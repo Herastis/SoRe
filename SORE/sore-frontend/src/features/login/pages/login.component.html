@@ -1,0 +1,47 @@
+<mat-card class="login">
+    <mat-card-header>
+        <div mat-card-avatar
+             class="login-header-image"></div>
+        <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="loginForm"
+          (ngSubmit)="login()">
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <mat-icon matSuffix>email</mat-icon>
+            <input matInput
+                   type="email"
+                   placeholder="email@something.com"
+                   formControlName="email">
+            <mat-error *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || mouseoverLogin)">
+                Please enter a valid email address
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <mat-icon matSuffix>password</mat-icon>
+            <input matInput
+                   type="password"
+                   placeholder="**********"
+                   formControlName="password">
+            <mat-error
+                       *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || mouseoverLogin)">
+                Required</mat-error>
+        </mat-form-field>
+
+        <mat-card-actions>
+            <span (mouseenter)="mouseoverLogin = true"
+                  (mouseleave)="mouseoverLogin = false">
+                <button mat-button
+                        type="submit"
+                        value="Submit"
+                        [disabled]="loginForm.invalid">
+                    <mat-icon>login</mat-icon>
+                </button>
+            </span>
+        </mat-card-actions>
+    </form>
+</mat-card>

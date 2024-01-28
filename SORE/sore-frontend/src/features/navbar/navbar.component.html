@@ -1,0 +1,49 @@
+<mat-toolbar class="navbar"
+             color="primary">
+    <img src="/assets/icons/sore-logo.svg"
+         class="logo-image"
+         alt="SORE Logo"
+         width="48"
+         height="48">
+
+    <mat-form-field class="search-field">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput
+               placeholder="Search on Sore">
+    </mat-form-field>
+
+    <span class="example-spacer"></span>
+
+    <button *ngIf="isLoggedIn"
+            mat-icon-button
+            [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>face</mat-icon>
+            <span>My profile</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Adjust profile</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>feedback</mat-icon>
+            <span>Send feedback</span>
+        </button>
+        <button mat-menu-item
+                *ngIf="isLoggedIn"
+                (click)="logout()">
+            <mat-icon> exit_to_app</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-menu>
+
+    <button mat-button
+            *ngIf="!isLoggedIn"
+            (click)="login()">
+        Login
+    </button>
+</mat-toolbar>
