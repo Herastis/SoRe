@@ -21,18 +21,17 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './features/login/pages/login.component';
-import { DashboardComponent } from './features/dashboard';
-import { HomepageComponent } from './features/homepage/page/homepage.component';
+
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
+import { TopicComponent } from './features/topic/page/topic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     NavbarComponent,
     SidenavComponent,
-    HomepageComponent,
+    TopicComponent,
     LoginComponent,
   ],
   imports: [
