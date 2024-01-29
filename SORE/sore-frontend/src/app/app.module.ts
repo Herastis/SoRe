@@ -25,6 +25,8 @@ import { LoginComponent } from './features/login/pages/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { TopicComponent } from './features/topic/page/topic.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { RegisterComponent } from './features/register/register.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { TopicComponent } from './features/topic/page/topic.component';
     SidenavComponent,
     TopicComponent,
     LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { TopicComponent } from './features/topic/page/topic.component';
     MatInputModule,
     MatCardModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

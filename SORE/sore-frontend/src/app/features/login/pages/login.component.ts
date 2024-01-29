@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { RegisterComponent } from '../../register/register.component';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,8 @@ export class LoginComponent implements OnInit {
   mouseoverLogin!: any;
 
   constructor(private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -35,5 +38,14 @@ export class LoginComponent implements OnInit {
     //     this.router.navigate(['population']);
     //   }
     // }
+  }
+
+  openRegisterDialog(): void {
+    const dialogRef = this.dialog.open(RegisterComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The login dialog was closed');
+    });
   }
 }
