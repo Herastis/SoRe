@@ -12,32 +12,34 @@ import { RegisterComponent } from '../../register/register.component';
 })
 export class LoginComponent implements OnInit {
   mouseoverLogin!: any;
+  loginForm!: FormGroup;
 
   constructor(private authService: AuthService,
     private router: Router,
     public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      email: new FormControl("", [Validators.required, Validators.email]),
+      password: new FormControl("", Validators.required),
+    })
   }
 
-  loginForm = new FormGroup({
-    email: new FormControl("", [Validators.required, Validators.email]),
-    password: new FormControl("", Validators.required),
-  })
-
   login() {
-    // this.authService.isLoggedin = true;
-    // this.authService.email = this.loginForm.controls['email'].value;
-    // this.authService.firstName = this.authService.email.split(/[@.]/)[0];
-    // this.authService.lastName = this.authService.email.split(/[@.]/)[1];
-    
-    // if (this.loginForm.valid) {
-    //   if(this.authService.redirectUrl){
-    //     this.router.navigateByUrl(this.authService.redirectUrl);
-    //   } else {
-    //     this.router.navigate(['population']);
-    //   }
-    // }
+    if (this.loginForm.valid) {
+      const email = this.loginForm.get('email')?.value;
+      const password = this.loginForm.get('password')?.value;
+      this.authService.login(email, password).subscribe(
+        (resp: any) => {
+          localStorage.setItem('access_token', resp.access_token);
+          this.authService.setLoggedIn(true);
+          this.router.navigate([this.authService.redirectUrl]); 
+        },
+        err => {
+          console.error(err);
+        }
+      );
+    }
   }
 
   openRegisterDialog(): void {

@@ -20,13 +20,14 @@ import { MatCardModule } from '@angular/material/card';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './features/login/pages/login.component';
+import { LoginComponent } from './features/login/page/login.component';
 
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { TopicComponent } from './features/topic/page/topic.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RegisterComponent } from './features/register/register.component';
+import { UserProfileComponent } from './features/user-profile/page/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RegisterComponent } from './features/register/register.component';
     SidenavComponent,
     TopicComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

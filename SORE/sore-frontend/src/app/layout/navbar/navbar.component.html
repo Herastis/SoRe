@@ -46,4 +46,9 @@
             (click)="login()">
         Login
     </button>
+    <button mat-button
+            *ngIf="!isLoggedIn"
+            (click)="register()">
+        Register
+    </button>
 </mat-toolbar>

@@ -15,7 +15,7 @@
                    type="email"
                    placeholder="email@something.com"
                    formControlName="email">
-            <mat-error *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || mouseoverLogin)">
+            <mat-error *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || mouseoverLogin)">
                 Please enter a valid email address
             </mat-error>
         </mat-form-field>
@@ -28,7 +28,7 @@
                    placeholder="**********"
                    formControlName="password">
             <mat-error
-                       *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || mouseoverLogin)">
+                       *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || mouseoverLogin)">
                 Required</mat-error>
         </mat-form-field>
 
@@ -41,7 +41,8 @@
                             cdkFocusInitial
                             type="submit"
                             value="Submit"
-                            [disabled]="loginForm.invalid">
+                            [disabled]="loginForm.invalid"
+                            (click) = "login()">
                         <mat-icon>login</mat-icon>
                     </button>
                     <div mat-dialog-actions>

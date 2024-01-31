@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from 'src/app/features/login/pages/login.component';
+import { LoginComponent } from 'src/app/features/login/page/login.component';
 import { RegisterComponent } from 'src/app/features/register/register.component';
 
 @Component({
@@ -15,17 +15,25 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  register() {
+    const dialogRef = this.dialog.open(RegisterComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
   login() {
     const dialogRef = this.dialog.open(LoginComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-    //this.isLoggedIn = true;
+    this.isLoggedIn = true;
   }
 
   logout() {
-    //this.isLoggedIn = false;
+    this.isLoggedIn = false;
   }
 
 }
