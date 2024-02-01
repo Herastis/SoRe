@@ -1,0 +1,36 @@
+@prefix : <http://example.org/news#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes
+:NewsArticle rdf:type rdfs:Class .
+
+# Properties
+:hasTitle rdf:type rdf:Property ;
+          rdfs:domain :NewsArticle ;
+          rdfs:range xsd:string .
+
+:hasAuthor rdf:type rdf:Property ;
+           rdfs:domain :NewsArticle ;
+           rdfs:range xsd:string .
+
+:hasDescription rdf:type rdf:Property ;
+                rdfs:domain :NewsArticle ;
+                rdfs:range xsd:string .
+
+:hasDatePublished rdf:type rdf:Property ;
+                  rdfs:domain :NewsArticle ;
+                  rdfs:range xsd:dateTime .
+
+:hasUrl rdf:type rdf:Property ;
+        rdfs:domain :NewsArticle ;
+        rdfs:range xsd:string .
+
+:hasImageUrl rdf:type rdf:Property ;
+             rdfs:domain :NewsArticle ;
+             rdfs:range xsd:string .
+
+:hasTopics rdf:type rdf:Property ;
+           rdfs:domain :NewsArticle ;
+           rdfs:range rdf:List .
