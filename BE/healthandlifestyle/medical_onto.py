@@ -2,15 +2,13 @@ import spacy
 from collections import Counter
 from newsAPI.getDataInfo import get_news_articles
 nlp = spacy.load("en_core_web_sm")
-from constants import constants as cst
 
-api_key = cst.api_key
-end_point = '/everything'  # /everything /top-headlines
+end_point = '/top-headlines'  # /everything
 language = 'us'
-category = None  # None, business, entertainment, general, health, science, sports, technology
+category = 'health'  # None, business, entertainment, general, health, science, sports, technology
 pageSize = 30  # 20 to 100
 country = 'us'  # random.choice(cst.country_codes)
-interests = ['Gaming' ,'AI', 'Coding']
+interests = ['treatment', 'life']
 
 articles = get_news_articles(interests, end_point, language, category, country)
 for article in articles:
@@ -41,4 +39,3 @@ for article in articles:
 
     print(f"Top 5 Relevant Words: {top_words}")
     print('\n')
-

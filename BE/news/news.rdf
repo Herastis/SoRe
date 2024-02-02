@@ -1,36 +1,42 @@
-@prefix : <http://example.org/news#> .
+@prefix : <http://sore.org/news#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Classes
 :NewsArticle rdf:type rdfs:Class .
 
 # Properties
 :hasTitle rdf:type rdf:Property ;
           rdfs:domain :NewsArticle ;
-          rdfs:range xsd:string .
+          rdfs:range xsd:string ;
+          rdfs:comment "The title of the news article." .
 
 :hasAuthor rdf:type rdf:Property ;
            rdfs:domain :NewsArticle ;
-           rdfs:range xsd:string .
+           rdfs:range xsd:string ;
+           rdfs:comment "The author of the news article." .
 
 :hasDescription rdf:type rdf:Property ;
                 rdfs:domain :NewsArticle ;
-                rdfs:range xsd:string .
+                rdfs:range xsd:string ;
+                rdfs:comment "A brief description or summary of the news article." .
 
 :hasDatePublished rdf:type rdf:Property ;
                   rdfs:domain :NewsArticle ;
-                  rdfs:range xsd:dateTime .
+                  rdfs:range xsd:dateTime ;
+                  rdfs:comment "The date and time when the news article was published." .
 
 :hasUrl rdf:type rdf:Property ;
         rdfs:domain :NewsArticle ;
-        rdfs:range xsd:string .
+        rdfs:range xsd:string ;
+        rdfs:comment "The URL or link to access the full news article." .
 
 :hasImageUrl rdf:type rdf:Property ;
              rdfs:domain :NewsArticle ;
-             rdfs:range xsd:string .
+             rdfs:range xsd:string ;
+             rdfs:comment "The URL or link to the image associated with the news article." .
 
 :hasTopics rdf:type rdf:Property ;
            rdfs:domain :NewsArticle ;
-           rdfs:range rdf:List .
+           rdfs:range rdf:List ;
+           rdfs:comment "A list of topics or categories associated with the news article." .
