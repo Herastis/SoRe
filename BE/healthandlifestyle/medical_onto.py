@@ -39,3 +39,15 @@ for article in articles:
 
     print(f"Top 5 Relevant Words: {top_words}")
     print('\n')
+
+'''{'source': {'id': None, 'name': 'Medical Xpress'}, 'author': 'Science X', 'title': 'New treatment shows promise against fatal neurological disease: Study - Medical Xpress', 'description': 'A new treatment shows promise against the deadly neurodegenerative disease ALS, a study based on mice showed Tuesday.', 'url': 'https://medicalxpress.com/news/2024-01-treatment-fatal-neurological-disease.html', 'urlToImage': 'https://scx2.b-cdn.net/gfx/news/2024/french-musician-guilhe.jpg', 'publishedAt': '2024-01-31T09:39:03Z', 'content': "A new treatment shows promise against the deadly neurodegenerative disease ALS, a study based on mice showed Tuesday.\r\nAmyotrophic lateral sclerosis, sometimes called Lou Gehrig's disease after the f… [+2755 chars]"}
+Source: Medical_Xpress
+Title: New treatment shows promise against fatal neurological disease: Study - Medical Xpress
+Name: Science X
+Description: A new treatment shows promise against the deadly neurodegenerative disease ALS, a study based on mice showed Tuesday.
+Published at: 2024-01-31T09:39:03Z
+Picture: https://scx2.b-cdn.net/gfx/news/2024/french-musician-guilhe.jpg
+URL: https://medicalxpress.com/news/2024-01-treatment-fatal-neurological-disease.html
+Content: A new treatment shows promise against the deadly neurodegenerative disease ALS, a study based on mice showed Tuesday.
+Amyotrophic lateral sclerosis, sometimes called Lou Gehrig's disease after the f… [+2755 chars]
+Top 5 Relevant Words: ['treatment', 'shows', 'promise', 'disease', 'New', 'fatal', 'neurological', 'Study', 'Medical', 'Xpress']'''
