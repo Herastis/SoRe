@@ -73,7 +73,6 @@ knows = ['user2@gmail.com', 'user3@gmail.com']
 
 User1 = User(first_name, last_name, email, gender, status, interests, country, work, education, age, knows)
 
-user_graph = Graph()
 user_graph = User1.to_rdf()
 
 # Print the resulting RDF graph
