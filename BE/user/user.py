@@ -26,6 +26,15 @@ class User:
         self.knows = knows
         print('User created')
 
+
+    def add_friends(self, knows):
+        user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}")
+
+        for known_email in knows:
+            #known_uri = person_ns[known_email]
+            #update later with the URI of the known user
+            self.graph.add((user_uri, user_ontology.knows, Literal(known_email)))
+
     def to_rdf(self):
         user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}")
 
@@ -75,8 +84,18 @@ User1 = User(first_name, last_name, email, gender, status, interests, country, w
 
 user_graph = User1.to_rdf()
 
+
+new_friends = ['user123@gmail.com', 'user456@gmail.com']
 # Print the resulting RDF graph
 print(user_graph.serialize(format="turtle"))
+
+User1.add_friends(new_friends)
+
+print(user_graph.serialize(format="turtle"))
+
+
+
+
 
 
 
