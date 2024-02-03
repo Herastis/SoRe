@@ -5,7 +5,7 @@ from flask_jwt_extended import JWTManager, create_access_token
 from werkzeug.security import check_password_hash, generate_password_hash
 from db import db, execute_sparql_query
 from datetime import timedelta
-from BE.user.user import User
+
 
 app = Flask(__name__)
 CORS(app)
