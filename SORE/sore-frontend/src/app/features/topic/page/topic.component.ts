@@ -19,9 +19,11 @@ export class TopicComponent implements OnInit {
   ngOnInit(): void {
     this.route.url.subscribe(urlSegments => {
       this.currentTab = urlSegments[0].path;
-      this.service.loadTopicData(this.currentTab).subscribe(value => {
-        this.newsItems = value;
-      });
+      if (this.currentTab != 'homepage') {
+        this.service.loadTopicData(this.currentTab).subscribe(value => {
+          this.newsItems = value;
+        });
+      }
     });
   }
 
@@ -30,6 +32,7 @@ export class TopicComponent implements OnInit {
   }
 
   connect(post: TopicType) {
-    
+
   }
+
 }
