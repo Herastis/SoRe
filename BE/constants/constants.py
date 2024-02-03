@@ -53,6 +53,13 @@ age = random.randint(25, 45)
 
 status_options = ["Single", "In Relationship", "Married"]
 
+news_interests = ['Gaming', 'Sports', 'Gaming', 'Technology', 'Entertainment', 'Books', 'Photography', 'AI', 'Coding']
+health_interests = ['Healthy', 'Fitness', 'Diet', 'Weight Loss', 'Nutrition', 'Fitness', 'Gym', 'Yoga', 'Running', 'CrossFit', 'Bodybuilding', 'Treatment']
+jokes_interests = ['Programming', 'Misc', 'Dark', 'Pun', 'Spooky', 'Christmas']
+music_interests = ['Rock', 'Pop', 'Country', 'Jazz', 'Metal', 'HipHop', 'Rap']
+movies_interests = ['Movies', 'TVShows', 'Celebrities', 'Concerts', 'Gaming']
+
+
 interests_dictionary = {
     'Travel': ['Adventure', 'Luxury', 'Backpacking', 'Cultural', 'Nature'],
     'Food': ['Cooking', 'Baking', 'Healthy', 'Reviews', 'Experiments'],
@@ -79,7 +86,7 @@ interests_dictionary = {
 api_key = '3520f08cf9bb4b94b614bf7fcfb7e8bf'
 base_url = 'https://newsapi.org/v2'
 country_codes = ['ae', 'ar', 'at', 'au', 'be', 'bg', 'br', 'ca', 'ch', 'cn', 'co', 'cr', 'cz', 'de', 'eg', 'fr', 'gb', 'gr', 'hk', 'hu', 'id', 'ie', 'il', 'in', 'it', 'jp', 'kr', 'lt', 'lv', 'ma', 'mx', 'my', 'ng', 'nl', 'no', 'nz', 'ph', 'pl', 'pt', 'ro', 'rs', 'ru', 'sa', 'se', 'sg', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za']
-categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology']
+categories_news_api = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology']
 language_codes = ['en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'zh', 'ru', 'ar']
 
 

@@ -1,4 +1,5 @@
 import requests
+from collections import Counter
 
 languages = ['en', 'de', 'es','fr','pt', 'cs']
 flags = 'nsfw,racist,sexist,explicit'
@@ -12,24 +13,35 @@ base_url = "https://v2.jokeapi.dev/joke"
 category_any = 'Any'
 
 url = base_url + '/' + category_any + f"?blacklistFlags={flags}&type={two_joke}&amount={amount}&language={languages[1]}"
+
 response = requests.get(url)
 
-print(response.text)
+data = response.json()
 
-#https://official-joke-api.appspot.com/random_ten
+jokes = data['jokes']
+print(jokes)
+class Joke:
+    def __init__(self, category, type, setup, delivery, flags, id, safe, lang):
+        self.id = id
+        self.delivery = delivery
+        self.type = type
+        self.is_safe = safe
+        self.setup = setup
+        self.category = category
+        self.lang = lang
+        self.flags = flags
 
-'''"category": "Pun",
-            "type": "twopart",
-            "setup": "I asked my wife if I was the only one she's been with.",
-            "delivery": "She said, \"Yes, the others were at least sevens or eights.\"",
-            "flags": {
-                "nsfw": false,
-                "religious": false,
-                "political": false,
-                "racist": false,
-                "sexist": false,
-                "explicit": false
-            },
-            "id": 58,
-            "safe": true,
-            "lang": "en"'''
+        # Get most frequent 3 words in setup and delivery
+        words = self.setup.split() + self.delivery.split()
+        word_counts = Counter(words)
+        self.frequent_words = [word for word, count in word_counts.most_common(3)]
+
+
+for joke_data in jokes:
+    joke = Joke(**joke_data)
+    print(joke.delivery)
+    print(joke.type)
+    print(joke.is_safe)
+    print(joke.setup)
+    print(joke.category)
+    print(joke.frequent_words)
