@@ -5,6 +5,7 @@ from flask_jwt_extended import JWTManager, create_access_token
 from werkzeug.security import check_password_hash, generate_password_hash
 from db import db, execute_sparql_query
 from datetime import timedelta
+from BE.user.user import User
 
 app = Flask(__name__)
 CORS(app)
@@ -33,6 +34,11 @@ def register():
                                 'first_name': first_name,
                                 'last_name': last_name
                                 })
+
+    #User = User.create_user_graph()
+    #User.set_friends()
+
+
     return jsonify({"msg": "User registered successfully."}), 201
 
 @app.route('/login', methods=['POST'])
@@ -51,6 +57,14 @@ def login():
             'firstName': user['first_name'],
             'lastName': user['last_name']
         }), 200
+
+        #User = User.get_user_from_db()
+        #User = User.get_user_graph()
+
+        #get_news(User.graph) -> can apass pe events
+        #get_health(User.grapph) - > can apass pe lifestyle
+        #get_jokes(User.graph) -> can apass pe jokes
+
 
     return jsonify({"msg": "Incorrect email or password."}), 401
 
@@ -122,5 +136,5 @@ def get_education():
 def get_profile():
     return jsonify("Profile")
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run()

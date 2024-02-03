@@ -29,6 +29,8 @@ class User:
         print('User created')
 
 
+    def get_user_from_db(self):
+
 
     def add_interest_news(self, interests, country, language):
         user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}")
