@@ -1,8 +1,0 @@
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-
-<http://sore/person/ElizabethBrown> a foaf:Person ;
-    foaf:interest "Basketball",
-        "Football",
-        "Tennis" ;
-    foaf:name "ElizabethBrown" .
-

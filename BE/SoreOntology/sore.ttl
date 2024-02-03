@@ -1,0 +1,366 @@
+#################################################################
+###  Generated with the experimental alpha version of the TTL exporter of WebVOWL (version 1.1.7)  http://visualdataweb.de/webvowl/   ###
+#################################################################
+
+@prefix : 		<http://visualdataweb.org/SoreOntology/> .
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/#> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix : 		<http://visualdataweb.org/SoreOntology/> .
+@base 			<http://visualdataweb.org/SoreOntology/> .
+
+<http://visualdataweb.org/SoreOntology/> rdf:type owl:Ontology ;
+                                         dc:title "Sore"@en; 
+                                         dc:description "Ontology to describe the recommendation system for an user."@en; 
+                                         owl:versionInfo "0.1"@en;
+                                         dc:creator "Stoleriu " . 
+#################################################################
+
+###  Property Definitions (Number of Property) 40 ###
+#  --------------------------- Property 0------------------------- 
+<http://visualdataweb.org/personOntology/firstName> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:label "firstName"@IRI-based; 
+                                                    rdfs:label "firstName"@iri-based; 
+                                                    rdfs:label "firstName"@en; 
+                                                    rdfs:domain <http://visualdataweb.org/personOntology/Person>;
+                                                    rdfs:range xsd:string . 
+#  --------------------------- Property 1------------------------- 
+:hasArtist rdf:type owl:ObjectProperty ;
+           rdfs:label "hasArtist"@IRI-based; 
+           rdfs:label "hasArtist"@iri-based; 
+           rdfs:label "hasSongWriter"@en; 
+           rdfs:domain :Music;
+           rdfs:range <http://visualdataweb.org/personOntology/Artist> . 
+#  --------------------------- Property 2------------------------- 
+:hasInterest rdf:type owl:ObjectProperty ;
+             rdfs:label "hasInterest"@IRI-based; 
+             rdfs:label "hasInterest"@iri-based; 
+             rdfs:label "hasInterest"@en; 
+             rdfs:domain <http://visualdataweb.org/personOntology/User>;
+             rdfs:range :Interest . 
+#  --------------------------- Property 3------------------------- 
+:hasJoke rdf:type owl:ObjectProperty ;
+         rdfs:label "hasJoke"@IRI-based; 
+         rdfs:label "hasJoke"@iri-based; 
+         rdfs:label "hasJoke"@en; 
+         rdfs:domain <http://visualdataweb.org/personOntology/User>;
+         rdfs:range :Jokes . 
+#  --------------------------- Property 4------------------------- 
+:hasA rdf:type owl:ObjectProperty ;
+      rdfs:label "hasA"@IRI-based; 
+      rdfs:label "hasA"@iri-based; 
+      rdfs:label "hasArticleAuthor"@en; 
+      rdfs:domain :Medical_and_Lifestyle;
+      rdfs:range <http://visualdataweb.org/personOntology/Author> . 
+#  --------------------------- Property 5------------------------- 
+:hasc rdf:type owl:DatatypeProperty ;
+      rdfs:label "hasc"@IRI-based; 
+      rdfs:label "hasc"@iri-based; 
+      rdfs:label "hasContent"@en; 
+      rdfs:domain <http://visualdataweb.org/personOntology/News>;
+      rdfs:range xsd:string . 
+#  --------------------------- Property 6------------------------- 
+:hasActor rdf:type owl:ObjectProperty ;
+          rdfs:label "hasActor"@IRI-based; 
+          rdfs:label "hasActor"@iri-based; 
+          rdfs:label "hasActor"@en; 
+          rdfs:domain :Movies;
+          rdfs:range :Actor . 
+#  --------------------------- Property 7------------------------- 
+:hasJokeTopic rdf:type owl:DatatypeProperty ;
+              rdfs:label "hasJokeTopic"@IRI-based; 
+              rdfs:label "hasJokeTopic"@en; 
+              rdfs:domain :JokeTopic;
+              rdfs:range rdfs:Literal . 
+#  --------------------------- Property 8------------------------- 
+<http://visualdataweb.org/personOntology/locality> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:label "hasCountry"@en; 
+                                                   rdfs:domain <http://visualdataweb.org/personOntology/User>;
+                                                   rdfs:range xsd:string . 
+#  --------------------------- Property 9------------------------- 
+:genre rdf:type owl:DatatypeProperty ;
+       rdfs:label "genre"@IRI-based; 
+       rdfs:label "genre"@iri-based; 
+       rdfs:label "genre"@en; 
+       rdfs:domain :Genre;
+       rdfs:range xsd:string . 
+#  --------------------------- Property 10------------------------- 
+:knows rdf:type owl:ObjectProperty ;
+       rdfs:label "knows"@IRI-based; 
+       rdfs:label "knows"@iri-based; 
+       rdfs:label "knows"@en; 
+       rdfs:domain <http://visualdataweb.org/personOntology/User>;
+       rdfs:range <http://visualdataweb.org/personOntology/User> . 
+#  --------------------------- Property 11------------------------- 
+<http://visualdataweb.org/personOntology/status> rdf:type owl:DatatypeProperty, owl:FunctionalProperty ;
+                                                 rdfs:label "status"@IRI-based; 
+                                                 rdfs:label "status"@iri-based; 
+                                                 rdfs:label "status"@en; 
+                                                 rdfs:domain <http://visualdataweb.org/personOntology/Person>;
+                                                 rdfs:range xsd:string . 
+#  --------------------------- Property 12------------------------- 
+:hasContent rdf:type owl:DatatypeProperty ;
+            rdfs:label "hasContent"@IRI-based; 
+            rdfs:label "hasContent"@iri-based; 
+            rdfs:label "hasContent"@en; 
+            rdfs:domain :Medical_and_Lifestyle;
+            rdfs:range xsd:string . 
+#  --------------------------- Property 13------------------------- 
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:label "hasTitle"@IRI-based; 
+          rdfs:label "hasTitle"@iri-based; 
+          rdfs:label "hasTitle"@en; 
+          rdfs:domain <http://visualdataweb.org/personOntology/News>;
+          rdfs:range xsd:string . 
+#  --------------------------- Property 14------------------------- 
+:allPerson rdf:type owl:ObjectProperty ;
+           rdfs:label "allPerson"@IRI-based; 
+           rdfs:label "allPerson"@iri-based; 
+           rdfs:label "allPerson"@en; 
+           rdfs:range <http://visualdataweb.org/personOntology/Person> . 
+#  --------------------------- Property 15------------------------- 
+:hasMusicURL rdf:type owl:DatatypeProperty ;
+             rdfs:label "hasMusicURL"@IRI-based; 
+             rdfs:label "hasMusicURL"@iri-based; 
+             rdfs:label "hasMusicURL"@en; 
+             rdfs:domain :Music;
+             rdfs:range xsd:string . 
+#  --------------------------- Property 16------------------------- 
+:type rdf:type owl:DatatypeProperty ;
+      rdfs:label "type"@IRI-based; 
+      rdfs:label "type"@en; 
+      rdfs:domain :Jokes;
+      rdfs:range xsd:string . 
+#  --------------------------- Property 17------------------------- 
+:isSafe rdf:type owl:DatatypeProperty ;
+        rdfs:label "isSafe"@IRI-based; 
+        rdfs:label "isSafe"@en; 
+        rdfs:domain :Jokes;
+        rdfs:range xsd:boolean . 
+#  --------------------------- Property 18------------------------- 
+:hasTopic rdf:type owl:ObjectProperty ;
+          rdfs:label "hasTopic"@IRI-based; 
+          rdfs:label "hasTopic"@iri-based; 
+          rdfs:label "hasTopic"@en; 
+          rdfs:domain <http://visualdataweb.org/personOntology/News>;
+          rdfs:range :topic . 
+#  --------------------------- Property 19------------------------- 
+:interest rdf:type owl:DatatypeProperty ;
+          rdfs:label "interest"@IRI-based; 
+          rdfs:label "interest"@iri-based; 
+          rdfs:label "topicName"@en; 
+          rdfs:domain :Interest;
+          rdfs:range rdfs:Literal . 
+#  --------------------------- Property 20------------------------- 
+:setup rdf:type owl:DatatypeProperty ;
+       rdfs:label "setup"@IRI-based; 
+       rdfs:label "setup"@en; 
+       rdfs:domain :Jokes;
+       rdfs:range xsd:string . 
+#  --------------------------- Property 21------------------------- 
+:category rdf:type owl:DatatypeProperty ;
+          rdfs:label "category"@IRI-based; 
+          rdfs:label "category"@en; 
+          rdfs:domain :Jokes;
+          rdfs:range xsd:string . 
+#  --------------------------- Property 22------------------------- 
+:hasRecommendedItem rdf:type owl:ObjectProperty ;
+                    rdfs:label "hasRecommendedItem"@IRI-based; 
+                    rdfs:label "hasRecommendedItem"@iri-based; 
+                    rdfs:label "hasRecommendedItem"@en; 
+                    rdfs:domain <http://visualdataweb.org/personOntology/User>;
+                    rdfs:range <http://visualdataweb.org/personOntology/News> . 
+#  --------------------------- Property 23------------------------- 
+:hasMedicalUrl rdf:type owl:DatatypeProperty ;
+               rdfs:label "hasMedicalUrl"@IRI-based; 
+               rdfs:label "hasMedicalUrl"@iri-based; 
+               rdfs:label "hasMedicalUrl"@en; 
+               rdfs:domain :Medical_and_Lifestyle;
+               rdfs:range xsd:string . 
+#  --------------------------- Property 24------------------------- 
+:hasGenre rdf:type owl:ObjectProperty ;
+          rdfs:label "hasGenre"@IRI-based; 
+          rdfs:label "hasGenre"@iri-based; 
+          rdfs:label "hasGenre"@en; 
+          rdfs:domain :Movies;
+          rdfs:range :Genre . 
+#  --------------------------- Property 25------------------------- 
+:objectProperty54 rdf:type owl:ObjectProperty ;
+                  rdfs:label "objectProperty54"@IRI-based; 
+                  rdfs:label "newObjectProperty"@en; 
+                  rdfs:domain :Jokes;
+                  rdfs:range :JokeTopic . 
+#  --------------------------- Property 26------------------------- 
+:hasAge rdf:type owl:DatatypeProperty ;
+        rdfs:label "hasAge"@IRI-based; 
+        rdfs:label "hasAge"@iri-based; 
+        rdfs:label "hasAge"@en; 
+        rdfs:domain <http://visualdataweb.org/personOntology/Person>;
+        rdfs:range xsd:integer . 
+#  --------------------------- Property 27------------------------- 
+<http://visualdataweb.org/personOntology/hasEmail> rdf:type owl:DatatypeProperty, owl:FunctionalProperty ;
+                                                   rdfs:label "hasEmail"@IRI-based; 
+                                                   rdfs:label "hasEmail"@iri-based; 
+                                                   rdfs:label "hasEmail"@en; 
+                                                   rdfs:domain <http://visualdataweb.org/personOntology/User>;
+                                                   rdfs:range xsd:string . 
+#  --------------------------- Property 28------------------------- 
+<http://visualdataweb.org/personOntology/gender> rdf:type owl:DatatypeProperty, owl:FunctionalProperty ;
+                                                 rdfs:label "gender"@IRI-based; 
+                                                 rdfs:label "gender"@iri-based; 
+                                                 rdfs:label "gender"@en; 
+                                                 rdfs:domain <http://visualdataweb.org/personOntology/Person>;
+                                                 rdfs:range xsd:string . 
+#  --------------------------- Property 29------------------------- 
+<http://visualdataweb.org/personOntology/workingPlace> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:label "workAs"@en; 
+                                                       rdfs:domain <http://visualdataweb.org/personOntology/User>;
+                                                       rdfs:range xsd:string . 
+#  --------------------------- Property 30------------------------- 
+<http://visualdataweb.org/personOntology/hasEducation> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:label "hasEducation"@IRI-based; 
+                                                       rdfs:label "hasEducation"@iri-based; 
+                                                       rdfs:label "hasEducation"@en; 
+                                                       rdfs:domain <http://visualdataweb.org/personOntology/User>;
+                                                       rdfs:range xsd:string . 
+#  --------------------------- Property 31------------------------- 
+:topicRecommendedItem rdf:type owl:DatatypeProperty ;
+                      rdfs:label "topicRecommendedItem"@IRI-based; 
+                      rdfs:label "topicRecommendedItem"@en; 
+                      rdfs:domain :topic;
+                      rdfs:range rdfs:Literal . 
+#  --------------------------- Property 32------------------------- 
+:hasImageURL rdf:type owl:DatatypeProperty ;
+             rdfs:label "hasImageURL"@IRI-based; 
+             rdfs:label "hasImageURL"@iri-based; 
+             rdfs:label "hasImageURL"@en; 
+             rdfs:domain :News;
+             rdfs:range xsd:string . 
+#  --------------------------- Property 33------------------------- 
+:hasAuthor rdf:type owl:ObjectProperty ;
+           rdfs:label "hasAuthor"@IRI-based; 
+           rdfs:label "hasAuthor"@iri-based; 
+           rdfs:label "hasAuthor"@en; 
+           rdfs:domain :News;
+           rdfs:range <http://visualdataweb.org/personOntology/Author> . 
+#  --------------------------- Property 34------------------------- 
+<http://visualdataweb.org/personOntology/lastName> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:label "lastName"@IRI-based; 
+                                                   rdfs:label "lastName"@iri-based; 
+                                                   rdfs:label "lastName"@en; 
+                                                   rdfs:domain <http://visualdataweb.org/personOntology/Person>;
+                                                   rdfs:range xsd:string . 
+#  --------------------------- Property 35------------------------- 
+:hasCountry rdf:type owl:DatatypeProperty ;
+            rdfs:label "hasCountry"@IRI-based; 
+            rdfs:label "hasCountry"@iri-based; 
+            rdfs:label "hasCountry"@en; 
+            rdfs:domain <http://visualdataweb.org/personOntology/News>;
+            rdfs:range xsd:string . 
+#  --------------------------- Property 36------------------------- 
+:hasNewsUrl rdf:type owl:DatatypeProperty ;
+            rdfs:label "hasNewsUrl"@IRI-based; 
+            rdfs:label "hasNewsUrl"@iri-based; 
+            rdfs:label "hasNewsUrl"@en; 
+            rdfs:domain :News;
+            rdfs:range xsd:string . 
+#  --------------------------- Property 37------------------------- 
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:label "hasDescription"@en; 
+                rdfs:domain <http://visualdataweb.org/personOntology/News>;
+                rdfs:range xsd:string . 
+#  --------------------------- Property 38------------------------- 
+:hasDatePublised rdf:type owl:DatatypeProperty ;
+                 rdfs:label "hasDatePublished"@en; 
+                 rdfs:domain <http://visualdataweb.org/personOntology/News>;
+                 rdfs:range xsd:string . 
+#  --------------------------- Property 39------------------------- 
+:flags rdf:type owl:DatatypeProperty ;
+       rdfs:label "flags"@en; 
+       rdfs:domain :Jokes;
+       rdfs:range xsd:string . 
+###  Class Definitions (Number of Classes) 15 ###
+#  --------------------------- Class  0------------------------- 
+:Jokes rdf:type owl:Class; 
+       rdfs:label "Jokes"@IRI-based; 
+       rdfs:label "Jokes"@iri-based; 
+       rdfs:label "Joke"@en . 
+#  --------------------------- Class  1------------------------- 
+:Music rdf:type owl:Class; 
+       rdfs:subClassOf <http://visualdataweb.org/personOntology/News> ;
+       rdfs:label "Music"@IRI-based; 
+       rdfs:label "Music"@iri-based; 
+       rdfs:label "Music"@en . 
+#  --------------------------- Class  2------------------------- 
+:topic rdf:type owl:Class; 
+       rdfs:label "topic"@IRI-based; 
+       rdfs:label "topicItemName"@en . 
+#  --------------------------- Class  3------------------------- 
+:Interest rdf:type owl:Class; 
+          rdfs:label "Interest"@IRI-based; 
+          rdfs:label "Interest"@iri-based; 
+          rdfs:label "InterestTopic"@en . 
+#  --------------------------- Class  4------------------------- 
+:Movies rdf:type owl:Class; 
+        rdfs:subClassOf <http://visualdataweb.org/personOntology/News> ;
+        rdfs:label "Movies"@IRI-based; 
+        rdfs:label "Movies"@iri-based; 
+        rdfs:label "Movies"@en . 
+#  --------------------------- Class  5------------------------- 
+:News rdf:type owl:Class; 
+      rdfs:subClassOf <http://visualdataweb.org/personOntology/News> ;
+      rdfs:label "News"@IRI-based; 
+      rdfs:label "News"@iri-based; 
+      rdfs:label "News"@en . 
+#  --------------------------- Class  6------------------------- 
+:Genre rdf:type owl:Class; 
+       rdfs:label "Genre"@IRI-based; 
+       rdfs:label "Genre"@iri-based; 
+       rdfs:label "Genre"@en . 
+#  --------------------------- Class  7------------------------- 
+<http://visualdataweb.org/personOntology/Person> rdf:type owl:Class; 
+                                                 rdfs:label "Person"@IRI-based; 
+                                                 rdfs:label "Person"@iri-based; 
+                                                 rdfs:label "Person"@en . 
+#  --------------------------- Class  8------------------------- 
+:Medical_and_Lifestyle rdf:type owl:Class; 
+                       rdfs:subClassOf <http://visualdataweb.org/personOntology/News> ;
+                       rdfs:label "Medical_and_Lifestyle"@IRI-based; 
+                       rdfs:label "Medical_and_Lifestyle"@iri-based; 
+                       rdfs:label "Medical and Lifestyle"@en . 
+#  --------------------------- Class  9------------------------- 
+:Actor rdf:type owl:Class; 
+       rdfs:subClassOf <http://visualdataweb.org/personOntology/Person> ;
+       rdfs:label "Actor"@IRI-based; 
+       rdfs:label "Actor"@iri-based; 
+       rdfs:label "Actor"@en . 
+#  --------------------------- Class  10------------------------- 
+<http://visualdataweb.org/personOntology/Artist> rdf:type owl:Class; 
+                                                 rdfs:subClassOf <http://visualdataweb.org/personOntology/Person> ;
+                                                 rdfs:label "Artist"@IRI-based; 
+                                                 rdfs:label "Artist"@iri-based; 
+                                                 rdfs:label "Artist"@en . 
+#  --------------------------- Class  11------------------------- 
+<http://visualdataweb.org/personOntology/User> rdf:type owl:Class; 
+                                               rdfs:subClassOf <http://visualdataweb.org/personOntology/Person> ;
+                                               rdfs:label "User"@IRI-based; 
+                                               rdfs:label "User"@iri-based; 
+                                               rdfs:label "User"@en . 
+#  --------------------------- Class  12------------------------- 
+<http://visualdataweb.org/personOntology/News> rdf:type owl:Class; 
+                                               rdfs:label "News"@IRI-based; 
+                                               rdfs:label "News"@iri-based; 
+                                               rdfs:label "Recommendation"@en . 
+#  --------------------------- Class  13------------------------- 
+:JokeTopic rdf:type owl:Class; 
+           rdfs:label "JokeTopic"@IRI-based; 
+           rdfs:label "JokeTopic"@en . 
+#  --------------------------- Class  14------------------------- 
+<http://visualdataweb.org/personOntology/Author> rdf:type owl:Class; 
+                                                 rdfs:subClassOf <http://visualdataweb.org/personOntology/Person> ;
+                                                 rdfs:label "Author"@IRI-based; 
+                                                 rdfs:label "Author"@iri-based; 
+                                                 rdfs:label "Author"@en . 
