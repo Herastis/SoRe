@@ -30,7 +30,8 @@ def get_news_articles(interests, end_point, language, category=None, country=Non
                 'country': country,
                 'category': category,
                 'sortBy': 'popularity',
-                'q': interests
+                'q': interests,
+                'pageSize': pageSize
             }
         elif category is not None and country is not None:
             params = {
@@ -39,7 +40,8 @@ def get_news_articles(interests, end_point, language, category=None, country=Non
                 'country': country,
                 'category': category,
                 'sortBy': 'relevancy',
-                'q': interests
+                'q': interests,
+                'pageSize': pageSize
             }
         elif country is not None:
             params = {
@@ -47,7 +49,8 @@ def get_news_articles(interests, end_point, language, category=None, country=Non
                 'lang': 'en',
                 'country': country,
                 'sortBy': 'relevancy',
-                'q': interests
+                'q': interests,
+                'pageSize': pageSize
             }
         else:
             return "No parameters for the request"
@@ -58,7 +61,8 @@ def get_news_articles(interests, end_point, language, category=None, country=Non
                 'lang': language,
                 'searchIn': 'title,description,content',
                 'sortBy': 'popularity',
-                'q': interests
+                'q': interests,
+                'pageSize': pageSize
             }
         else:
             return "No parameters for the request"
@@ -71,38 +75,6 @@ def get_news_articles(interests, end_point, language, category=None, country=Non
         news_data = response.json()
         # Extract and print relevant information
         articles = news_data['articles']
-        i = 0
-        for article in articles:
-            print(article)
-            source_name = article['source']['name']
-            # Concatenating the name parts separated by spaces
-            news_name = '_'.join(source_name.split())
-            print(f'Source: {news_name}')
-            print(f"Title: {article['title']}")
-            try:
-                name = article['author']
-                name = ''.join(article['author'].split())
-            except None:
-                pass
-            print(f"Name: {name}")
-            print(f"Description: {article['description']}")
-            print(f'Published at: {article["publishedAt"]}')
-            print(f'Picture: {article["urlToImage"]}')
-            print(f"URL: {article['url']}")
-            print(f'Content: {article["content"]}')
-            # Combine title and description text
-            text_combined = f"{article['title']} {article['description']}"
-
-            # Process the combined text using spaCy
-            doc = nlp(text_combined)
-
-            # Extract unique words and their frequencies
-            word_freq = Counter(token.text for token in doc if not token.is_stop and token.is_alpha)
-
-            top_words = [word for word, freq in word_freq.most_common(10)]
-
-            print(f"Top 5 Relevant Words: {top_words}")
-            print('\n')
 
         return articles
     else:
@@ -110,4 +82,4 @@ def get_news_articles(interests, end_point, language, category=None, country=Non
         print(f"Error: {response.status_code} - {response.text}")
 
 
-get_news_articles(interests, end_point, language, category, country)
+#get_news_articles(interests, end_point, language, category, country)
