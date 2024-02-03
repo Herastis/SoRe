@@ -2,15 +2,13 @@ import spacy
 from collections import Counter
 from newsAPI.getDataInfo import get_news_articles
 nlp = spacy.load("en_core_web_sm")
-from constants import constants as cst
 
-api_key = cst.api_key
-end_point = '/everything'  # /everything /top-headlines
+end_point = '/top-headlines'  # /everything
 language = 'us'
-category = None  # None, business, entertainment, general, health, science, sports, technology
+category = 'health'  # None, business, entertainment, general, health, science, sports, technology
 pageSize = 30  # 20 to 100
 country = 'us'  # random.choice(cst.country_codes)
-interests = ['Gaming' ,'AI', 'Coding']
+interests = ['treatment', 'life']
 
 articles = get_news_articles(interests, end_point, language, category, country)
 for article in articles:
@@ -45,7 +43,7 @@ for article in articles:
 '''{'source': {'id': None, 'name': 'Medical Xpress'}, 'author': 'Science X', 'title': 'New treatment shows promise against fatal neurological disease: Study - Medical Xpress', 'description': 'A new treatment shows promise against the deadly neurodegenerative disease ALS, a study based on mice showed Tuesday.', 'url': 'https://medicalxpress.com/news/2024-01-treatment-fatal-neurological-disease.html', 'urlToImage': 'https://scx2.b-cdn.net/gfx/news/2024/french-musician-guilhe.jpg', 'publishedAt': '2024-01-31T09:39:03Z', 'content': "A new treatment shows promise against the deadly neurodegenerative disease ALS, a study based on mice showed Tuesday.\r\nAmyotrophic lateral sclerosis, sometimes called Lou Gehrig's disease after the f… [+2755 chars]"}
 Source: Medical_Xpress
 Title: New treatment shows promise against fatal neurological disease: Study - Medical Xpress
-Name: ScienceX
+Name: Science X
 Description: A new treatment shows promise against the deadly neurodegenerative disease ALS, a study based on mice showed Tuesday.
 Published at: 2024-01-31T09:39:03Z
 Picture: https://scx2.b-cdn.net/gfx/news/2024/french-musician-guilhe.jpg
