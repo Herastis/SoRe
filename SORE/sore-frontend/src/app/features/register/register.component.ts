@@ -10,7 +10,6 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  mouseoverLogin!: any;
   registerForm!: FormGroup;
 
   constructor(
@@ -29,10 +28,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
     if (this.registerForm.valid) {
-      const email = this.registerForm.get('email')?.value;
-      const password = this.registerForm.get('password')?.value;
-      
-      this.authService.register(email, password).subscribe(
+      this.authService.register(this.registerForm.value).subscribe(
         response => {
           console.log(response);
         },

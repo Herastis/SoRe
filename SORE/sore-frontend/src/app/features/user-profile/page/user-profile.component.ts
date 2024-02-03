@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,9 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent {
+export class UserProfileComponent implements OnInit {
+  firstName!: string | null;
+  lastName!: string | null;
   profileForm!: FormGroup;
   nameForm!: FormGroup;
   topics = ['news', 'events', 'music', 'movies', 'healthAndWellness', 'technologyAndGadgets', 'lifestyleAndTravel', 'humorAndMemes', 'educationAndLearning'];
@@ -15,11 +17,15 @@ export class UserProfileComponent {
     this.profileForm = this.createprofileForm();
   }
 
+  ngOnInit(): void {
+    this.loadProfile();
+  }
+
   createprofileForm() {
     const group: any = {};
 
     this.topics.forEach((topic) => {
-      group[topic] = new FormControl({value: '', disabled: true});
+      group[topic] = new FormControl({ value: '', disabled: true });
     });
 
     return new FormGroup(group);
@@ -31,5 +37,10 @@ export class UserProfileComponent {
     } else {
       this.profileForm.enable();
     }
+  }
+
+  loadProfile(): void {
+    this.firstName = localStorage?.getItem('firstName');
+    this.lastName = localStorage?.getItem('lastName');
   }
 }

@@ -15,7 +15,7 @@
                    type="email"
                    placeholder="email@something.com"
                    formControlName="email">
-            <mat-error *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || mouseoverLogin)">
+            <mat-error *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty)">
                 Please enter a valid email address
             </mat-error>
         </mat-form-field>
@@ -28,21 +28,17 @@
                    placeholder="**********"
                    formControlName="password">
             <mat-error
-                       *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || mouseoverLogin)">
+                       *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty)">
                 Required</mat-error>
         </mat-form-field>
 
         <mat-card-actions>
-            <span (mouseenter)="mouseoverLogin = true"
-                  (mouseleave)="mouseoverLogin = false">
                 <div mat-dialog-actions>
                     <button mat-button
-                            mat-dialog-close
                             cdkFocusInitial
                             type="submit"
                             value="Submit"
-                            [disabled]="loginForm.invalid"
-                            (click) = "login()">
+                            [disabled]="loginForm.invalid">
                         <mat-icon>login</mat-icon>
                     </button>
                     <div mat-dialog-actions>
@@ -51,9 +47,8 @@
                     </div>
                     <button mat-button
                             mat-dialog-close
-                            (click)="openRegisterDialog()">Not having an account? Register now!</button>
+                            (click)="openRegisterDialog()">No account? Register now!</button>
                 </div>
-            </span>
         </mat-card-actions>
     </form>
 </mat-card>

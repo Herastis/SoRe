@@ -35,7 +35,7 @@
              type="email"
              placeholder="email@something.com"
              formControlName="email">
-      <mat-error *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || mouseoverLogin)">
+      <mat-error *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty)">
         Please enter a valid email address
       </mat-error>
     </mat-form-field>
@@ -48,13 +48,11 @@
              placeholder="**********"
              formControlName="password">
       <mat-error
-                 *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || mouseoverLogin)">
+                 *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty)">
         Required</mat-error>
     </mat-form-field>
 
     <mat-card-actions>
-      <span (mouseenter)="mouseoverLogin = true"
-            (mouseleave)="mouseoverLogin = false">
         <div mat-dialog-actions>
           <button mat-button
                   mat-dialog-close
@@ -70,9 +68,8 @@
           </div>
           <button mat-button
                   mat-dialog-close
-                  (click)="openLoginDialog()">Already having an account? Login now!</button>
+                  (click)="openLoginDialog()">Login</button>
         </div>
-      </span>
     </mat-card-actions>
   </form>
 </mat-card>

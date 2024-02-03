@@ -8,24 +8,35 @@
     <mat-card-content>
       <mat-form-field>
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="First Name" value="Ginerica" [readonly]= true>
+        <input matInput
+               placeholder="First Name"
+               value={{firstName}}
+               [readonly]=true>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last Name" value="Valeriu" [readonly]= true>
+        <input matInput
+               placeholder="Last Name"
+               value={{firstName}}
+               [readonly]=true>
       </mat-form-field>
     </mat-card-content>
   </mat-card>
 
   <form [formGroup]="profileForm">
     <div *ngFor="let topic of topics">
-      <mat-form-field appearance="fill" class="full-width">
+      <mat-form-field appearance="fill"
+                      class="full-width">
         <mat-label>{{ topic }}</mat-label>
-        <input matInput [formControlName]="topic" [readonly]="profileForm.controls[topic].disabled">
+        <input matInput
+               [formControlName]="topic"
+               [readonly]="profileForm.controls[topic].disabled">
       </mat-form-field>
     </div>
-    <button mat-raised-button color="primary" (click)="toggleEdit()">
+    <button mat-raised-button
+            color="primary"
+            (click)="toggleEdit()">
       {{ profileForm.disabled ? 'Edit' : 'Save' }}
     </button>
   </form>

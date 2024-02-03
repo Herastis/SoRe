@@ -4,6 +4,7 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token
 from werkzeug.security import check_password_hash, generate_password_hash
 from db import db
+from datetime import timedelta
 
 app = Flask(__name__)
 CORS(app)
@@ -18,24 +19,36 @@ def register():
     password = request.json.get('password', None)
     user_collection = db.users
     existing_user = user_collection.find_one({'email': email})
+    first_name = request.json.get('firstName', None)
+    last_name = request.json.get('lastName', None)
 
     if existing_user:
         return jsonify({"msg": "Email already exists."}), 409
 
     hashed_password = generate_password_hash(password)
-    user_collection.insert_one({'email': email, 'password_hash': hashed_password})
+    user_collection.insert_one({'email': email,
+                                'password_hash': hashed_password,
+                                'first_name': first_name,
+                                'last_name': last_name
+                                })
     return jsonify({"msg": "User registered successfully."}), 201
 
 @app.route('/login', methods=['POST'])
 def login():
     email = request.json.get('email', None)
     password = request.json.get('password', None)
+
     user_collection = db.users
     user = user_collection.find_one({'email': email})
 
     if user and check_password_hash(user['password_hash'], password):
-        access_token = create_access_token(identity=email)
-        return jsonify(access_token=access_token), 200
+        expires = timedelta(minutes=1)
+        access_token = create_access_token(identity=email,  expires_delta=expires)
+        return jsonify({
+            'access_token': access_token,
+            'firstName': user['first_name'],
+            'lastName': user['last_name']
+        }), 200
 
     return jsonify({"msg": "Incorrect email or password."}), 401
 
