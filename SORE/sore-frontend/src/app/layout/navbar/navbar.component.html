@@ -17,7 +17,11 @@
     <button *ngIf="isLoggedIn"
             mat-icon-button
             [matMenuTriggerFor]="menu">
-        <mat-icon>account_circle</mat-icon>
+        <!-- <mat-icon>account_circle</mat-icon> -->
+        <img *ngIf="isLoggedIn"
+             [src]="avatarUrl"
+             class="avatar-image"
+             alt="User Avatar">
     </button>
 
     <mat-menu #menu="matMenu">

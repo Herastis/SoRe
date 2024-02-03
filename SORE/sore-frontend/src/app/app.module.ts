@@ -19,7 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './features/login/page/login.component';
 
 import { NavbarComponent } from './layout/navbar/navbar.component';
@@ -28,6 +28,8 @@ import { TopicComponent } from './features/topic/page/topic.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RegisterComponent } from './features/register/register.component';
 import { UserProfileComponent } from './features/user-profile/page/user-profile.component';
+import { TokenInterceptor } from './shared/interceptors/token-interceptor';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -54,9 +56,14 @@ import { UserProfileComponent } from './features/user-profile/page/user-profile.
     MatCardModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

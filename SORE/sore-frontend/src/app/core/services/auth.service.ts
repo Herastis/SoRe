@@ -1,30 +1,61 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
+import { LoginResponseType } from '../types/loginResponse.type';
+import { RegisterFormType } from '../types/registerForm.type';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   url: string = 'http://127.0.0.1:5000';
-  private loggedIn = new BehaviorSubject<boolean>(false); 
   redirectUrl = 'profile'
+  public isLoggedInStatus = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient) { }
-
-  register(email: string, password: string) {
-    return this.http.post(`${this.url}/register`, { email, password });
+  constructor(private http: HttpClient) { 
+    this.isLoggedInStatus.next(this.checkIsLoggedInStatus());
   }
 
-  login(email: string, password: string) {
-    return this.http.post(`${this.url}/login`, { email, password });
+  register(form: RegisterFormType) {
+    return this.http.post(`${this.url}/register`, form);
   }
 
-  isLoggedIn() {
-    return this.loggedIn.asObservable();
+  login(email: string, password: string): Observable<boolean> {
+    return this.http.post<LoginResponseType>(`${this.url}/login`, { email, password })
+      .pipe(map(response => {
+        if (response.access_token) {
+          localStorage.setItem('access_token', response.access_token);
+          localStorage.setItem('firstName', response.firstName);
+          localStorage.setItem('lastName', response.lastName);
+          this.isLoggedInStatus.next(true);
+          return true;
+        } else {
+          return false;
+        }
+      }
+      ));
   }
 
-  setLoggedIn(value: boolean) {
-    this.loggedIn.next(value);
+  logout() {
+    this.isLoggedInStatus.next(false);
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('firstName');
+    localStorage.removeItem('lastName');
+  }
+
+  setIsLoggedInStatus(value: boolean) {
+    this.isLoggedInStatus.next(value);
+  }
+
+  isLoggedIn(): boolean {
+    return this.isLoggedInStatus.value;
+  }
+
+  private checkIsLoggedInStatus(): boolean {
+    return !!localStorage.getItem('access_token');
+  }
+
+  getAvatarUrl(firstName: string, lastName: string): string {
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(firstName)}+${encodeURIComponent(lastName)}&rounded=true`;
   }
 }

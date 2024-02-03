@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { LoginComponent } from 'src/app/features/login/page/login.component';
 import { RegisterComponent } from 'src/app/features/register/register.component';
 
@@ -10,12 +12,24 @@ import { RegisterComponent } from 'src/app/features/register/register.component'
 })
 export class NavbarComponent implements OnInit {
   isLoggedIn: boolean = false;
-  constructor(public dialog: MatDialog) { }
+  subscription!: Subscription;
+  avatarUrl!: string;
+  firstName!: string | null;
+  lastName!: string | null;
+
+  constructor(public dialog: MatDialog,
+    private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.subscription = this.authService.isLoggedInStatus.subscribe(
+      (loggedInStatus: boolean) => {
+        this.isLoggedIn = loggedInStatus;
+        this.getAvatar();
+      }
+    );
   }
 
-  register() {
+  register(): void {
     const dialogRef = this.dialog.open(RegisterComponent);
 
     dialogRef.afterClosed().subscribe(result => {
@@ -23,17 +37,27 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  login() {
+  login(): void {
     const dialogRef = this.dialog.open(LoginComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      if (result) {
+        this.isLoggedIn = true;
+        this.getAvatar();
+      }
     });
-    this.isLoggedIn = true;
+
   }
 
-  logout() {
-    this.isLoggedIn = false;
+  logout(): void {
+    this.authService.logout();
   }
 
+  getAvatar(): void {
+    this.firstName = localStorage.getItem('firstName');
+        this.lastName = localStorage.getItem('lastName');
+        if (this.firstName && this.lastName) {
+          this.avatarUrl = this.authService.getAvatarUrl(this.firstName, this.lastName);
+        }
+  }
 }
