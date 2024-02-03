@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { LoginComponent } from 'src/app/features/login/page/login.component';
@@ -18,7 +19,8 @@ export class NavbarComponent implements OnInit {
   lastName!: string | null;
 
   constructor(public dialog: MatDialog,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.subscription = this.authService.isLoggedInStatus.subscribe(
@@ -53,6 +55,10 @@ export class NavbarComponent implements OnInit {
     this.authService.logout();
   }
 
+  navigateToProfile() {
+    this.router.navigate(['/profile']);
+  }
+  
   getAvatar(): void {
     this.firstName = localStorage.getItem('firstName');
         this.lastName = localStorage.getItem('lastName');

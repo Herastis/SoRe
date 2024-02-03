@@ -25,7 +25,8 @@
     </button>
 
     <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item
+                (click)="navigateToProfile()">
             <mat-icon>face</mat-icon>
             <span>My profile</span>
         </button>

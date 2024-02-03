@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { LoginResponseType } from '../types/loginResponse.type';
 import { RegisterFormType } from '../types/registerForm.type';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthService {
   redirectUrl = 'profile'
   public isLoggedInStatus = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private router: Router) { 
     this.isLoggedInStatus.next(this.checkIsLoggedInStatus());
   }
 
@@ -41,6 +42,7 @@ export class AuthService {
     localStorage.removeItem('access_token');
     localStorage.removeItem('firstName');
     localStorage.removeItem('lastName');
+    this.router.navigate(['/homepage']);
   }
 
   setIsLoggedInStatus(value: boolean) {

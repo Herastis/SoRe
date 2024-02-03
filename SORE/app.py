@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token
 from werkzeug.security import check_password_hash, generate_password_hash
-from db import db
+from db import db, execute_sparql_query
 from datetime import timedelta
 
 app = Flask(__name__)
@@ -12,6 +12,8 @@ CORS(app)
 bcrypt = Bcrypt(app)
 app.config['JWT_SECRET_KEY'] = 'your-secret-key'
 jwt = JWTManager(app)
+
+BLAZEGRAPH_URL = 'http://localhost:9999/blazegraph/namespace/yournamespace/sparql'
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -58,7 +60,31 @@ def get_homepage():
 
 @app.route('/news', methods=['GET'])
 def get_news():
-    return jsonify("News")
+    #return jsonify("News")
+    query = """
+        PREFIX ns1: <http://example.org/news#>
+
+        SELECT ?title ?author ?description ?imageUrl WHERE {
+            ?news a ns1:NewsArticle ;
+                  ns1:hasTitle ?title ;
+                  ns1:hasAuthor ?author ;
+                  ns1:hasDescription ?description ;
+                  ns1:hasImageUrl ?imageUrl .
+        }
+        LIMIT 10
+        """
+    results = execute_sparql_query(query)
+    if results:
+        news_items = results.get("results", {}).get("bindings", [])
+        news = [{
+            "title": item["title"]["value"],
+            "author": item["author"]["value"],
+            "description": item["description"]["value"],
+            "image": item["imageUrl"]["value"]
+        } for item in news_items]
+        return jsonify(news)
+    else:
+        return jsonify({"error": "Could not retrieve news"}), 500
 
 @app.route('/events', methods=['GET'])
 def get_events():
