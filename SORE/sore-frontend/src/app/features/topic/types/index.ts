@@ -1,1 +1,1 @@
-export * from './homepage.type';
+export * from './topic.type';

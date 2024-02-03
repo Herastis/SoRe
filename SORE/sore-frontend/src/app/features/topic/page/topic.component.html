@@ -1,1 +1,17 @@
-<div> {{text}} </div>
+<!-- <div> {{text}} </div> -->
+
+<ng-container *ngFor="let newsItem of newsItems">
+  <mat-card class = "mat-card">
+    <mat-card-header>
+      <mat-card-title>{{ newsItem.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image class="news-image" [src]="newsItem.image" alt="Image for {{ newsItem.title }}">
+    <mat-card-content>
+      <p>{{ newsItem.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="like(newsItem)">Like</button>
+      <button mat-button (click)="connect(newsItem)">Connect</button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
