@@ -1,25 +1,41 @@
+import random
+
 import requests
 from collections import Counter
+import constants.constants as cst
 
 languages = ['en', 'de', 'es','fr','pt', 'cs']
 flags = 'nsfw,racist,sexist,explicit'
 two_joke = 'twopart'
 q = ['photo'] # ?
-category = ['Programming', 'Misc', 'Dark', 'Pun', 'Spooky', 'Christmas']
-param = ['Any']
-amount = 10
-base_url = "https://v2.jokeapi.dev/joke"
-
+category_web = ['Programming', 'Misc', 'Dark', 'Pun', 'Spooky', 'Christmas']
 category_any = 'Any'
 
-url = base_url + '/' + category_any + f"?blacklistFlags={flags}&type={two_joke}&amount={amount}&language={languages[1]}"
+param = ['Any']
+amount = 10
 
-response = requests.get(url)
 
-data = response.json()
 
-jokes = data['jokes']
-print(jokes)
+def call_joke_api(category):
+    flags = 'nsfw,racist,sexist,explicit'
+    two_joke = 'twopart'
+    cate = ""
+    if category is not None:
+        cate = category
+    else:
+        cate = 'Any'
+
+    base_url = "https://v2.jokeapi.dev/joke"
+    amount = 10
+
+    url = base_url + '/' + category + f"?blacklistFlags={flags}&type={two_joke}&amount={amount}&language={languages[1]}"
+
+    response = requests.get(url)
+
+    data = response.json()
+
+    jokes = data['jokes']
+    return jokes
 class Joke:
     def __init__(self, category, type, setup, delivery, flags, id, safe, lang):
         self.id = id
@@ -32,16 +48,12 @@ class Joke:
         self.flags = flags
 
         # Get most frequent 3 words in setup and delivery
-        words = self.setup.split() + self.delivery.split()
-        word_counts = Counter(words)
+
+        # Words from self.setup and self.delivery, converted to lowercase
+        words = [word.lower() for word in self.setup.split() + self.delivery.split()]
+
+        word_counts = Counter(word for word in words if word.lower() not in cst.stopwords)
         self.frequent_words = [word for word, count in word_counts.most_common(3)]
 
 
-for joke_data in jokes:
-    joke = Joke(**joke_data)
-    print(joke.delivery)
-    print(joke.type)
-    print(joke.is_safe)
-    print(joke.setup)
-    print(joke.category)
-    print(joke.frequent_words)
+

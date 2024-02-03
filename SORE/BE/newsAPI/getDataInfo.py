@@ -29,7 +29,6 @@ def get_news_articles(interests, end_point, language, category=None, country=Non
                 'lang': language,
                 'country': country,
                 'category': category,
-                'sortBy': 'popularity',
                 'q': interests,
                 'pageSize': pageSize
             }
