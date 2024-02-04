@@ -47,29 +47,71 @@
              type="password"
              placeholder="**********"
              formControlName="password">
-      <mat-error
-                 *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty)">
+      <mat-error *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty)">
         Required</mat-error>
     </mat-form-field>
 
+
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <mat-icon matSuffix>status</mat-icon>
+      <input matInput
+             formControlName="status">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Gender</mat-label>
+      <mat-icon matSuffix>gender</mat-icon>
+      <input matInput
+             formControlName="gender">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Age</mat-label>
+      <mat-icon matSuffix>age</mat-icon>
+      <input matInput
+             formControlName="age">
+    </mat-form-field>
+ 
+    <mat-form-field>
+      <mat-label>Working Place</mat-label>
+      <mat-icon matSuffix>workingPlace</mat-icon>
+      <input matInput
+             formControlName="workingPlace">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Education</mat-label>
+      <mat-icon matSuffix>school</mat-icon>
+      <input matInput
+             formControlName="education">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Country</mat-label>
+      <mat-icon matSuffix>location_city</mat-icon>
+      <input matInput
+             formControlName="country">
+    </mat-form-field>
+
     <mat-card-actions>
+      <div mat-dialog-actions>
+        <button mat-button
+                mat-dialog-close
+                cdkFocusInitial
+                type="submit"
+                value="Submit"
+                [disabled]="registerForm.invalid">
+          <mat-icon>login</mat-icon>
+        </button>
         <div mat-dialog-actions>
           <button mat-button
-                  mat-dialog-close
-                  cdkFocusInitial
-                  type="submit"
-                  value="Submit"
-                  [disabled]="registerForm.invalid">
-            <mat-icon>login</mat-icon>
-          </button>
-          <div mat-dialog-actions>
-            <button mat-button
-                    mat-dialog-close>Close</button>
-          </div>
-          <button mat-button
-                  mat-dialog-close
-                  (click)="openLoginDialog()">Login</button>
+                  mat-dialog-close>Close</button>
         </div>
+        <button mat-button
+                mat-dialog-close
+                (click)="openLoginDialog()">Login</button>
+      </div>
     </mat-card-actions>
   </form>
 </mat-card>

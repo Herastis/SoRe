@@ -20,6 +20,11 @@ BLAZEGRAPH_URL = 'http://localhost:9999/blazegraph/namespace/yournamespace/sparq
 def register():
     email = request.json.get('email', None)
     password = request.json.get('password', None)
+    status = request.json.get('status', None)
+    gender = request.json.get('gender', None)
+    age = request.json.get('age', None)
+    education = request.json.get('education', None)
+    country = request.json.get('country', None)
     user_collection = db.users
     existing_user = user_collection.find_one({'email': email})
     first_name = request.json.get('firstName', None)
@@ -32,7 +37,12 @@ def register():
     user_collection.insert_one({'email': email,
                                 'password_hash': hashed_password,
                                 'first_name': first_name,
-                                'last_name': last_name
+                                'last_name': last_name,
+                                'status': status,
+                                'gender': gender,
+                                'age': age,
+                                'education': education,
+                                'country': country,
                                 })
 
     #User = User.create_user_graph()

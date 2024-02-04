@@ -5,7 +5,7 @@ export type RegisterFormType = {
   lastName: string;
   status: string;
   gender: string;
-  age : string;
+  age: string;
   workingPlace: string;
   education: string;
   country: string;
