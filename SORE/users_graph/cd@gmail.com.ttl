@@ -3,7 +3,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://soreOntology.com/users/c_d> a ns2:User ;
+<http://soreOntology.com/users/c_d_cd@gmail.com> a ns2:User ;
     ns2:firstName "c"^^xsd:string ;
     ns2:gender "male"^^xsd:string ;
     ns2:hasAge 32 ;
