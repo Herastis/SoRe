@@ -1,0 +1,791 @@
+@prefix ns1: <http://visualdataweb.org/SoreOntology/personOntology/> .
+@prefix ns2: <http://visualdataweb.org/SoreOntology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://soreOntology.com/users/John_Smith_john_smith@example.com> a ns1:User ;
+    ns1:firstName "John"^^xsd:string ;
+    ns1:gender "male"^^xsd:string ;
+    ns1:hasAge 36 ;
+    ns1:hasCountry "United States"^^xsd:string ;
+    ns1:hasEducation "Bachelor"^^xsd:string ;
+    ns1:hasEmail "john_smith@example.com"^^xsd:string ;
+    ns1:hasInterest <http://soreOntology.com/interestsUser/AI>,
+        <http://soreOntology.com/interestsUser/gaming>,
+        <http://soreOntology.com/interestsUser/politics>,
+        <http://soreOntology.com/interestsUser/sports>,
+        <http://soreOntology.com/interestsUser/technology> ;
+    ns1:hasJoke <http://soreOntology.com/joke/christmas>,
+        <http://soreOntology.com/joke/kind>,
+        <http://soreOntology.com/joke/oh%3F>,
+        <http://soreOntology.com/joke/santa>,
+        <http://soreOntology.com/joke/santa%27s>,
+        <http://soreOntology.com/joke/skeleton> ;
+    ns1:hasRecommendedItem <http://soreOntology.com/medicalNews/MedicalMysterySolved%3FHormoneTreatmentLinkedToAlzheimer%27sInShockingDiscovery-NDTV>,
+        <http://soreOntology.com/news/BanningPrivateJetsandGoingtoa4-DayWorkWeekAreRadical%E2%80%94andPopular>,
+        <http://soreOntology.com/news/BlizzardpartnerswithESLforanopenOverwatch2esportscircuit>,
+        <http://soreOntology.com/news/Canpop-upshopshelptoregenerateourHighStreets%3F>,
+        <http://soreOntology.com/news/Childobesityinpandemiccouldhavelifelongeffects%2Cstudysays>,
+        <http://soreOntology.com/news/Dementia%3APhotoslaybareagonyofslowlylosingmum>,
+        <http://soreOntology.com/news/DerekDraper%3AKateGarrawaythankssupportersasshedealswith%27pain%27ofhusband%27sdeath>,
+        <http://soreOntology.com/news/GenZandtheArtofIncentivizedSelf-Actualization>,
+        <http://soreOntology.com/news/GlobalEmissionsCouldPeakSoonerThanYouThink>,
+        <http://soreOntology.com/news/GooglelaysoffhundredsofemployeesinitsAssistant%2Chardwareandotherdivisions>,
+        <http://soreOntology.com/news/GraceO%27Malley-Kumar%3AMumcallsforjailtermsforknifecarrying>,
+        <http://soreOntology.com/news/InequalityIsaHealthRisk%E2%80%94andIt%E2%80%99sGettingWorse>,
+        <http://soreOntology.com/news/Meta%E2%80%99sOversightBoardraisesconcernsoverautomatedmoderationofhatespeech>,
+        <http://soreOntology.com/news/NaughtyDog%27sbehind-the-scenesdocumentaryonTheLastofUsPart2arrivesFebruary2>,
+        <http://soreOntology.com/news/Oppenheimer%3ACillianMurphyfilmmarchestowardsOscarssuccess>,
+        <http://soreOntology.com/news/Pupilsinunsafeschoolsneedexamboost-report>,
+        <http://soreOntology.com/news/ScabiesIsMakingaComeback>,
+        <http://soreOntology.com/news/TheCambridgeshirebusroutethatcosts%C2%A3124perpassenger>,
+        <http://soreOntology.com/news/ThePapers%3A%27GoodbyedarlingDerek%27andPostOfficeprobe>,
+        <http://soreOntology.com/news/ToMakeanImpact%2CJoinTech%E2%80%99sExodus>,
+        <http://soreOntology.com/news/WhySen.BrianSchatzthinkschildsafetybillsshouldtrumptheFirstAmendment> ;
+    ns1:lastName "Smith"^^xsd:string ;
+    ns1:status "Single"^^xsd:string ;
+    ns1:workingPlace "United States"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/AI> a ns2:Interest ;
+    rdfs:label "AI"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/gaming> a ns2:Interest ;
+    rdfs:label "gaming"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/politics> a ns2:Interest ;
+    rdfs:label "politics"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/sports> a ns2:Interest ;
+    rdfs:label "sports"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/technology> a ns2:Interest ;
+    rdfs:label "technology"^^xsd:string .
+
+<http://soreOntology.com/joke/christmas> a ns2:Joke ;
+    ns2:category "Christmas" ;
+    ns2:delivery "No Brussels!" ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/brexit?>,
+        <http://soreOntology.com/topicsJoke/christmas>,
+        <http://soreOntology.com/topicsJoke/dinner> ;
+    ns2:isSafe false ;
+    ns2:setup "How will Christmas dinner be different after Brexit?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/kind> a ns2:Joke ;
+    ns2:category "Christmas" ;
+    ns2:delivery "A Holly Davidson!" ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/kind>,
+        <http://soreOntology.com/topicsJoke/motorbike>,
+        <http://soreOntology.com/topicsJoke/santa> ;
+    ns2:isSafe true ;
+    ns2:setup "What kind of motorbike does Santa ride?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/oh%3F> a ns2:Joke ;
+    ns2:category "Christmas" ;
+    ns2:delivery "Santa walking backwards!" ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/oh?>,
+        <http://soreOntology.com/topicsJoke/santa>,
+        <http://soreOntology.com/topicsJoke/walking> ;
+    ns2:isSafe true ;
+    ns2:setup "What says Oh Oh Oh?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/santa> a ns2:Joke ;
+    ns2:category "Christmas" ;
+    ns2:delivery "Because it soots him!",
+        "So he can 'ho ho ho'!" ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/'ho>,
+        <http://soreOntology.com/topicsJoke/chimney?>,
+        <http://soreOntology.com/topicsJoke/gardens?>,
+        <http://soreOntology.com/topicsJoke/santa>,
+        <http://soreOntology.com/topicsJoke/soots> ;
+    ns2:isSafe true ;
+    ns2:setup "Why does Santa go down the chimney?",
+        "Why does Santa have three gardens?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/santa%27s> a ns2:Joke ;
+    ns2:category "Christmas" ;
+    ns2:delivery "Because he had a low \"elf\" esteem!",
+        "Elf-is Presley!",
+        """The elf-abet!
+""",
+        "Wrap!" ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/doctor?>,
+        <http://soreOntology.com/topicsJoke/favourite>,
+        <http://soreOntology.com/topicsJoke/helper>,
+        <http://soreOntology.com/topicsJoke/helpers>,
+        <http://soreOntology.com/topicsJoke/learn>,
+        <http://soreOntology.com/topicsJoke/santa's>,
+        <http://soreOntology.com/topicsJoke/singer?>,
+        <http://soreOntology.com/topicsJoke/type> ;
+    ns2:isSafe true ;
+    ns2:setup "What do Santa's little helpers learn at school?",
+        "What's Santa's favourite type of music?",
+        "Who is Santa's favourite singer?",
+        "Why did Santa's helper see the doctor?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/skeleton> a ns2:Joke ;
+    ns2:category "Christmas" ;
+    ns2:delivery "Because he had no body to go with!" ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/christmas>,
+        <http://soreOntology.com/topicsJoke/party?>,
+        <http://soreOntology.com/topicsJoke/skeleton> ;
+    ns2:isSafe true ;
+    ns2:setup "Why couldn't the skeleton go to the Christmas party?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/medicalNews/MedicalMysterySolved%3FHormoneTreatmentLinkedToAlzheimer%27sInShockingDiscovery-NDTV> a ns2:Medical_and_Lifestyle ;
+    ns2:hasAuthor "undefined"^^xsd:string ;
+    ns2:hasContent "https://c.ndtvimg.com/2020-09/5u5t590g_alzheimer_625x300_21_September_20.jpg"^^xsd:string ;
+    ns2:hasDescription "The study provides the first evidence of Alzheimer's disease in living people that appears to have been medically acquired and due to transmission of the amyloid-beta protein."^^xsd:string ;
+    ns2:hasMedicalUrl "https://www.ndtv.com/science/medical-mystery-solved-hormone-treatment-linked-to-alzheimers-in-shocking-discovery-4981971"^^xsd:string ;
+    ns2:hasTitle "Medical Mystery Solved? Hormone Treatment Linked To Alzheimer's In Shocking Discovery - NDTV"^^xsd:string ;
+    ns2:hasTopic <http://soreOntology.com/topicsItem/Alzheimer>,
+        <http://soreOntology.com/topicsItem/Hormone>,
+        <http://soreOntology.com/topicsItem/Medical>,
+        <http://soreOntology.com/topicsItem/Mystery>,
+        <http://soreOntology.com/topicsItem/Solved> .
+
+<http://soreOntology.com/news/BanningPrivateJetsandGoingtoa4-DayWorkWeekAreRadical%E2%80%94andPopular> a ns2:News ;
+    ns2:hasAuthor "Akielly_Hu,_Grist"^^xsd:string ;
+    ns2:hasDatePublished "2024-02-02T18:27:00Z"^^xsd:string ;
+    ns2:hasDescription "This story was originally published by Grist. Sign up for Grist’s weekly newsletter here.Read more..."^^xsd:string ;
+    ns2:hasImageURL "https://i.kinja-img.com/image/upload/c_fill,h_675,pg_1,q_80,w_1200/6e6552e124397b65dcf874b1f4d51048.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Banning>,
+        <http://soreOntology.com/topicsItem/Going>,
+        <http://soreOntology.com/topicsItem/Grist>,
+        <http://soreOntology.com/topicsItem/Jets>,
+        <http://soreOntology.com/topicsItem/Private> ;
+    ns2:hasNewsUrl "https://gizmodo.com/banning-private-jets-and-going-to-a-4-day-work-week-are-1851221050"^^xsd:string ;
+    ns2:hasTitle "Banning Private Jets and Going to a 4-Day Work Week Are Radical—and Popular"^^xsd:string .
+
+<http://soreOntology.com/news/BlizzardpartnerswithESLforanopenOverwatch2esportscircuit> a ns2:News ;
+    ns2:hasAuthor "Kris_Holt"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-23T17:00:33Z"^^xsd:string ;
+    ns2:hasDescription "Blizzard has revealed the next evolution of top-level Overwatch 2 esports after the demise of the Overwatch League. The publisher has teamed up with ESL FACEIT Group (EFG) to run the new Overwatch Champions Series (OWCS) under an exclusive multi-year agreemen…"^^xsd:string ;
+    ns2:hasImageURL "https://s.yimg.com/os/creatr-uploaded-images/2024-01/64905f50-b966-11ee-beff-4787917b68a1"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Blizzard>,
+        <http://soreOntology.com/topicsItem/ESL>,
+        <http://soreOntology.com/topicsItem/Overwatch>,
+        <http://soreOntology.com/topicsItem/esports>,
+        <http://soreOntology.com/topicsItem/partners> ;
+    ns2:hasNewsUrl "https://www.engadget.com/blizzard-partners-with-esl-for-an-open-overwatch-2-esports-circuit-170033793.html"^^xsd:string ;
+    ns2:hasTitle "Blizzard partners with ESL for an open Overwatch 2 esports circuit"^^xsd:string .
+
+<http://soreOntology.com/news/Canpop-upshopshelptoregenerateourHighStreets%3F> a ns2:News ;
+    ns2:hasAuthor "https://www.facebook.com/bbcnews"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-10T00:16:06Z"^^xsd:string ;
+    ns2:hasDescription "Pop-up shops are proving one way to fill empty units left on our High Streets, as chains struggle."^^xsd:string ;
+    ns2:hasImageURL "https://ichef.bbci.co.uk/news/1024/branded_news/2DD6/production/_132243711_tillie_small.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/High>,
+        <http://soreOntology.com/topicsItem/Streets>,
+        <http://soreOntology.com/topicsItem/help>,
+        <http://soreOntology.com/topicsItem/pop>,
+        <http://soreOntology.com/topicsItem/shops> ;
+    ns2:hasNewsUrl "https://www.bbc.co.uk/news/business-67911127"^^xsd:string ;
+    ns2:hasTitle "Can pop-up shops help to regenerate our High Streets?"^^xsd:string .
+
+<http://soreOntology.com/news/Childobesityinpandemiccouldhavelifelongeffects%2Cstudysays> a ns2:News ;
+    ns2:hasAuthor "https://www.facebook.com/bbcnews"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-24T19:02:12Z"^^xsd:string ;
+    ns2:hasDescription "Researchers say children who gained weight in the pandemic could develop diseases later in life."^^xsd:string ;
+    ns2:hasImageURL "https://ichef.bbci.co.uk/news/1024/branded_news/1122F/production/_132419107_d41bdc8ad9291e3e8fa89b1ea66e9a543a7e58d8.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Child>,
+        <http://soreOntology.com/topicsItem/effects>,
+        <http://soreOntology.com/topicsItem/lifelong>,
+        <http://soreOntology.com/topicsItem/obesity>,
+        <http://soreOntology.com/topicsItem/pandemic> ;
+    ns2:hasNewsUrl "https://www.bbc.co.uk/news/health-68068199"^^xsd:string ;
+    ns2:hasTitle "Child obesity in pandemic could have lifelong effects, study says"^^xsd:string .
+
+<http://soreOntology.com/news/Dementia%3APhotoslaybareagonyofslowlylosingmum> a ns2:News ;
+    ns2:hasAuthor "https://www.facebook.com/bbcnews"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-05T23:00:37Z"^^xsd:string ;
+    ns2:hasDescription "From the mundane to the heartbreaking, photojournalist Helen Rimell documents her mother's decline."^^xsd:string ;
+    ns2:hasImageURL "https://ichef.bbci.co.uk/news/1024/branded_news/988A/production/_132205093_use9nolongerher-e-9.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Dementia>,
+        <http://soreOntology.com/topicsItem/Photos>,
+        <http://soreOntology.com/topicsItem/agony>,
+        <http://soreOntology.com/topicsItem/bare>,
+        <http://soreOntology.com/topicsItem/lay> ;
+    ns2:hasNewsUrl "https://www.bbc.co.uk/news/uk-wales-67762173"^^xsd:string ;
+    ns2:hasTitle "Dementia: Photos lay bare agony of slowly losing mum"^^xsd:string .
+
+<http://soreOntology.com/news/DerekDraper%3AKateGarrawaythankssupportersasshedealswith%27pain%27ofhusband%27sdeath> a ns2:News ;
+    ns2:hasAuthor "https://www.facebook.com/bbcnews"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-08T09:42:46Z"^^xsd:string ;
+    ns2:hasDescription "Kate Garraway says messages of support mean \"so much\" after the death of her husband Derek Draper."^^xsd:string ;
+    ns2:hasImageURL "https://ichef.bbci.co.uk/news/1024/branded_news/17A85/production/_132210969_derek-index-shutterstock.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Derek>,
+        <http://soreOntology.com/topicsItem/Draper>,
+        <http://soreOntology.com/topicsItem/Garraway>,
+        <http://soreOntology.com/topicsItem/Kate>,
+        <http://soreOntology.com/topicsItem/husband> ;
+    ns2:hasNewsUrl "https://www.bbc.co.uk/news/entertainment-arts-67910975"^^xsd:string ;
+    ns2:hasTitle "Derek Draper: Kate Garraway thanks supporters as she deals with 'pain' of husband's death"^^xsd:string .
+
+<http://soreOntology.com/news/GenZandtheArtofIncentivizedSelf-Actualization> a ns2:News ;
+    ns2:hasAuthor "Michèle_Lamont"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-08T12:00:00Z"^^xsd:string ;
+    ns2:hasDescription "Stepping off the hedonistic treadmill, younger workers are demanding a more authentic employment experience."^^xsd:string ;
+    ns2:hasImageURL "https://media.wired.com/photos/65989cb98bfcf235fbde4a54/191:100/w_1280,c_limit/WW2024_1303781671_BIZ_Michele-Lamont.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Art>,
+        <http://soreOntology.com/topicsItem/Gen>,
+        <http://soreOntology.com/topicsItem/Incentivized>,
+        <http://soreOntology.com/topicsItem/Self>,
+        <http://soreOntology.com/topicsItem/Z> ;
+    ns2:hasNewsUrl "https://www.wired.com/story/gen-z-and-the-art-of-incentivized-self-actualization/"^^xsd:string ;
+    ns2:hasTitle "Gen Z and the Art of Incentivized Self-Actualization"^^xsd:string .
+
+<http://soreOntology.com/news/GlobalEmissionsCouldPeakSoonerThanYouThink> a ns2:News ;
+    ns2:hasAuthor "Hannah_Ritchie"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-17T12:00:00Z"^^xsd:string ;
+    ns2:hasDescription "Global deployment of solar and wind power, plus a surge in EV sales, means emissions from fossil-fuel-derived energy will finally hit the downward slope."^^xsd:string ;
+    ns2:hasImageURL "https://media.wired.com/photos/65a0d4335cf413d19929974a/191:100/w_1280,c_limit/WW2024_1318038785_ENVIRONMENT_Hannah-Ritchie.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Emissions>,
+        <http://soreOntology.com/topicsItem/Global>,
+        <http://soreOntology.com/topicsItem/Peak>,
+        <http://soreOntology.com/topicsItem/Sooner>,
+        <http://soreOntology.com/topicsItem/Think> ;
+    ns2:hasNewsUrl "https://www.wired.com/story/global-emissions-could-peak-sooner-than-you-think/"^^xsd:string ;
+    ns2:hasTitle "Global Emissions Could Peak Sooner Than You Think"^^xsd:string .
+
+<http://soreOntology.com/news/GooglelaysoffhundredsofemployeesinitsAssistant%2Chardwareandotherdivisions> a ns2:News ;
+    ns2:hasAuthor "Steve_Dent"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-11T08:25:40Z"^^xsd:string ;
+    ns2:hasDescription "Google has laid off \"several hundred\" workers in multiple divisions each in a new round of belt tightening, according to reports from The New York Times, 9to5Mac, Semafor and others. Divisions affected include hardware (Pixel, Nest and Fitbit), core engineeri…"^^xsd:string ;
+    ns2:hasImageURL "None"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Google>,
+        <http://soreOntology.com/topicsItem/divisions>,
+        <http://soreOntology.com/topicsItem/hardware>,
+        <http://soreOntology.com/topicsItem/hundreds>,
+        <http://soreOntology.com/topicsItem/lays> ;
+    ns2:hasNewsUrl "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_e0292b99-dcba-4995-ae7d-a1670b0da33e"^^xsd:string ;
+    ns2:hasTitle "Google lays off hundreds of employees in its Assistant, hardware and other divisions"^^xsd:string .
+
+<http://soreOntology.com/news/GraceO%27Malley-Kumar%3AMumcallsforjailtermsforknifecarrying> a ns2:News ;
+    ns2:hasAuthor "https://www.facebook.com/bbcnews"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-24T12:58:05Z"^^xsd:string ;
+    ns2:hasDescription "The devastated parents of Grace O'Malley-Kumar say knife crime needs to be urgently examined."^^xsd:string ;
+    ns2:hasImageURL "https://ichef.bbci.co.uk/news/1024/branded_news/1278C/production/_132406657_gracestill-blurred-7.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Grace>,
+        <http://soreOntology.com/topicsItem/Kumar>,
+        <http://soreOntology.com/topicsItem/Mum>,
+        <http://soreOntology.com/topicsItem/calls>,
+        <http://soreOntology.com/topicsItem/knife> ;
+    ns2:hasNewsUrl "https://www.bbc.co.uk/news/uk-68082036"^^xsd:string ;
+    ns2:hasTitle "Grace O'Malley-Kumar: Mum calls for jail terms for knife carrying"^^xsd:string .
+
+<http://soreOntology.com/news/InequalityIsaHealthRisk%E2%80%94andIt%E2%80%99sGettingWorse> a ns2:News ;
+    ns2:hasAuthor "Arline_Geronimus"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-19T12:00:00Z"^^xsd:string ;
+    ns2:hasDescription "If not addressed by governments, racism, classism, austerity, and more will continue to drive mortality and illness among minorities."^^xsd:string ;
+    ns2:hasImageURL ""^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Getting>,
+        <http://soreOntology.com/topicsItem/Health>,
+        <http://soreOntology.com/topicsItem/Inequality>,
+        <http://soreOntology.com/topicsItem/Risk>,
+        <http://soreOntology.com/topicsItem/Worse> ;
+    ns2:hasNewsUrl "https://www.wired.com/story/inequality-is-a-health-risk-and-its-getting-worse/"^^xsd:string ;
+    ns2:hasTitle "Inequality Is a Health Risk—and It’s Getting Worse"^^xsd:string .
+
+<http://soreOntology.com/news/Meta%E2%80%99sOversightBoardraisesconcernsoverautomatedmoderationofhatespeech> a ns2:News ;
+    ns2:hasAuthor "Kris_Holt"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-23T15:43:59Z"^^xsd:string ;
+    ns2:hasDescription """Meta's\r
+ Oversight Board\r
+ has raised concerns over automated moderation while overturning a decision by the company to leave a Holocaust denial post on Instagram. Holocaust denial is deemed hate speech under Meta's policies. The post in question depicted Squ…"""^^xsd:string ;
+    ns2:hasImageURL "None"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Board>,
+        <http://soreOntology.com/topicsItem/Meta>,
+        <http://soreOntology.com/topicsItem/Oversight>,
+        <http://soreOntology.com/topicsItem/automated>,
+        <http://soreOntology.com/topicsItem/concerns> ;
+    ns2:hasNewsUrl "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_57956489-c3f9-4031-9a3f-15b410e6c521"^^xsd:string ;
+    ns2:hasTitle "Meta’s Oversight Board raises concerns over automated moderation of hate speech"^^xsd:string .
+
+<http://soreOntology.com/news/NaughtyDog%27sbehind-the-scenesdocumentaryonTheLastofUsPart2arrivesFebruary2> a ns2:News ;
+    ns2:hasAuthor "Nathan_Ingraham"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-25T18:45:56Z"^^xsd:string ;
+    ns2:hasDescription "The Last of Us Part II Remastered arrived last week, and if the cutscene commentary from the game's director, writer and key actors wasn't enough for you, Naughty Dog has another behind the scenes piece coming. Grounded II: Making The Last Of Us Part II, a do…"^^xsd:string ;
+    ns2:hasImageURL "None"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Dog>,
+        <http://soreOntology.com/topicsItem/II>,
+        <http://soreOntology.com/topicsItem/Naughty>,
+        <http://soreOntology.com/topicsItem/documentary>,
+        <http://soreOntology.com/topicsItem/scenes> ;
+    ns2:hasNewsUrl "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_3a0486f5-56b2-458f-af5d-e8f13093aa87"^^xsd:string ;
+    ns2:hasTitle "Naughty Dog's behind-the-scenes documentary on The Last of Us Part 2 arrives February 2"^^xsd:string .
+
+<http://soreOntology.com/news/Oppenheimer%3ACillianMurphyfilmmarchestowardsOscarssuccess> a ns2:News ;
+    ns2:hasAuthor "https://www.facebook.com/bbcnews"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-14T02:42:07Z"^^xsd:string ;
+    ns2:hasDescription "Christopher Nolan's film got another boost in its awards campaign at last week's Golden Globes."^^xsd:string ;
+    ns2:hasImageURL "https://ichef.bbci.co.uk/news/1024/branded_news/151BA/production/_132285468_crr2_0017_oppen_5p_timed_ip_r02a_bt1886.0182806.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Cillian>,
+        <http://soreOntology.com/topicsItem/Murphy>,
+        <http://soreOntology.com/topicsItem/Oppenheimer>,
+        <http://soreOntology.com/topicsItem/film>,
+        <http://soreOntology.com/topicsItem/marches> ;
+    ns2:hasNewsUrl "https://www.bbc.co.uk/news/entertainment-arts-67950097"^^xsd:string ;
+    ns2:hasTitle "Oppenheimer: Cillian Murphy film marches towards Oscars success"^^xsd:string .
+
+<http://soreOntology.com/news/Pupilsinunsafeschoolsneedexamboost-report> a ns2:News ;
+    ns2:hasAuthor "https://www.facebook.com/bbcnews"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-18T09:06:16Z"^^xsd:string ;
+    ns2:hasDescription "Students in schools with unsafe Raac concrete need additional exam support, a new study says."^^xsd:string ;
+    ns2:hasImageURL "https://ichef.bbci.co.uk/news/1024/branded_news/f128/live/1119da40-b542-11ee-9efa-47f5a85c476a.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Pupils>,
+        <http://soreOntology.com/topicsItem/exam>,
+        <http://soreOntology.com/topicsItem/need>,
+        <http://soreOntology.com/topicsItem/schools>,
+        <http://soreOntology.com/topicsItem/unsafe> ;
+    ns2:hasNewsUrl "https://www.bbc.co.uk/news/articles/cw0d7l4x930o"^^xsd:string ;
+    ns2:hasTitle "Pupils in unsafe schools need exam boost - report"^^xsd:string .
+
+<http://soreOntology.com/news/ScabiesIsMakingaComeback> a ns2:News ;
+    ns2:hasAuthor "David_Cox"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-17T07:00:00Z"^^xsd:string ;
+    ns2:hasDescription "Cases of scabies, a highly contagious parasitic skin disease, are on the rise across Europe. The UK in particular is struggling with a shortage of treatments."^^xsd:string ;
+    ns2:hasImageURL "https://media.wired.com/photos/659fed845baaf77c7f3dd013/191:100/w_1280,c_limit/scabies-virus-science-ScienceSourceImages_2347209.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Cases>,
+        <http://soreOntology.com/topicsItem/Comeback>,
+        <http://soreOntology.com/topicsItem/Making>,
+        <http://soreOntology.com/topicsItem/Scabies>,
+        <http://soreOntology.com/topicsItem/scabies> ;
+    ns2:hasNewsUrl "https://www.wired.com/story/scabies-outbreak-uk-europe-treatment-shortages-drug-resistance-permethrin-ivermectin/"^^xsd:string ;
+    ns2:hasTitle "Scabies Is Making a Comeback"^^xsd:string .
+
+<http://soreOntology.com/news/TheCambridgeshirebusroutethatcosts%C2%A3124perpassenger> a ns2:News ;
+    ns2:hasAuthor "https://www.facebook.com/bbcnews"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-29T01:39:43Z"^^xsd:string ;
+    ns2:hasDescription "\"For the very few passengers that use it, it really is important,\" says the company that runs the service."^^xsd:string ;
+    ns2:hasImageURL "https://ichef.bbci.co.uk/news/1024/branded_news/F5A8/production/_132488826_7aaerial.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Cambridgeshire>,
+        <http://soreOntology.com/topicsItem/bus>,
+        <http://soreOntology.com/topicsItem/costs>,
+        <http://soreOntology.com/topicsItem/passenger>,
+        <http://soreOntology.com/topicsItem/route> ;
+    ns2:hasNewsUrl "https://www.bbc.co.uk/news/uk-england-cambridgeshire-68093312"^^xsd:string ;
+    ns2:hasTitle "The Cambridgeshire bus route that costs £124 per passenger"^^xsd:string .
+
+<http://soreOntology.com/news/ThePapers%3A%27GoodbyedarlingDerek%27andPostOfficeprobe> a ns2:News ;
+    ns2:hasAuthor "https://www.facebook.com/bbcnews"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-06T00:38:06Z"^^xsd:string ;
+    ns2:hasDescription "Many of Saturday's papers lead on the death of Derek Draper, the author and former political adviser."^^xsd:string ;
+    ns2:hasImageURL "https://ichef.bbci.co.uk/news/1024/branded_news/16F8B/production/_132219049_untitleddesign.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Derek>,
+        <http://soreOntology.com/topicsItem/Goodbye>,
+        <http://soreOntology.com/topicsItem/Papers>,
+        <http://soreOntology.com/topicsItem/Post>,
+        <http://soreOntology.com/topicsItem/darling> ;
+    ns2:hasNewsUrl "https://www.bbc.co.uk/news/blogs-the-papers-67899176"^^xsd:string ;
+    ns2:hasTitle "The Papers: 'Goodbye darling Derek' and Post Office probe"^^xsd:string .
+
+<http://soreOntology.com/news/ToMakeanImpact%2CJoinTech%E2%80%99sExodus> a ns2:News ;
+    ns2:hasAuthor "Jennifer_Pahlka"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-08T12:00:00Z"^^xsd:string ;
+    ns2:hasDescription "A desire to make a difference is driving government recruitment."^^xsd:string ;
+    ns2:hasImageURL "https://media.wired.com/photos/65989cb9c3b0a56e499ce9d8/191:100/w_1280,c_limit/WW2024_1178079023_POLITICS_Jennifer%20Pahlka.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Exodus>,
+        <http://soreOntology.com/topicsItem/Impact>,
+        <http://soreOntology.com/topicsItem/Join>,
+        <http://soreOntology.com/topicsItem/Tech>,
+        <http://soreOntology.com/topicsItem/desire> ;
+    ns2:hasNewsUrl "https://www.wired.com/story/to-make-an-impact-join-techs-exodus/"^^xsd:string ;
+    ns2:hasTitle "To Make an Impact, Join Tech’s Exodus"^^xsd:string .
+
+<http://soreOntology.com/news/WhySen.BrianSchatzthinkschildsafetybillsshouldtrumptheFirstAmendment> a ns2:News ;
+    ns2:hasAuthor "Nilay_Patel"^^xsd:string ;
+    ns2:hasDatePublished "2024-01-30T17:00:00Z"^^xsd:string ;
+    ns2:hasDescription "The Democratic senator from Hawaii explains why KOSA won’t lead to harmful speech restrictions."^^xsd:string ;
+    ns2:hasImageURL "https://cdn.vox-cdn.com/thumbor/e0URQQK886G7Ld2bo0XDPtSJ2Xo=/0x0:3000x2000/1200x628/filters:focal(1500x1000:1501x1001)/cdn.vox-cdn.com/uploads/chorus_asset/file/25254957/VRG_DCD_Brian_Schatz.jpg"^^xsd:string ;
+    ns2:hasJokeTopic <http://soreOntology.com/topicsItem/Brian>,
+        <http://soreOntology.com/topicsItem/Schatz>,
+        <http://soreOntology.com/topicsItem/child>,
+        <http://soreOntology.com/topicsItem/safety>,
+        <http://soreOntology.com/topicsItem/thinks> ;
+    ns2:hasNewsUrl "https://www.theverge.com/24054658/senator-brian-schatz-congress-kosa-first-amendment-regulation-decoder-interview"^^xsd:string ;
+    ns2:hasTitle "Why Sen. Brian Schatz thinks child safety bills should trump the First Amendment"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Alzheimer> a ns2:topicItemName ;
+    rdfs:label "Alzheimer"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Art> a ns2:topicItemName ;
+    rdfs:label "Art"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Banning> a ns2:topicItemName ;
+    rdfs:label "Banning"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Blizzard> a ns2:topicItemName ;
+    rdfs:label "Blizzard"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Board> a ns2:topicItemName ;
+    rdfs:label "Board"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Brian> a ns2:topicItemName ;
+    rdfs:label "Brian"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Cambridgeshire> a ns2:topicItemName ;
+    rdfs:label "Cambridgeshire"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Cases> a ns2:topicItemName ;
+    rdfs:label "Cases"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Child> a ns2:topicItemName ;
+    rdfs:label "Child"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Cillian> a ns2:topicItemName ;
+    rdfs:label "Cillian"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Comeback> a ns2:topicItemName ;
+    rdfs:label "Comeback"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Dementia> a ns2:topicItemName ;
+    rdfs:label "Dementia"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Dog> a ns2:topicItemName ;
+    rdfs:label "Dog"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Draper> a ns2:topicItemName ;
+    rdfs:label "Draper"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/ESL> a ns2:topicItemName ;
+    rdfs:label "ESL"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Emissions> a ns2:topicItemName ;
+    rdfs:label "Emissions"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Exodus> a ns2:topicItemName ;
+    rdfs:label "Exodus"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Garraway> a ns2:topicItemName ;
+    rdfs:label "Garraway"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Gen> a ns2:topicItemName ;
+    rdfs:label "Gen"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Getting> a ns2:topicItemName ;
+    rdfs:label "Getting"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Global> a ns2:topicItemName ;
+    rdfs:label "Global"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Going> a ns2:topicItemName ;
+    rdfs:label "Going"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Goodbye> a ns2:topicItemName ;
+    rdfs:label "Goodbye"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Google> a ns2:topicItemName ;
+    rdfs:label "Google"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Grace> a ns2:topicItemName ;
+    rdfs:label "Grace"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Grist> a ns2:topicItemName ;
+    rdfs:label "Grist"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Health> a ns2:topicItemName ;
+    rdfs:label "Health"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/High> a ns2:topicItemName ;
+    rdfs:label "High"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Hormone> a ns2:topicItemName ;
+    rdfs:label "Hormone"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/II> a ns2:topicItemName ;
+    rdfs:label "II"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Impact> a ns2:topicItemName ;
+    rdfs:label "Impact"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Incentivized> a ns2:topicItemName ;
+    rdfs:label "Incentivized"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Inequality> a ns2:topicItemName ;
+    rdfs:label "Inequality"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Jets> a ns2:topicItemName ;
+    rdfs:label "Jets"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Join> a ns2:topicItemName ;
+    rdfs:label "Join"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Kate> a ns2:topicItemName ;
+    rdfs:label "Kate"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Kumar> a ns2:topicItemName ;
+    rdfs:label "Kumar"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Making> a ns2:topicItemName ;
+    rdfs:label "Making"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Medical> a ns2:topicItemName ;
+    rdfs:label "Medical"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Meta> a ns2:topicItemName ;
+    rdfs:label "Meta"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Mum> a ns2:topicItemName ;
+    rdfs:label "Mum"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Murphy> a ns2:topicItemName ;
+    rdfs:label "Murphy"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Mystery> a ns2:topicItemName ;
+    rdfs:label "Mystery"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Naughty> a ns2:topicItemName ;
+    rdfs:label "Naughty"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Oppenheimer> a ns2:topicItemName ;
+    rdfs:label "Oppenheimer"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Oversight> a ns2:topicItemName ;
+    rdfs:label "Oversight"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Overwatch> a ns2:topicItemName ;
+    rdfs:label "Overwatch"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Papers> a ns2:topicItemName ;
+    rdfs:label "Papers"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Peak> a ns2:topicItemName ;
+    rdfs:label "Peak"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Photos> a ns2:topicItemName ;
+    rdfs:label "Photos"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Post> a ns2:topicItemName ;
+    rdfs:label "Post"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Private> a ns2:topicItemName ;
+    rdfs:label "Private"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Pupils> a ns2:topicItemName ;
+    rdfs:label "Pupils"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Risk> a ns2:topicItemName ;
+    rdfs:label "Risk"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Scabies> a ns2:topicItemName ;
+    rdfs:label "Scabies"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Schatz> a ns2:topicItemName ;
+    rdfs:label "Schatz"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Self> a ns2:topicItemName ;
+    rdfs:label "Self"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Solved> a ns2:topicItemName ;
+    rdfs:label "Solved"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Sooner> a ns2:topicItemName ;
+    rdfs:label "Sooner"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Streets> a ns2:topicItemName ;
+    rdfs:label "Streets"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Tech> a ns2:topicItemName ;
+    rdfs:label "Tech"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Think> a ns2:topicItemName ;
+    rdfs:label "Think"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Worse> a ns2:topicItemName ;
+    rdfs:label "Worse"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Z> a ns2:topicItemName ;
+    rdfs:label "Z"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/agony> a ns2:topicItemName ;
+    rdfs:label "agony"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/automated> a ns2:topicItemName ;
+    rdfs:label "automated"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/bare> a ns2:topicItemName ;
+    rdfs:label "bare"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/bus> a ns2:topicItemName ;
+    rdfs:label "bus"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/calls> a ns2:topicItemName ;
+    rdfs:label "calls"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/child> a ns2:topicItemName ;
+    rdfs:label "child"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/concerns> a ns2:topicItemName ;
+    rdfs:label "concerns"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/costs> a ns2:topicItemName ;
+    rdfs:label "costs"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/darling> a ns2:topicItemName ;
+    rdfs:label "darling"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/desire> a ns2:topicItemName ;
+    rdfs:label "desire"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/divisions> a ns2:topicItemName ;
+    rdfs:label "divisions"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/documentary> a ns2:topicItemName ;
+    rdfs:label "documentary"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/effects> a ns2:topicItemName ;
+    rdfs:label "effects"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/esports> a ns2:topicItemName ;
+    rdfs:label "esports"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/exam> a ns2:topicItemName ;
+    rdfs:label "exam"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/film> a ns2:topicItemName ;
+    rdfs:label "film"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/hardware> a ns2:topicItemName ;
+    rdfs:label "hardware"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/help> a ns2:topicItemName ;
+    rdfs:label "help"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/hundreds> a ns2:topicItemName ;
+    rdfs:label "hundreds"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/husband> a ns2:topicItemName ;
+    rdfs:label "husband"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/knife> a ns2:topicItemName ;
+    rdfs:label "knife"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/lay> a ns2:topicItemName ;
+    rdfs:label "lay"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/lays> a ns2:topicItemName ;
+    rdfs:label "lays"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/lifelong> a ns2:topicItemName ;
+    rdfs:label "lifelong"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/marches> a ns2:topicItemName ;
+    rdfs:label "marches"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/need> a ns2:topicItemName ;
+    rdfs:label "need"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/obesity> a ns2:topicItemName ;
+    rdfs:label "obesity"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/pandemic> a ns2:topicItemName ;
+    rdfs:label "pandemic"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/partners> a ns2:topicItemName ;
+    rdfs:label "partners"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/passenger> a ns2:topicItemName ;
+    rdfs:label "passenger"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/pop> a ns2:topicItemName ;
+    rdfs:label "pop"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/route> a ns2:topicItemName ;
+    rdfs:label "route"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/safety> a ns2:topicItemName ;
+    rdfs:label "safety"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/scabies> a ns2:topicItemName ;
+    rdfs:label "scabies"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/scenes> a ns2:topicItemName ;
+    rdfs:label "scenes"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/schools> a ns2:topicItemName ;
+    rdfs:label "schools"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/shops> a ns2:topicItemName ;
+    rdfs:label "shops"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/thinks> a ns2:topicItemName ;
+    rdfs:label "thinks"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/unsafe> a ns2:topicItemName ;
+    rdfs:label "unsafe"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/'ho> a ns2:JokeTopic ;
+    rdfs:label "'ho"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/brexit?> a ns2:JokeTopic ;
+    rdfs:label "brexit?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/chimney?> a ns2:JokeTopic ;
+    rdfs:label "chimney?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/dinner> a ns2:JokeTopic ;
+    rdfs:label "dinner"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/doctor?> a ns2:JokeTopic ;
+    rdfs:label "doctor?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/favourite> a ns2:JokeTopic ;
+    rdfs:label "favourite"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/gardens?> a ns2:JokeTopic ;
+    rdfs:label "gardens?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/helper> a ns2:JokeTopic ;
+    rdfs:label "helper"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/helpers> a ns2:JokeTopic ;
+    rdfs:label "helpers"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/kind> a ns2:JokeTopic ;
+    rdfs:label "kind"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/learn> a ns2:JokeTopic ;
+    rdfs:label "learn"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/motorbike> a ns2:JokeTopic ;
+    rdfs:label "motorbike"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/oh?> a ns2:JokeTopic ;
+    rdfs:label "oh?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/party?> a ns2:JokeTopic ;
+    rdfs:label "party?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/santa's> a ns2:JokeTopic ;
+    rdfs:label "santa's"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/singer?> a ns2:JokeTopic ;
+    rdfs:label "singer?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/skeleton> a ns2:JokeTopic ;
+    rdfs:label "skeleton"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/soots> a ns2:JokeTopic ;
+    rdfs:label "soots"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/type> a ns2:JokeTopic ;
+    rdfs:label "type"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/walking> a ns2:JokeTopic ;
+    rdfs:label "walking"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Derek> a ns2:topicItemName ;
+    rdfs:label "Derek"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/christmas> a ns2:JokeTopic ;
+    rdfs:label "christmas"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/santa> a ns2:JokeTopic ;
+    rdfs:label "santa"^^xsd:string .
+

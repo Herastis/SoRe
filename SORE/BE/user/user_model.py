@@ -6,6 +6,7 @@ from rdflib.namespace import RDF, XSD, RDFS
 from BE.healthandlifestyle.medical_onto import medical_articles
 from BE.joke.get_jokes import *
 from BE.news.news import news_articles
+from BE.constants.constants import age
 
 path = '../SoreOntology/sore.ttl'
 
@@ -18,24 +19,72 @@ person_ontology = Namespace("http://visualdataweb.org/SoreOntology/personOntolog
 
 # first , last, email, status, geneder, age, workingplace, education, country, language -> get after country
 class User:
-    def __init__(self, first_name, last_name, email, gender, status, interests, country, work, education, age, knows):
+    def __init__(self, first_name, last_name, email, gender, status, country, work, interests, education, age):
         self.graph = Graph()
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
         self.gender = gender
         self.status = status
-        self.interests = interests  #
         self.country = country
         self.work = work
+        self.interests = interests
         self.education = education
         self.age = age
-        self.knows = knows  #
+        self.knows = []
         print('User created')
+
+    def get_user_rdf(self):
+        user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}_{self.email}")
+        return self.graph, user_uri
+
+    def set_interests(self, new_interests):
+        self.interests = new_interests
+        g, user_uri = self.get_user_rdf()
+        for interest in self.interests:
+            interest_uri = URIRef(f"http://soreOntology.com/interestsUser/{interest}")
+            g.add((user_uri, person_ontology.hasInterest, interest_uri))
+            g.add((interest_uri, RDF.type, sore.Interest))
+            g.add((interest_uri, RDFS.label, Literal(interest, datatype=XSD.string)))
+
+    def get_first_name(self):
+        return self.first_name
+
+    def get_last_name(self):
+        return self.last_name
+
+    def get_email(self):
+        return self.email
+
+    def get_gender(self):
+        return self.gender
+
+    def get_status(self):
+        return self.status
+
+    def get_country(self):
+        return self.country
+
+    def get_work(self):
+        return self.work
+
+    def get_interests(self):
+        return self.interests
+
+    def get_education(self):
+        return self.education
+
+    def get_age(self):
+        return self.age
+
+    def get_graph(self):
+        return self.graph
+
 
     def add_health_info(self, interests, country, language):  # health_interests
 
-        user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}_{self.email}")
+        g, user_uri = self.get_user_rdf()
+
 
         articles, top_words = medical_articles(interests, country, language)
 
@@ -47,35 +96,35 @@ class User:
             encoded_frequent_word = quote(medical_onto_URI)
 
             article_uri = URIRef(f"http://soreOntology.com/medicalNews/{encoded_frequent_word}")
-            self.graph.add((user_uri, person_ontology.hasRecommendedItem, article_uri))
+            g.add((user_uri, person_ontology.hasRecommendedItem, article_uri))
 
-            self.graph.add((article_uri, RDF.type, sore.Medical_and_Lifestyle))
-            self.graph.add((article_uri, sore.hasTitle, Literal(article['title'], datatype=XSD.string)))
+            g.add((article_uri, RDF.type, sore.Medical_and_Lifestyle))
+            g.add((article_uri, sore.hasTitle, Literal(article['title'], datatype=XSD.string)))
             if article['author'] is not None:
                 author_name = '_'.join(article['author'].split())
-                self.graph.add((article_uri, sore.hasAuthor, Literal(author_name, datatype=XSD.string)))
+                g.add((article_uri, sore.hasAuthor, Literal(author_name, datatype=XSD.string)))
             else:
-                self.graph.add((article_uri, sore.hasAuthor, Literal("undefined", datatype=XSD.string)))
+                g.add((article_uri, sore.hasAuthor, Literal("undefined", datatype=XSD.string)))
 
-            self.graph.add(
+            g.add(
                 (article_uri, sore.hasDescription, Literal(article['description'], datatype=XSD.string)))
-            self.graph.add(
+            g.add(
                 (article_uri, sore.hasMedicalUrl, Literal(article['url'], datatype=XSD.string)))
-            self.graph.add((article_uri, sore.hasContent, Literal(article['urlToImage'], datatype=XSD.string)))
+            g.add((article_uri, sore.hasContent, Literal(article['urlToImage'], datatype=XSD.string)))
             for topic in top_words[i]:
                 topic_literal = Literal(topic, datatype=XSD.string)
 
                 # Add RDF triples for the topicItemName property
                 topic_uri = URIRef(f"http://soreOntology.com/topicsItem/{topic.replace(' ', '_')}")
-                self.graph.add((article_uri, sore.hasTopic, topic_uri))
-                self.graph.add((topic_uri, RDF.type, sore.topicItemName))
-                self.graph.add((topic_uri, RDFS.label, topic_literal))
+                g.add((article_uri, sore.hasTopic, topic_uri))
+                g.add((topic_uri, RDF.type, sore.topicItemName))
+                g.add((topic_uri, RDFS.label, topic_literal))
 
             # self.graph.add((article_uri, sore.hasTopic, Literal(topic, datatype=XSD.string)))
             i = i + 1
 
-    def add_joke(self, category):  # joke_category, email
-        user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}_{self.email}")
+    def add_jokes_info(self, category):  # joke_category, email
+        g,user_uri = self.get_user_rdf()
 
         jokes = call_joke_api(category)
         for joke_data in jokes:
@@ -85,26 +134,26 @@ class User:
 
             joke_uri = URIRef(f"http://soreOntology.com/joke/{encoded_frequent_word}")
 
-            self.graph.add((user_uri, person_ontology.hasJoke, joke_uri))
-            self.graph.add((joke_uri, RDF.type, sore.Joke))
+            g.add((user_uri, person_ontology.hasJoke, joke_uri))
+            g.add((joke_uri, RDF.type, sore.Joke))
 
-            self.graph.add((joke_uri, sore.type, Literal(joke.type)))
-            self.graph.add((joke_uri, sore.isSafe, Literal(joke.is_safe)))
-            self.graph.add((joke_uri, sore.category, Literal(joke.category)))
-            self.graph.add((joke_uri, sore.setup, Literal(joke.setup)))
-            self.graph.add((joke_uri, sore.delivery, Literal(joke.delivery)))
+            g.add((joke_uri, sore.type, Literal(joke.type)))
+            g.add((joke_uri, sore.isSafe, Literal(joke.is_safe)))
+            g.add((joke_uri, sore.category, Literal(joke.category)))
+            g.add((joke_uri, sore.setup, Literal(joke.setup)))
+            g.add((joke_uri, sore.delivery, Literal(joke.delivery)))
 
             for topic in joke.frequent_words:
                 topic_literal = Literal(topic, datatype=XSD.string)
 
                 # Add RDF triples for the topicItemName property
                 topic_uri = URIRef(f"http://soreOntology.com/topicsJoke/{topic.replace(' ', '_')}")
-                self.graph.add((joke_uri, sore.hasTopic, topic_uri))
-                self.graph.add((topic_uri, RDF.type, sore.JokeTopic))
-                self.graph.add((topic_uri, RDFS.label, topic_literal))
+                g.add((joke_uri, sore.hasTopic, topic_uri))
+                g.add((topic_uri, RDF.type, sore.JokeTopic))
+                g.add((topic_uri, RDFS.label, topic_literal))
 
-    def add_interest_news(self, interests, country, language):  # interest_news_interests, country, language, email
-        user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}_{self.email}")
+    def add_news_info(self, interests, country, language):  # interest_news_interests, country, language, email
+        g, user_uri = self.get_user_rdf()
 
         end_point = '/everything'  # /everything /top-headlines
 
@@ -118,49 +167,45 @@ class User:
 
             article_uri = URIRef(f"http://soreOntology.com/news/{encoded_frequent_word}")
 
-            self.graph.add((user_uri, person_ontology.hasRecommendedItem, article_uri))
+            g.add((user_uri, person_ontology.hasRecommendedItem, article_uri))
             # Add RDF triples for the news article
-            self.graph.add((article_uri, RDF.type, sore.News))
-            self.graph.add((article_uri, sore.hasTitle, Literal(article['title'], datatype=XSD.string)))
+            g.add((article_uri, RDF.type, sore.News))
+            g.add((article_uri, sore.hasTitle, Literal(article['title'], datatype=XSD.string)))
 
             if article['author'] is not None:
                 author_name = '_'.join(article['author'].split())
-                self.graph.add((article_uri, sore.hasAuthor, Literal(author_name, datatype=XSD.string)))
+                g.add((article_uri, sore.hasAuthor, Literal(author_name, datatype=XSD.string)))
             else:
-                self.graph.add((article_uri, sore.hasAuthor, Literal("undefined", datatype=XSD.string)))
+                g.add((article_uri, sore.hasAuthor, Literal("undefined", datatype=XSD.string)))
 
-            self.graph.add(
+            g.add(
                 (article_uri, sore.hasDescription, Literal(article['description'], datatype=XSD.string)))
-            self.graph.add(
+            g.add(
                 (article_uri, sore.hasDatePublished, Literal(article['publishedAt'], datatype=XSD.string)))
-            self.graph.add(
+            g.add(
                 (article_uri, sore.hasImageURL, Literal(article['urlToImage'], datatype=XSD.string)))
-            self.graph.add((article_uri, sore.hasNewsUrl, Literal(article['url'], datatype=XSD.string)))
+            g.add((article_uri, sore.hasNewsUrl, Literal(article['url'], datatype=XSD.string)))
             for topic in top_words[i]:
                 topic_literal = Literal(topic, datatype=XSD.string)
 
                 # Add RDF triples for the topicItemName property
                 topic_uri = URIRef(f"http://soreOntology.com/topicsItem/{topic.replace(' ', '_')}")
-                self.graph.add((article_uri, sore.hasJokeTopic, topic_uri))
-                self.graph.add((topic_uri, RDF.type, sore.topicItemName))
-                self.graph.add((topic_uri, RDFS.label, topic_literal))
+                g.add((article_uri, sore.hasJokeTopic, topic_uri))
+                g.add((topic_uri, RDF.type, sore.topicItemName))
+                g.add((topic_uri, RDFS.label, topic_literal))
 
             # self.graph.add((article_uri, sore.hasTopic, Literal(topic, datatype=XSD.string)))
             i = i + 1
 
-    def update_interests(self, updated_interests):
-        pass
-
-    def getUser(self):
-        pass
 
     def add_friends(self, knows):  # knows, email
-        user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}_{self.email}")
+
+        g, user_uri = self.get_user_rdf()
 
         for known_email in knows:
             # known_uri = person_ns[known_email]
             # update later with the URI of the known user
-            self.graph.add((user_uri, person_ontology.knows, Literal(known_email)))
+            g.add((user_uri, person_ontology.knows, Literal(known_email)))
 
     def to_rdf(self):
         user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}_{self.email}")
@@ -177,13 +222,6 @@ class User:
         self.graph.add((user_uri, person_ontology.hasEducation, Literal(self.education, datatype=XSD.string)))
         self.graph.add((user_uri, person_ontology.hasEmail, Literal(self.email, datatype=XSD.string)))
 
-        # Adding 'knows' relationship
-        if self.knows:
-            for known_email in self.knows:
-                # known_uri = person_ns[known_email]
-                # update later with the URI of the known user
-                self.graph.add((user_uri, person_ontology.knows, Literal(known_email)))
-
         print('here')
         # Interests #descos
         for interest in self.interests:
@@ -195,65 +233,53 @@ class User:
         return self.graph
 
 
-first_name = "John"
-last_name = "Doe"
-email = "john.doe@example.com"
-gender = random.choice(["Male", "Female"])
-status = cst.status_options[random.randint(0, len(cst.status_options) - 1)]
-#
-news_interests = ["Art", "Technology", "Travel", "Coding", "Gaming"]
-jokes_category = ['Programming', 'Misc', 'Pun', 'Spooky', 'Christmas']
-health_interests = ['treatment', 'health', 'covid']
-#
-country = random.choice(cst.european_countries)
-work = random.choice(["Student", "Teacher", "Engineer"])
-education = random.choice(["HighSchool", "Bachelor", "Master"])
-age = cst.age
-knows = ['user2@gmail.com', 'user3@gmail.com']
 
+def create_user(file_path,  first_name, last_name, email, gender, status, country, work, interests, education, age):
 
-def create_user(file_path, first_name, last_name, email, gender, status, news_interests, jokes_category,
-                health_interests, country, work, education, age, knows):
-    User1 = User(first_name, last_name, email, gender, status, news_interests, country, work, education, age, knows)
+    user = User(first_name, last_name, email, gender, status, country, work, interests, education, age)
 
-    user_graph = User1.to_rdf()
-    # Print the resulting RDF graph
-    # print(user_graph.serialize(format="turtle"))
-
-    new_friends = ['user123@gmail.com', 'user456@gmail.com']
-    User1.add_friends(new_friends)
-    # print(user_graph.serialize(format="turtle"))
-
-    User1.add_interest_news(news_interests, 'us', 'us')
-    # print(user_graph.serialize(format="turtle"))
-
-    User1.add_health_info(health_interests, 'us', 'us')
-    # print(user_graph.serialize(format="turtle"))
-
-    joke_category = random.choice(jokes_category)
-
-    User1.add_joke(joke_category)
-    # print(user_graph.serialize(format="turtle"))
-    turtle_data = user_graph.serialize(format="turtle")
+    user_graph = user.to_rdf()
 
     user_graph.serialize(file_path + f'{email}.ttl', format="turtle")
 
     print(f"Graph saved successfully to {email}.ttl")
 
+    return user
 
-# file_path = './'
-# create_user(file_path, first_name, last_name, email, gender, status, news_interests,jokes_category, health_interests, country, work, education, age, knows)
+file_path = './'
+first_name = 'John'
+last_name = 'Smith'
+email = 'john_smith@example.com'
+gender = 'male'
+status = 'Single'
+country = 'United States'
+work = 'United States'
+interests = ['sports', 'technology', 'politics', 'AI', 'gaming']
+education = 'Bachelor'
+AGE = age
 
-# after register
-User2 = User(first_name, last_name, email, gender, status, news_interests, country, work, education, age, knows)
-user_graph = User2.to_rdf()
-# print(user_graph.serialize(format="turtle"))
+usr = create_user(file_path,  first_name, last_name, email, gender, status, country, work, interests, education, AGE)
+g, user_uri = usr.get_user_rdf()
 
-# update_profile_to_display news jokes health
-# news_interents = list from front post
-User2.add_interest_news(news_interests, 'us', 'us')
-# print(user_graph.serialize(format="turtle"))
-# display for news tab using sparql on news topic
 
-User2.add_health_info(health_interests, 'us', 'us')
-print(user_graph.serialize(format="turtle"))
+def update_profile_to_display(usr, news_interests, health_interests, joke_category, country, language):
+    usr.add_health_info(news_interests, country, language)
+    usr.add_news_info(health_interests, country, language)
+    usr.add_jokes_info(joke_category)
+
+    g, user_uri = usr.get_user_rdf()
+    g.serialize(file_path + f'{email}.ttl', format="turtle")
+
+    print(f"Graph saved successfully to {email}.ttl")
+
+
+news_interests = ['sports', 'technology', 'politics',  'gaming']
+health_interests = ['covid', 'vaccine', 'treatment', 'technology']
+joke_category = 'Christmas'
+country_code = cst.country_mapping[country]
+language = cst.languages_reversed[country]
+update_profile_to_display(usr, news_interests , health_interests, joke_category, country, language)
+
+print(g.serialize(format="turtle"))
+print(user_uri)
+

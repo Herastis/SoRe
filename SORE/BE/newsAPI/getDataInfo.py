@@ -8,7 +8,7 @@ api_key = cst.api_key
 end_point = '/top-headlines'  # /everything
 language = 'us'
 category = 'health'  # None, business, entertainment, general, health, science, sports, technology
-pageSize = 30  # 20 to 100
+pageSize = 20  # 20 to 100
 country = 'us'  # random.choice(cst.country_codes)
 interests = ['treatment', 'life']
 

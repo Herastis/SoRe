@@ -1,50 +1,6 @@
 import random
 
-# List of countries by continent
-african_countries = [
-    'Algeria', 'Angola', 'Benin', 'Botswana', 'Burkina Faso', 'Burundi', 'Cabo Verde', 'Cameroon',
-    'Central African Republic', 'Chad', 'Comoros', 'Democratic Republic of the Congo', 'Djibouti',
-    'Egypt', 'Equatorial Guinea', 'Eritrea', 'Eswatini', 'Ethiopia', 'Gabon', 'Gambia', 'Ghana',
-    'Guinea', 'Guinea-Bissau', 'Ivory Coast', 'Kenya', 'Lesotho', 'Liberia', 'Libya', 'Madagascar',
-    'Malawi', 'Mali', 'Mauritania', 'Mauritius', 'Morocco', 'Mozambique', 'Namibia', 'Niger', 'Nigeria',
-    'Rwanda', 'Sao Tome and Principe', 'Senegal', 'Seychelles', 'Sierra Leone', 'Somalia', 'South Africa',
-    'South Sudan', 'Sudan', 'Tanzania', 'Togo', 'Tunisia', 'Uganda', 'Zambia', 'Zimbabwe'
-]
 
-asian_countries = [
-    'Afghanistan', 'Armenia', 'Azerbaijan', 'Bahrain', 'Bangladesh', 'Bhutan', 'Brunei', 'Cambodia',
-    'China', 'Cyprus', 'Georgia', 'India', 'Indonesia', 'Iran', 'Iraq', 'Israel', 'Japan', 'Jordan',
-    'Kazakhstan', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Lebanon', 'Malaysia', 'Maldives', 'Mongolia', 'Myanmar',
-    'Nepal', 'North Korea', 'Oman', 'Pakistan', 'Palestine', 'Philippines', 'Qatar', 'Saudi Arabia',
-    'Singapore', 'South Korea', 'Sri Lanka', 'Syria', 'Taiwan', 'Tajikistan', 'Thailand', 'Timor-Leste',
-    'Turkey', 'Turkmenistan', 'United Arab Emirates', 'Uzbekistan', 'Vietnam', 'Yemen'
-]
-
-european_countries = [
-    'Albania', 'Andorra', 'Austria', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria', 'Croatia',
-    'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary',
-    'Iceland', 'Ireland', 'Italy', 'Kosovo', 'Latvia', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Malta',
-    'Moldova', 'Monaco', 'Montenegro', 'Netherlands', 'North Macedonia', 'Norway', 'Poland', 'Portugal',
-    'Romania', 'Russia', 'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland',
-    'Ukraine', 'United Kingdom', 'Vatican City'
-]
-
-north_american_countries = [
-    'Antigua and Barbuda', 'Bahamas', 'Barbados', 'Belize', 'Canada', 'Costa Rica', 'Cuba', 'Dominica',
-    'Dominican Republic', 'El Salvador', 'Grenada', 'Guatemala', 'Haiti', 'Honduras', 'Jamaica', 'Mexico',
-    'Nicaragua', 'Panama', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines',
-    'Trinidad and Tobago', 'United States'
-]
-
-oceania_countries = [
-    'Australia', 'Fiji', 'Kiribati', 'Marshall Islands', 'Micronesia', 'Nauru', 'New Zealand', 'Palau',
-    'Papua New Guinea', 'Samoa', 'Solomon Islands', 'Tonga', 'Tuvalu', 'Vanuatu'
-]
-
-south_american_countries = [
-    'Argentina', 'Bolivia', 'Brazil', 'Chile', 'Colombia', 'Ecuador', 'Guyana', 'Paraguay', 'Peru',
-    'Suriname', 'Uruguay', 'Venezuela'
-]
 gender = ["Male", "Female"]
 
 degrees = ["Bachelor's", "Master's", "PhD"]
@@ -89,8 +45,73 @@ stopwords=[i.replace('"',"").strip() for i in stopwords]
 
 api_key = '3520f08cf9bb4b94b614bf7fcfb7e8bf'
 base_url = 'https://newsapi.org/v2'
-country_codes = ['ae', 'ar', 'at', 'au', 'be', 'bg', 'br', 'ca', 'ch', 'cn', 'co', 'cr', 'cz', 'de', 'eg', 'fr', 'gb', 'gr', 'hk', 'hu', 'id', 'ie', 'il', 'in', 'it', 'jp', 'kr', 'lt', 'lv', 'ma', 'mx', 'my', 'ng', 'nl', 'no', 'nz', 'ph', 'pl', 'pt', 'ro', 'rs', 'ru', 'sa', 'se', 'sg', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za']
-categories_news_api = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology']
-language_codes = ['en', 'es', 'fr', 'de', 'it', 'ja', 'ko', 'zh', 'ru', 'ar']
+country_mapping = {
+    'Algeria': 'dz',
+    'Argentina': 'ar',
+    'Austria': 'at',
+    'Australia': 'au',
+    'Belgium': 'be',
+    'Bulgaria': 'bg',
+    'Brazil': 'br',
+    'Canada': 'ca',
+    'Switzerland': 'ch',
+    'China': 'cn',
+    'Colombia': 'co',
+    'Costa Rica': 'cr',
+    'Czech Republic': 'cz',
+    'Germany': 'de',
+    'Egypt': 'eg',
+    'France': 'fr',
+    'United Kingdom': 'gb',
+    'Greece': 'gr',
+    'Hong Kong': 'hk',
+    'Hungary': 'hu',
+    'Indonesia': 'id',
+    'Ireland': 'ie',
+    'Israel': 'il',
+    'India': 'in',
+    'Italy': 'it',
+    'Japan': 'jp',
+    'South Korea': 'kr',
+    'Lithuania': 'lt',
+    'Latvia': 'lv',
+    'Morocco': 'ma',
+    'Mexico': 'mx',
+    'Malaysia': 'my',
+    'Nigeria': 'ng',
+    'Netherlands': 'nl',
+    'Norway': 'no',
+    'New Zealand': 'nz',
+    'Philippines': 'ph',
+    'Poland': 'pl',
+    'Portugal': 'pt',
+    'Romania': 'ro',
+    'Serbia': 'rs',
+    'Russia': 'ru',
+    'Saudi Arabia': 'sa',
+    'Sweden': 'se',
+    'Singapore': 'sg',
+    'Slovakia': 'sk',
+    'Thailand': 'th',
+    'Turkey': 'tr',
+    'Taiwan': 'tw',
+    'Ukraine': 'ua',
+    'United States': 'us',
+    'Venezuela': 've',
+    'South Africa': 'za'
+}
+
+languages_reversed = {
+    'United States': 'en',
+    'Argentina': 'es',
+    'France': 'fr',
+    'Germany': 'de',
+    'Italy': 'it',
+    'Japan': 'ja',
+    'South Korea': 'ko',
+    'China': 'zh',
+    'Russia': 'ru',
+    'Saudi Arabia': 'ar'
+}
 
 
