@@ -1,4 +1,5 @@
 import random
+from rdflib import Namespace, URIRef, Literal, Graph
 
 from flask_cors import CORS
 from flask import Flask, request, jsonify
@@ -110,30 +111,55 @@ def get_people():
 @app.route('/news', methods=['GET'])
 def get_news():
     #return jsonify("News")
-    query = """
-        PREFIX ns1: <http://example.org/news#>
+    # Define the SPARQL query
 
-        SELECT ?title ?author ?description ?imageUrl WHERE {
-            ?news a ns1:NewsArticle ;
-                  ns1:hasTitle ?title ;
-                  ns1:hasAuthor ?author ;
-                  ns1:hasDescription ?description ;
-                  ns1:hasImageUrl ?imageUrl .
+    ttl_file = './users_graph/ab@gmail.com.ttl'
+
+    email = request.json.get('email', None)
+
+    sparql_query = f"""
+    PREFIX ns1: <http://visualdataweb.org/SoreOntology/>
+    PREFIX ns2: <http://visualdataweb.org/SoreOntology/personOntology/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+    SELECT ?news ?title ?author ?description ?publishedAt ?urlToImage ?url
+    WHERE {{
+      ?user ns2:hasEmail "{email}"^^xsd:string .
+      ?user ns2:hasRecommendedItem ?news .
+      ?news a ns1:News .
+      ?news ns1:hasTitle ?title .
+      OPTIONAL {{ ?news ns1:hasAuthor ?author . }}
+      OPTIONAL {{ ?news ns1:hasDescription ?description . }}
+      OPTIONAL {{ ?news ns1:hasDatePublished ?publishedAt . }}
+      OPTIONAL {{ ?news ns1:hasImageURL ?urlToImage . }}
+      OPTIONAL {{ ?news ns1:hasNewsUrl ?url . }}
+    }}
+    """
+
+    g = Graph()
+    # Load the graph
+    g.parse(ttl_file, format="turtle")  # Replace "your_rdf_file.ttl" with your actual RDF file
+
+    # Execute the SPARQL query
+    query_results = g.query(sparql_query)
+
+    # Convert the results to JSON
+    news_data = []
+    for result in query_results:
+        news_entry = {
+            'news': str(result['news']),
+            'title': str(result['title']),
+            'author': str(result['author']) if result['author'] else None,
+            'description': str(result['description']) if result['description'] else None,
+            'publishedAt': str(result['publishedAt']) if result['publishedAt'] else None,
+            'urlToImage': str(result['urlToImage']) if result['urlToImage'] else None,
+            'url': str(result['url']) if result['url'] else None,
         }
-        LIMIT 10
-        """
-    results = execute_sparql_query(query)
-    if results:
-        news_items = results.get("results", {}).get("bindings", [])
-        news = [{
-            "title": item["title"]["value"],
-            "author": item["author"]["value"],
-            "description": item["description"]["value"],
-            "image": item["imageUrl"]["value"]
-        } for item in news_items]
-        return jsonify(news)
-    else:
-        return jsonify({"error": "Could not retrieve news"}), 500
+        news_data.append(news_entry)
+
+    import json
+    print(json.dumps(news_data, indent=2))
 
 @app.route('/events', methods=['GET'])
 def get_events():
