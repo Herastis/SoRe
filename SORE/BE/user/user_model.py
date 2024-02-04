@@ -258,8 +258,8 @@ interests = ['sports', 'technology', 'politics', 'AI', 'gaming']
 education = 'Bachelor'
 AGE = age
 
-usr = create_user(file_path,  first_name, last_name, email, gender, status, country, work, interests, education, AGE)
-g, user_uri = usr.get_user_rdf()
+#usr = create_user(file_path,  first_name, last_name, email, gender, status, country, work, interests, education, AGE)
+#g, user_uri = usr.get_user_rdf()
 
 
 def update_profile_to_display(usr, news_interests, health_interests, joke_category, country, language):
@@ -278,8 +278,7 @@ health_interests = ['covid', 'vaccine', 'treatment', 'technology']
 joke_category = 'Christmas'
 country_code = cst.country_mapping[country]
 language = cst.languages_reversed[country]
-update_profile_to_display(usr, news_interests , health_interests, joke_category, country, language)
-
-print(g.serialize(format="turtle"))
-print(user_uri)
+#update_profile_to_display(usr, news_interests , health_interests, joke_category, country, language)
+#print(g.serialize(format="turtle"))
+#print(user_uri)
 
