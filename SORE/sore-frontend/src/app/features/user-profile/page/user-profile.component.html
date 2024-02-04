@@ -25,90 +25,21 @@
   <form [formGroup]="preferencesForm"
         class="category-form"
         (ngSubmit)="onSubmit()">
-    <div formArrayName="travel">
-      <app-category-chips formControlName ="fruits"
-                          [allFruits]=travel
-                          [label]="'travel'">
-      </app-category-chips>
-    </div>
-    <div formArrayName="food">
-      <app-category-chips [allFruits]=food
-                          [label]="'food'">
-      </app-category-chips>
-    </div>
-    <div formArrayName="fitness">
-      <app-category-chips [allFruits]=fitness
-                          [label]="'fitness'">
-      </app-category-chips>
-    </div>
-
-    <!-- <app-category-chips [allFruits]=fashion
-                        [label]="'fashion'">
+    <app-category-chips formControlName="categoryJokes"
+                        [allFruits]=allCategoryJokes
+                        [label]="'categoryJokes'"
+                        (fruitsChange)="updateFruits($event, 'categoryJokes')">
     </app-category-chips>
-
-    <app-category-chips [allFruits]=technology
-                        [label]="'technology'">
+    <app-category-chips formControlName="healthInterests"
+                        [allFruits]=allHealthInterests
+                        [label]="'healthInterests'"
+                        (fruitsChange)="updateFruits($event, 'healthInterests')">
     </app-category-chips>
-
-    <app-category-chips [allFruits]=entertainment
-                        [label]="'entertainment'">
+    <app-category-chips formControlName="newsInterests"
+                        [allFruits]=allNewsInterests
+                        [label]="'newsInterests'"
+                        (fruitsChange)="updateFruits($event, 'newsInterests')">
     </app-category-chips>
-
-    <app-category-chips [allFruits]=books
-                        [label]="'books'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=gaming
-                        [label]="'gaming'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=photography
-                        [label]="'photography'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=parenting
-                        [label]="'parenting'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=crafts
-                        [label]="'crafts'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=politics
-                        [label]="'politics'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=music
-                        [label]="'music'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=pets
-                        [label]="'pets'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=selfImprovement
-                        [label]="'selfImprovement'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=art
-                        [label]="'art'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=movies
-                        [label]="'movies'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=sports
-                        [label]="'sports'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=health
-                        [label]="'health'">
-    </app-category-chips>
-
-    <app-category-chips [allFruits]=education
-                        [label]="'education'">
-    </app-category-chips> -->
     <button type="submit"
             mat-raised-button
             color="primary">Save</button>

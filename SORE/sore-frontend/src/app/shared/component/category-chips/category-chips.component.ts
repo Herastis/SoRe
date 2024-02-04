@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, inject } from '@angular/core';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
@@ -20,6 +20,7 @@ export class CategoryChipsComponent implements OnInit {
   fruits!: string[] ;
   @Input() allFruits!: string[];
   @Input() label!: string;
+  @Output() fruitsChange = new EventEmitter<string[]>();
   selectedPreferences: any = {};
   constructor() { 
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
@@ -58,6 +59,7 @@ export class CategoryChipsComponent implements OnInit {
 
   selected(event: MatAutocompleteSelectedEvent): void {
     this.fruits.push(event.option.viewValue);
+    this.fruitsChange.emit(this.fruits);
     this.fruitInput.nativeElement.value = '';
     this.fruitCtrl.setValue(null);
   }
