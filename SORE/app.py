@@ -83,7 +83,7 @@ def get_homepage():
     return jsonify("Homepage")
 
 @app.route('/people', methods=['GET'])
-def get_events():
+def get_people():
     return jsonify("People")
 
 @app.route('/news', methods=['GET'])

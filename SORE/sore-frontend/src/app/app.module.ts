@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './features/login/page/login.component';
 
@@ -30,7 +30,12 @@ import { RegisterComponent } from './features/register/register.component';
 import { UserProfileComponent } from './features/user-profile/page/user-profile.component';
 import { TokenInterceptor } from './shared/interceptors/token-interceptor';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
+import { AsyncPipe } from '@angular/common';
+import { CategoryChipsComponent } from './shared/component/category-chips/category-chips.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +44,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     TopicComponent,
     LoginComponent,
     RegisterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    CategoryChipsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    FormsModule,
+    AsyncPipe,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
