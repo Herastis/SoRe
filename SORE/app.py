@@ -1,3 +1,5 @@
+import random
+
 from flask_cors import CORS
 from flask import Flask, request, jsonify
 from flask_bcrypt import Bcrypt
@@ -5,6 +7,8 @@ from flask_jwt_extended import JWTManager, create_access_token
 from werkzeug.security import check_password_hash, generate_password_hash
 from db import db, execute_sparql_query
 from datetime import timedelta
+
+from BE.user.user_model import create_user, User
 
 
 app = Flask(__name__)
@@ -43,11 +47,18 @@ def register():
                                 'age': age,
                                 'education': education,
                                 'country': country,
+                                #'work': work,
                                 })
 
-    #User = User.create_user_graph()
-    #User.set_friends()
 
+
+    category_jokes = ['Programming', 'Misc', 'Pun', 'Spooky', 'Christmas']
+    health_interests = ['treatment', 'health', 'covid']
+    news_interests = ["Art", "Technology", "Travel", "Coding", "Gaming"]
+    work = random.choice(['IT', 'Engineering', 'Finance', 'Marketing', 'Sales', 'HR'])
+    knows = random.choice(['user2@gmail.com', 'user3@gmail.com'])
+
+    create_user(first_name, last_name, email, gender, status, news_interests, country, work, education, age, knows)
 
     return jsonify({"msg": "User registered successfully."}), 201
 

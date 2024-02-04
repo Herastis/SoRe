@@ -2,7 +2,7 @@ import random
 
 import requests
 from collections import Counter
-import constants.constants as cst
+import BE.constants.constants as cst
 
 languages = ['en', 'de', 'es','fr','pt', 'cs']
 flags = 'nsfw,racist,sexist,explicit'

@@ -1,0 +1,1063 @@
+@prefix ns1: <http://visualdataweb.org/SoreOntology/> .
+@prefix ns2: <http://visualdataweb.org/SoreOntology/personOntology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://soreOntology.com/users/John_Doe> a ns2:User ;
+    ns2:firstName "John"^^xsd:string ;
+    ns2:gender "Female"^^xsd:string ;
+    ns2:hasAge 41 ;
+    ns2:hasCountry "Belgium"^^xsd:string ;
+    ns2:hasEducation "HighSchool"^^xsd:string ;
+    ns2:hasEmail "john.doe@example.com"^^xsd:string ;
+    ns2:hasInterest <http://soreOntology.com/interestsUser/Art>,
+        <http://soreOntology.com/interestsUser/Coding>,
+        <http://soreOntology.com/interestsUser/Gaming>,
+        <http://soreOntology.com/interestsUser/Technology>,
+        <http://soreOntology.com/interestsUser/Travel> ;
+    ns2:hasJoke <http://soreOntology.com/joke/ghost>,
+        <http://soreOntology.com/joke/ghost's>,
+        <http://soreOntology.com/joke/ghosts>,
+        <http://soreOntology.com/joke/kissed>,
+        <http://soreOntology.com/joke/skeleton>,
+        <http://soreOntology.com/joke/son>,
+        <http://soreOntology.com/joke/turkey> ;
+    ns2:hasRecommendedItem <http://soreOntology.com/medicalNews/MedicalMysterySolved?HormoneTreatmentLinkedToAlzheimer'sInShockingDiscovery-NDTV>,
+        <http://soreOntology.com/medicalNews/ThedoctorsthoughtIwassufferingfromCOVID.Turnsout,IhadStage4cancer.-YahooNews>,
+        <http://soreOntology.com/medicalNews/[Removed]>,
+        <http://soreOntology.com/news/Amazon’snote-takingKindleScribehasfallentooneofitsbestpricestodate>,
+        <http://soreOntology.com/news/AppleVisionProreview:magic,untilit’snot>,
+        <http://soreOntology.com/news/CES2024Day0Recap:AllthebiggestnewsandthemosttransparentTVs>,
+        <http://soreOntology.com/news/DisneyWorld'sMassiveArtsFestivalKnowsItsFandomBest>,
+        <http://soreOntology.com/news/DumbestAIStuntoftheWeek:ARobotGeorgeCarlinStandupSpecial>,
+        <http://soreOntology.com/news/FinalFantasyXIV’snewclasswillunleashyourinnerBobRoss>,
+        <http://soreOntology.com/news/GenZandtheArtofIncentivizedSelf-Actualization>,
+        <http://soreOntology.com/news/Halo’sBlackHistoryMontharmorshadersareunintentionallyhilarious>,
+        <http://soreOntology.com/news/I'mObsessedWithThisHugeSmartTouchscreenCalendar>,
+        <http://soreOntology.com/news/Ican'tstoptouchingthenewASUSROGZephyrusG14>,
+        <http://soreOntology.com/news/IndiegamechampionDayoftheDevsisnowanindependentnon-profit>,
+        <http://soreOntology.com/news/LenovoYogaPro9iandYoga9i2-in-1nowhavehaveAIchipsandagenerativeartsuite>,
+        <http://soreOntology.com/news/Palworldisahit,andit’seasytoseewhy>,
+        <http://soreOntology.com/news/Peregrinespacecraftexperiences‘anomaly’thatcouldthreatenmoonlanding>,
+        <http://soreOntology.com/news/Persona3Reloadisasurprisingdoseof2000snostalgia>,
+        <http://soreOntology.com/news/SamsungdebutsMusicFramespeakertopairwithyourFrameTVatCES2024>,
+        <http://soreOntology.com/news/ScammyAI-GeneratedBooksAreFloodingAmazon>,
+        <http://soreOntology.com/news/SeekingMavisBeaconisawildSundancedocaboutthesearchforalosttechicon>,
+        <http://soreOntology.com/news/SnapRecallsAllofItsSelfieDronesDuetoFearsThey'llBecomeFlyingFireballs>,
+        <http://soreOntology.com/news/SyntheticDataIsaDangerousTeacher>,
+        <http://soreOntology.com/news/TheCreative’sToolboxGetsanAIUpgrade>,
+        <http://soreOntology.com/news/TheFramehasbecomesuchahitthatSamsungismakingaspeakerversion>,
+        <http://soreOntology.com/news/TheMorningAfter:CES2024kicksoffwithtransparentdisplaysfromSamsungandLG>,
+        <http://soreOntology.com/news/TheSadTruthoftheFTC'sLocationDataPrivacySettlement>,
+        <http://soreOntology.com/news/ThebestofCES2024>,
+        <http://soreOntology.com/news/TherearetwogreatreasonstoupgradetoTheLastofUsPartIIRemastered>,
+        <http://soreOntology.com/news/Valve'snewguidelineswillallowformoreAIcontentingames>,
+        <http://soreOntology.com/news/WanttoStreamWithoutAds?That’llCostYou>,
+        <http://soreOntology.com/news/WhatSoundCloudCreatedCanNeverDie>,
+        <http://soreOntology.com/news/WhySen.BrianSchatzthinkschildsafetybillsshouldtrumptheFirstAmendment> ;
+    ns2:knows "user123@gmail.com",
+        "user2@gmail.com",
+        "user3@gmail.com",
+        "user456@gmail.com" ;
+    ns2:lastName "Doe"^^xsd:string ;
+    ns2:status "Married"^^xsd:string ;
+    ns2:workingPlace "Engineer"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/Art> a ns1:Interest ;
+    rdfs:label "Art"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/Coding> a ns1:Interest ;
+    rdfs:label "Coding"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/Gaming> a ns1:Interest ;
+    rdfs:label "Gaming"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/Technology> a ns1:Interest ;
+    rdfs:label "Technology"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/Travel> a ns1:Interest ;
+    rdfs:label "Travel"^^xsd:string .
+
+<http://soreOntology.com/joke/ghost> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "For the boos." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/bar?>,
+        <http://soreOntology.com/topicsJoke/ghost>,
+        <http://soreOntology.com/topicsJoke/inside> ;
+    ns1:isSafe true ;
+    ns1:setup "Why did the ghost go inside the bar?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/ghost's> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "Boo-gers." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/boo-gers.>,
+        <http://soreOntology.com/topicsJoke/ghost's>,
+        <http://soreOntology.com/topicsJoke/nose?> ;
+    ns1:isSafe true ;
+    ns1:setup "What is in a ghost's nose?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/ghosts> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "So they can keep their ghoulish figures." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/diets?>,
+        <http://soreOntology.com/topicsJoke/ghosts>,
+        <http://soreOntology.com/topicsJoke/ghoulish> ;
+    ns1:isSafe true ;
+    ns1:setup "Why do ghosts go on diets?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/kissed> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "It's a pain in the neck." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/kissed>,
+        <http://soreOntology.com/topicsJoke/pain>,
+        <http://soreOntology.com/topicsJoke/vampire?> ;
+    ns1:isSafe true ;
+    ns1:setup "What's it like to be kissed by a vampire?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/skeleton> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "Because it had nobody." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/nobody.>,
+        <http://soreOntology.com/topicsJoke/prom?>,
+        <http://soreOntology.com/topicsJoke/skeleton> ;
+    ns1:isSafe true ;
+    ns1:setup "Why didn't the skeleton go for prom?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/son> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "But on Halloween he went to tell the neighbors to turn down their TV and they gave him some candy." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/halloween>,
+        <http://soreOntology.com/topicsJoke/son>,
+        <http://soreOntology.com/topicsJoke/ugly...> ;
+    ns1:isSafe true ;
+    ns1:setup "I'm not saying my son is ugly..." ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/turkey> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "A gobblin'!" ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/dress>,
+        <http://soreOntology.com/topicsJoke/halloween?>,
+        <http://soreOntology.com/topicsJoke/turkey> ;
+    ns1:isSafe true ;
+    ns1:setup "What does a turkey dress up as for Halloween?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/medicalNews/MedicalMysterySolved?HormoneTreatmentLinkedToAlzheimer'sInShockingDiscovery-NDTV> a ns1:Medical_and_Lifestyle ;
+    ns1:hasAuthor "undefined"^^xsd:string ;
+    ns1:hasContent "https://c.ndtvimg.com/2020-09/5u5t590g_alzheimer_625x300_21_September_20.jpg"^^xsd:string ;
+    ns1:hasDescription "The study provides the first evidence of Alzheimer's disease in living people that appears to have been medically acquired and due to transmission of the amyloid-beta protein."^^xsd:string ;
+    ns1:hasMedicalUrl "https://www.ndtv.com/science/medical-mystery-solved-hormone-treatment-linked-to-alzheimers-in-shocking-discovery-4981971"^^xsd:string ;
+    ns1:hasTitle "Medical Mystery Solved? Hormone Treatment Linked To Alzheimer's In Shocking Discovery - NDTV"^^xsd:string ;
+    ns1:hasTopic <http://soreOntology.com/topicsItem/Alzheimer>,
+        <http://soreOntology.com/topicsItem/Hormone>,
+        <http://soreOntology.com/topicsItem/Medical>,
+        <http://soreOntology.com/topicsItem/Mystery>,
+        <http://soreOntology.com/topicsItem/Solved> .
+
+<http://soreOntology.com/medicalNews/ThedoctorsthoughtIwassufferingfromCOVID.Turnsout,IhadStage4cancer.-YahooNews> a ns1:Medical_and_Lifestyle ;
+    ns1:hasAuthor "Kelly_Burch"^^xsd:string ;
+    ns1:hasContent "https://s.yimg.com/ny/api/res/1.2/2zTNVeJjSZYWRSAN0nMPKA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD05MDA-/https://media.zenfs.com/en/insider_articles_922/e9141536d480171d565f52340da474d6"^^xsd:string ;
+    ns1:hasDescription "Doctors thought that I had COVID, but it was actually cancer. The thought of getting back on my unicycle got me through treatment and experimental radiation ..."^^xsd:string ;
+    ns1:hasMedicalUrl "https://www.businessinsider.com/doctors-thought-diagnosis-covid-symptoms-actually-cancer-2024-2"^^xsd:string ;
+    ns1:hasTitle "The doctors thought I was suffering from COVID. Turns out, I had Stage 4 cancer. - Yahoo News"^^xsd:string ;
+    ns1:hasTopic <http://soreOntology.com/topicsItem/COVID>,
+        <http://soreOntology.com/topicsItem/cancer>,
+        <http://soreOntology.com/topicsItem/doctors>,
+        <http://soreOntology.com/topicsItem/suffering>,
+        <http://soreOntology.com/topicsItem/thought> .
+
+<http://soreOntology.com/medicalNews/[Removed]> a ns1:Medical_and_Lifestyle ;
+    ns1:hasAuthor "undefined"^^xsd:string ;
+    ns1:hasContent "None"^^xsd:string ;
+    ns1:hasDescription "[Removed]"^^xsd:string ;
+    ns1:hasMedicalUrl "https://removed.com"^^xsd:string ;
+    ns1:hasTitle "[Removed]"^^xsd:string ;
+    ns1:hasTopic <http://soreOntology.com/topicsItem/Removed> .
+
+<http://soreOntology.com/news/Amazon’snote-takingKindleScribehasfallentooneofitsbestpricestodate> a ns1:News ;
+    ns1:hasAuthor "Brandon_Widder"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-04T18:54:51Z"^^xsd:string ;
+    ns1:hasDescription "Amazon is now offering up to $75 off its base Kindle Scribe models. You can also grab the latest AirPods Pro, as well as Samsung’s Frame TV and Galaxy Tab S9, at an all-time low."^^xsd:string ;
+    ns1:hasImageURL "https://cdn.vox-cdn.com/thumbor/ch6BuRUKY_ks_QEiiD-NVvBREa8=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/24224274/226417__Amazon_Kindle_Scribe_AKrales_0143.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Amazon>,
+        <http://soreOntology.com/topicsItem/Kindle>,
+        <http://soreOntology.com/topicsItem/Scribe>,
+        <http://soreOntology.com/topicsItem/note>,
+        <http://soreOntology.com/topicsItem/taking> ;
+    ns1:hasNewsUrl "https://www.theverge.com/2024/1/4/24023130/kindle-scribe-apple-airpods-pro-usb-c-samsung-frame-tv-deal-sale"^^xsd:string ;
+    ns1:hasTitle "Amazon’s note-taking Kindle Scribe has fallen to one of its best prices to date"^^xsd:string .
+
+<http://soreOntology.com/news/AppleVisionProreview:magic,untilit’snot> a ns1:News ;
+    ns1:hasAuthor "Nilay_Patel"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-30T14:00:00Z"^^xsd:string ;
+    ns1:hasDescription "There’s a lot of pressure on the new Apple Vision Pro headset, which starts at $3,499 and marks the beginning of something called “spatial computing.” The ambition is enormous, but the Vision Pro also represents a series of really big tradeoffs."^^xsd:string ;
+    ns1:hasImageURL "https://cdn.vox-cdn.com/thumbor/uCgzK17G5rY_qJnFUAHN7-SQRsY=/0x0:2700x1800/1200x628/filters:focal(1350x900:1351x901)/cdn.vox-cdn.com/uploads/chorus_asset/file/25255994/246965_vision_pro_AKrales_0235.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Apple>,
+        <http://soreOntology.com/topicsItem/Pro>,
+        <http://soreOntology.com/topicsItem/Vision>,
+        <http://soreOntology.com/topicsItem/magic>,
+        <http://soreOntology.com/topicsItem/review> ;
+    ns1:hasNewsUrl "https://www.theverge.com/24054862/apple-vision-pro-review-vr-ar-headset-features-price"^^xsd:string ;
+    ns1:hasTitle "Apple Vision Pro review: magic, until it’s not"^^xsd:string .
+
+<http://soreOntology.com/news/CES2024Day0Recap:AllthebiggestnewsandthemosttransparentTVs> a ns1:News ;
+    ns1:hasAuthor "Cherlynn_Low"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-09T05:18:11Z"^^xsd:string ;
+    ns1:hasDescription "CES 2024 may not have officially started yet, but the news is already in full swing. The show’s official dates are January 9th to 12th, with the 8th usually being a day of press conferences ahead of the convention centers opening to attendees. Which makes thi…"^^xsd:string ;
+    ns1:hasImageURL "https://s.yimg.com/ny/api/res/1.2/Bnpl3lUToucHy_4UeWAFHQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2024-01/64e2bb60-aead-11ee-9f99-796ffcbcf346"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/CES>,
+        <http://soreOntology.com/topicsItem/Day>,
+        <http://soreOntology.com/topicsItem/Recap>,
+        <http://soreOntology.com/topicsItem/biggest>,
+        <http://soreOntology.com/topicsItem/news> ;
+    ns1:hasNewsUrl "https://www.engadget.com/ces-2024-day-0-recap-all-the-biggest-news-and-the-most-transparent-tvs-051811355.html"^^xsd:string ;
+    ns1:hasTitle "CES 2024 Day 0 Recap: All the biggest news and the most transparent TVs"^^xsd:string .
+
+<http://soreOntology.com/news/DisneyWorld'sMassiveArtsFestivalKnowsItsFandomBest> a ns1:News ;
+    ns1:hasAuthor "Sabina_Graves"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-18T22:15:00Z"^^xsd:string ;
+    ns1:hasDescription "Walt Disney World’s best and most underrated festival is going on right now at Epcot. Disney Parks’ International Festival of the Arts happens at the start of the year and showcases amazing artists debuting Disney-inspired art—and it’s truly any fandom print …"^^xsd:string ;
+    ns1:hasImageURL "https://i.kinja-img.com/image/upload/c_fill,h_675,pg_1,q_80,w_1200/98925cf831a5f02e9db1c96c26bebed9.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Arts>,
+        <http://soreOntology.com/topicsItem/Disney>,
+        <http://soreOntology.com/topicsItem/Festival>,
+        <http://soreOntology.com/topicsItem/Massive>,
+        <http://soreOntology.com/topicsItem/World> ;
+    ns1:hasNewsUrl "https://gizmodo.com/disney-parks-epcot-festival-arts-marvel-star-wars-pixar-1851174512"^^xsd:string ;
+    ns1:hasTitle "Disney World's Massive Arts Festival Knows Its Fandom Best"^^xsd:string .
+
+<http://soreOntology.com/news/DumbestAIStuntoftheWeek:ARobotGeorgeCarlinStandupSpecial> a ns1:News ;
+    ns1:hasAuthor "Thomas_Germain"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-15T13:00:00Z"^^xsd:string ;
+    ns1:hasDescription "Someday we’ll move past the point where you can spend half an hour pumping out an AI video and generate headlines. Sadly, we’re not there yet. The latest piece of refuse from the AI hype machine comes in the form of an unauthorized, “AI-generated” George Carl…"^^xsd:string ;
+    ns1:hasImageURL "https://i.kinja-img.com/image/upload/c_fill,h_675,pg_1,q_80,w_1200/62338948f1cfe7ca51bbcfa953cacc82.png"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AI>,
+        <http://soreOntology.com/topicsItem/Dumbest>,
+        <http://soreOntology.com/topicsItem/George>,
+        <http://soreOntology.com/topicsItem/Stunt>,
+        <http://soreOntology.com/topicsItem/Week> ;
+    ns1:hasNewsUrl "https://gizmodo.com/dumbest-ai-student-robot-george-carlin-standup-1851164038"^^xsd:string ;
+    ns1:hasTitle "Dumbest AI Stunt of the Week: A Robot George Carlin Standup Special"^^xsd:string .
+
+<http://soreOntology.com/news/FinalFantasyXIV’snewclasswillunleashyourinnerBobRoss> a ns1:News ;
+    ns1:hasAuthor "Ash_Parrish"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T20:02:37Z"^^xsd:string ;
+    ns1:hasDescription "Final Fantasy XIV’s latest expansion Dawntrail will add the new Pictomancer job class, a new playable race, and a new location that seems to draw influence from Final Fantasy IX."^^xsd:string ;
+    ns1:hasImageURL "https://cdn.vox-cdn.com/thumbor/ZLT61h9pO0tM4ZP5j7n6KKGUFRE=/0x0:1920x1080/1200x628/filters:focal(960x540:961x541)/cdn.vox-cdn.com/uploads/chorus_asset/file/25212299/FFXIV_PUB_FANFESTIVAL_2024_in_TOKYO_32.png"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Fantasy>,
+        <http://soreOntology.com/topicsItem/Final>,
+        <http://soreOntology.com/topicsItem/XIV>,
+        <http://soreOntology.com/topicsItem/class>,
+        <http://soreOntology.com/topicsItem/new> ;
+    ns1:hasNewsUrl "https://www.theverge.com/2024/1/8/24030282/final-fantasy-14-new-class-pictomancer-ffxiv-fan-fest-tokyo"^^xsd:string ;
+    ns1:hasTitle "Final Fantasy XIV’s new class will unleash your inner Bob Ross"^^xsd:string .
+
+<http://soreOntology.com/news/GenZandtheArtofIncentivizedSelf-Actualization> a ns1:News ;
+    ns1:hasAuthor "Michèle_Lamont"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T12:00:00Z"^^xsd:string ;
+    ns1:hasDescription "Stepping off the hedonistic treadmill, younger workers are demanding a more authentic employment experience."^^xsd:string ;
+    ns1:hasImageURL "https://media.wired.com/photos/65989cb98bfcf235fbde4a54/191:100/w_1280,c_limit/WW2024_1303781671_BIZ_Michele-Lamont.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Art>,
+        <http://soreOntology.com/topicsItem/Gen>,
+        <http://soreOntology.com/topicsItem/Incentivized>,
+        <http://soreOntology.com/topicsItem/Self>,
+        <http://soreOntology.com/topicsItem/Z> ;
+    ns1:hasNewsUrl "https://www.wired.com/story/gen-z-and-the-art-of-incentivized-self-actualization/"^^xsd:string ;
+    ns1:hasTitle "Gen Z and the Art of Incentivized Self-Actualization"^^xsd:string .
+
+<http://soreOntology.com/news/Halo’sBlackHistoryMontharmorshadersareunintentionallyhilarious> a ns1:News ;
+    ns1:hasAuthor "Ash_Parrish"^^xsd:string ;
+    ns1:hasDatePublished "2024-02-01T23:56:03Z"^^xsd:string ;
+    ns1:hasDescription "Halo Infinite has released a new set of armor shaders in celebration of Black History Month. The results are interesting."^^xsd:string ;
+    ns1:hasImageURL "https://cdn.vox-cdn.com/thumbor/tZaSQmi4INd56FPJUhwfeRgtVXI=/0x0:1200x675/1200x628/filters:focal(600x338:601x339)/cdn.vox-cdn.com/uploads/chorus_asset/file/25261912/GFRmiIcXcAAl6ZJ.jpeg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Black>,
+        <http://soreOntology.com/topicsItem/Halo>,
+        <http://soreOntology.com/topicsItem/History>,
+        <http://soreOntology.com/topicsItem/Month>,
+        <http://soreOntology.com/topicsItem/armor> ;
+    ns1:hasNewsUrl "https://www.theverge.com/2024/2/1/24058370/halo-infinite-black-history-month-armor-shaders"^^xsd:string ;
+    ns1:hasTitle "Halo’s Black History Month armor shaders are unintentionally hilarious"^^xsd:string .
+
+<http://soreOntology.com/news/I'mObsessedWithThisHugeSmartTouchscreenCalendar> a ns1:News ;
+    ns1:hasAuthor "Dua_Rashid"^^xsd:string ;
+    ns1:hasDatePublished "2024-02-01T18:10:00Z"^^xsd:string ;
+    ns1:hasDescription "Skylight recently released a 27-inch variant of its smart calendar, which looks pretty promising. It’s essentially a huge touchscreen display housed in an aluminum or plastic case that you put on your wall like a framed piece of art. It lets you add, remove, …"^^xsd:string ;
+    ns1:hasImageURL "https://i.kinja-img.com/image/upload/c_fill,h_675,pg_1,q_80,w_1200/a5aba7d33c3c2e32dde3bed947cdda82.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Calendar>,
+        <http://soreOntology.com/topicsItem/Huge>,
+        <http://soreOntology.com/topicsItem/Obsessed>,
+        <http://soreOntology.com/topicsItem/Smart>,
+        <http://soreOntology.com/topicsItem/Touchscreen> ;
+    ns1:hasNewsUrl "https://gizmodo.com/skylight-touchscreen-smart-calender-organization-1851215964"^^xsd:string ;
+    ns1:hasTitle "I'm Obsessed With This Huge Smart Touchscreen Calendar"^^xsd:string .
+
+<http://soreOntology.com/news/Ican'tstoptouchingthenewASUSROGZephyrusG14> a ns1:News ;
+    ns1:hasAuthor "Devindra_Hardawar"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-12T18:00:25Z"^^xsd:string ;
+    ns1:hasDescription "Call it love at first sight. Every year, I come across a handful of products that elicit instant joy, a sense of elation that's so strong I forget about the many ways the tech industry is actively making our world worse. As we wrap up CES 2024 in Las Vegas, I…"^^xsd:string ;
+    ns1:hasImageURL "None"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/ASUS>,
+        <http://soreOntology.com/topicsItem/ROG>,
+        <http://soreOntology.com/topicsItem/new>,
+        <http://soreOntology.com/topicsItem/stop>,
+        <http://soreOntology.com/topicsItem/touching> ;
+    ns1:hasNewsUrl "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_54b01d05-9934-426c-8a9e-1041cd0377b5"^^xsd:string ;
+    ns1:hasTitle "I can't stop touching the new ASUS ROG Zephyrus G14"^^xsd:string .
+
+<http://soreOntology.com/news/IndiegamechampionDayoftheDevsisnowanindependentnon-profit> a ns1:News ;
+    ns1:hasAuthor "Kris_Holt"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-30T16:34:39Z"^^xsd:string ;
+    ns1:hasDescription """Day of the Devs\r
+ is always one of the biggest highlights\r
+ of Summer Game Fest and The Game Awards. The showcase places the spotlight firmly on emerging indie games and underground titles, and each event always has at least a few projects that are worth addi…"""^^xsd:string ;
+    ns1:hasImageURL "None"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Day>,
+        <http://soreOntology.com/topicsItem/Devs>,
+        <http://soreOntology.com/topicsItem/Game>,
+        <http://soreOntology.com/topicsItem/Indie>,
+        <http://soreOntology.com/topicsItem/game> ;
+    ns1:hasNewsUrl "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_8acc7c81-bd79-48c7-8fe0-627c21e78609"^^xsd:string ;
+    ns1:hasTitle "Indie game champion Day of the Devs is now an independent non-profit"^^xsd:string .
+
+<http://soreOntology.com/news/LenovoYogaPro9iandYoga9i2-in-1nowhavehaveAIchipsandagenerativeartsuite> a ns1:News ;
+    ns1:hasAuthor "Will_Shanklin"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T23:00:59Z"^^xsd:string ;
+    ns1:hasDescription """Lenovo’s updated consumer laptop lineup at CES 2024 is (unsurprisingly) focused on AI. The company unveiled an array of Yoga and Ideapad notebooks on Monday in Las Vegas, including new versions of the Yoga Pro 9i and Yoga 9i 2-in-1.
+The 2024 Yoga Pro 9i and Y…"""^^xsd:string ;
+    ns1:hasImageURL "https://s.yimg.com/ny/api/res/1.2/3SCV2vldoD.4XhGqEnQaxg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03MjA-/https://s.yimg.com/os/creatr-uploaded-images/2024-01/2cd37c00-ae53-11ee-bade-9cefa8f97777"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AI>,
+        <http://soreOntology.com/topicsItem/Lenovo>,
+        <http://soreOntology.com/topicsItem/Pro>,
+        <http://soreOntology.com/topicsItem/Yoga>,
+        <http://soreOntology.com/topicsItem/chips> ;
+    ns1:hasNewsUrl "https://www.engadget.com/lenovo-yoga-pro-9i-and-yoga-9i-2-in-1-now-have-have-ai-chips-and-a-generative-art-suite-230059936.html"^^xsd:string ;
+    ns1:hasTitle "Lenovo Yoga Pro 9i and Yoga 9i 2-in-1 now have have AI chips and a generative art suite"^^xsd:string .
+
+<http://soreOntology.com/news/Palworldisahit,andit’seasytoseewhy> a ns1:News ;
+    ns1:hasAuthor "Ash_Parrish"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-22T22:00:53Z"^^xsd:string ;
+    ns1:hasDescription "Palworld, the game that’s been dubbed “Pokémon with guns,” has sold a staggering 5 million copies in three days with it’s interesting mix of survival, crafting, and monster-catching elements."^^xsd:string ;
+    ns1:hasImageURL "https://cdn.vox-cdn.com/thumbor/iusyAOfVUETU6i1kEZEcuJCevpU=/0x0:3840x2160/1200x628/filters:focal(1920x1080:1921x1081)/cdn.vox-cdn.com/uploads/chorus_asset/file/25242409/20230608_Palworld_Screenshot_02.png"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Palworld>,
+        <http://soreOntology.com/topicsItem/dubbed>,
+        <http://soreOntology.com/topicsItem/easy>,
+        <http://soreOntology.com/topicsItem/game>,
+        <http://soreOntology.com/topicsItem/hit> ;
+    ns1:hasNewsUrl "https://www.theverge.com/2024/1/22/24047087/palworld-early-access-steam-xbox-gamepass"^^xsd:string ;
+    ns1:hasTitle "Palworld is a hit, and it’s easy to see why"^^xsd:string .
+
+<http://soreOntology.com/news/Peregrinespacecraftexperiences‘anomaly’thatcouldthreatenmoonlanding> a ns1:News ;
+    ns1:hasAuthor "Lawrence_Bonk"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T19:12:21Z"^^xsd:string ;
+    ns1:hasDescription """The Peregrine spacecraft has experienced an ‘anomaly’ that could endanger its planned moon landing, as reported by the \r
+BBC.\r
+ Astrobotic, the private company behind the project, says this anomaly prevents the spacecraft from pointing its solar panels at the…"""^^xsd:string ;
+    ns1:hasImageURL "None"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Peregrine>,
+        <http://soreOntology.com/topicsItem/anomaly>,
+        <http://soreOntology.com/topicsItem/landing>,
+        <http://soreOntology.com/topicsItem/moon>,
+        <http://soreOntology.com/topicsItem/spacecraft> ;
+    ns1:hasNewsUrl "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_bdb0d952-5af0-4b5d-9aad-f08e54f1be8b"^^xsd:string ;
+    ns1:hasTitle "Peregrine spacecraft experiences ‘anomaly’ that could threaten moon landing"^^xsd:string .
+
+<http://soreOntology.com/news/Persona3Reloadisasurprisingdoseof2000snostalgia> a ns1:News ;
+    ns1:hasAuthor "Mat_Smith"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-31T16:00:22Z"^^xsd:string ;
+    ns1:hasDescription "If you have a popular gaming franchise, now is the time to decide if you can repackage it, upgrade some textures, or completely reimagine the title for the 2020s. Atlus’ Persona games are one of those enduring series, and the company has already relaunched th…"^^xsd:string ;
+    ns1:hasImageURL "None"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Persona>,
+        <http://soreOntology.com/topicsItem/Reload>,
+        <http://soreOntology.com/topicsItem/dose>,
+        <http://soreOntology.com/topicsItem/nostalgia>,
+        <http://soreOntology.com/topicsItem/surprising> ;
+    ns1:hasNewsUrl "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_a7ba14b8-48b2-42b5-9bbf-9dc0043f520b"^^xsd:string ;
+    ns1:hasTitle "Persona 3 Reload is a surprising dose of 2000s nostalgia"^^xsd:string .
+
+<http://soreOntology.com/news/SamsungdebutsMusicFramespeakertopairwithyourFrameTVatCES2024> a ns1:News ;
+    ns1:hasAuthor "Billy_Steele"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T03:00:24Z"^^xsd:string ;
+    ns1:hasDescription "Samsung's The Frame TV has become a key part of its home entertainment lineup since the product debuted in 2017. The company has upgraded it a few times over the years, but at CES 2024 in Las Vegas, Samsung revealed a new audio accessory to accompany the TV t…"^^xsd:string ;
+    ns1:hasImageURL "None"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/CES>,
+        <http://soreOntology.com/topicsItem/Frame>,
+        <http://soreOntology.com/topicsItem/Samsung>,
+        <http://soreOntology.com/topicsItem/TV>,
+        <http://soreOntology.com/topicsItem/debuts> ;
+    ns1:hasNewsUrl "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_b145f3ce-fe55-4b79-be23-6c92d2cd60ab"^^xsd:string ;
+    ns1:hasTitle "Samsung debuts Music Frame speaker to pair with your Frame TV at CES 2024"^^xsd:string .
+
+<http://soreOntology.com/news/ScammyAI-GeneratedBooksAreFloodingAmazon> a ns1:News ;
+    ns1:hasAuthor "Kate_Knibbs"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-10T12:00:00Z"^^xsd:string ;
+    ns1:hasDescription "Authors keep finding what appear to be AI-generated imitations and summaries of their books on Amazon. There's little they can do to rein in the rip-offs."^^xsd:string ;
+    ns1:hasImageURL "https://media.wired.com/photos/659ddb4a0694326576f16b04/191:100/w_1280,c_limit/AI-Book-Summaries-Business-484917294.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AI>,
+        <http://soreOntology.com/topicsItem/Amazon>,
+        <http://soreOntology.com/topicsItem/Books>,
+        <http://soreOntology.com/topicsItem/Generated>,
+        <http://soreOntology.com/topicsItem/Scammy> ;
+    ns1:hasNewsUrl "https://www.wired.com/story/scammy-ai-generated-books-flooding-amazon/"^^xsd:string ;
+    ns1:hasTitle "Scammy AI-Generated Books Are Flooding Amazon"^^xsd:string .
+
+<http://soreOntology.com/news/SeekingMavisBeaconisawildSundancedocaboutthesearchforalosttechicon> a ns1:News ;
+    ns1:hasAuthor "Devindra_Hardawar"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-27T14:00:49Z"^^xsd:string ;
+    ns1:hasDescription "With a healthy dose of heart and whimsy, the Sundance documentary Seeking Mavis Beacon follows two young Black women who are devoted to finding the original model for Mavis Beacon Teaches Typing. If you touched a computer during the '80s or '90s, there's a go…"^^xsd:string ;
+    ns1:hasImageURL "https://s.yimg.com/uu/api/res/1.2/ZnVXdgo0skTdhEWdYzZMAA--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2024-01/44945571-bcd2-11ee-af9f-b05c0b312db1.cf.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Beacon>,
+        <http://soreOntology.com/topicsItem/Mavis>,
+        <http://soreOntology.com/topicsItem/Seeking>,
+        <http://soreOntology.com/topicsItem/Sundance>,
+        <http://soreOntology.com/topicsItem/wild> ;
+    ns1:hasNewsUrl "https://www.engadget.com/seeking-mavis-beacon-review-sundance-documentary-140049830.html"^^xsd:string ;
+    ns1:hasTitle "Seeking Mavis Beacon is a wild Sundance doc about the search for a lost tech icon"^^xsd:string .
+
+<http://soreOntology.com/news/SnapRecallsAllofItsSelfieDronesDuetoFearsThey'llBecomeFlyingFireballs> a ns1:News ;
+    ns1:hasAuthor "Lucas_Ropek"^^xsd:string ;
+    ns1:hasDatePublished "2024-02-01T21:10:00Z"^^xsd:string ;
+    ns1:hasDescription "A couple of years ago, Snap (the company behind Snapchat) decided that the selfie production pipeline needed to be improved upon. Bathroom mirrors and selfie sticks were not cutting it. No, no, Snap decided that the next evolution in the art of taking picture…"^^xsd:string ;
+    ns1:hasImageURL "https://i.kinja-img.com/image/upload/c_fill,h_675,pg_1,q_80,w_1200/9837953d8ac676f33a55a72efc5385a2.gif"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Recalls>,
+        <http://soreOntology.com/topicsItem/Selfie>,
+        <http://soreOntology.com/topicsItem/Snap>,
+        <http://soreOntology.com/topicsItem/decided>,
+        <http://soreOntology.com/topicsItem/selfie> ;
+    ns1:hasNewsUrl "https://gizmodo.com/snap-selfie-drone-recall-fire-hazard-1851216678"^^xsd:string ;
+    ns1:hasTitle "Snap Recalls All of Its Selfie Drones Due to Fears They'll Become Flying Fireballs"^^xsd:string .
+
+<http://soreOntology.com/news/SyntheticDataIsaDangerousTeacher> a ns1:News ;
+    ns1:hasAuthor "Abeba_Birhane"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T12:00:00Z"^^xsd:string ;
+    ns1:hasDescription "In the race to scale up, the number of AIs being trained on poor-quality data sets has swelled—and it’s going to amplify all kinds of inequities."^^xsd:string ;
+    ns1:hasImageURL "https://media.wired.com/photos/65989cbbc11c9697ca8526d2/191:100/w_1280,c_limit/WW2024_1500238081_TECH_Abeba-Birhane.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Dangerous>,
+        <http://soreOntology.com/topicsItem/Data>,
+        <http://soreOntology.com/topicsItem/Synthetic>,
+        <http://soreOntology.com/topicsItem/Teacher>,
+        <http://soreOntology.com/topicsItem/race> ;
+    ns1:hasNewsUrl "https://www.wired.com/story/synthetic-data-is-a-dangerous-teacher/"^^xsd:string ;
+    ns1:hasTitle "Synthetic Data Is a Dangerous Teacher"^^xsd:string .
+
+<http://soreOntology.com/news/TheCreative’sToolboxGetsanAIUpgrade> a ns1:News ;
+    ns1:hasAuthor "Suhair_Khan"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T12:00:00Z"^^xsd:string ;
+    ns1:hasDescription "It’s easy to accuse algorithms of stifling creativity, but designers of every stripe should be embracing their multidisciplinary abilities."^^xsd:string ;
+    ns1:hasImageURL ""^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AI>,
+        <http://soreOntology.com/topicsItem/Creative>,
+        <http://soreOntology.com/topicsItem/Gets>,
+        <http://soreOntology.com/topicsItem/Toolbox>,
+        <http://soreOntology.com/topicsItem/Upgrade> ;
+    ns1:hasNewsUrl "https://www.wired.com/story/the-creatives-toolbox-gets-an-ai-upgrade/"^^xsd:string ;
+    ns1:hasTitle "The Creative’s Toolbox Gets an AI Upgrade"^^xsd:string .
+
+<http://soreOntology.com/news/TheFramehasbecomesuchahitthatSamsungismakingaspeakerversion> a ns1:News ;
+    ns1:hasAuthor "Chris_Welch"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T03:00:00Z"^^xsd:string ;
+    ns1:hasDescription "Samsung has announced the Music Frame at CES 2024. It’s a stylish wireless speaker inspired by the company’s hugely popular The Frame TV series."^^xsd:string ;
+    ns1:hasImageURL "https://cdn.vox-cdn.com/thumbor/vD3JEL03-g8LGYMssN_owyVuowQ=/0x0:2280x1425/1200x628/filters:focal(1140x713:1141x714)/cdn.vox-cdn.com/uploads/chorus_asset/file/25210232/samsungmusicframe.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Frame>,
+        <http://soreOntology.com/topicsItem/Samsung>,
+        <http://soreOntology.com/topicsItem/hit>,
+        <http://soreOntology.com/topicsItem/making>,
+        <http://soreOntology.com/topicsItem/speaker> ;
+    ns1:hasNewsUrl "https://www.theverge.com/2024/1/7/24029243/samsung-music-frame-speaker-announced-specs-features"^^xsd:string ;
+    ns1:hasTitle "The Frame has become such a hit that Samsung is making a speaker version"^^xsd:string .
+
+<http://soreOntology.com/news/TheMorningAfter:CES2024kicksoffwithtransparentdisplaysfromSamsungandLG> a ns1:News ;
+    ns1:hasAuthor "Mat_Smith"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T18:20:01Z"^^xsd:string ;
+    ns1:hasDescription "Viva Las Vegas! I am contractually obliged to write that in at least one of our posts at CES 2024. So I’m getting it out of the way early. This year, LG and Samsung brought out the big guns, both revealing similar (but technically very different) transparent …"^^xsd:string ;
+    ns1:hasImageURL "None"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/CES>,
+        <http://soreOntology.com/topicsItem/LG>,
+        <http://soreOntology.com/topicsItem/Morning>,
+        <http://soreOntology.com/topicsItem/Samsung>,
+        <http://soreOntology.com/topicsItem/transparent> ;
+    ns1:hasNewsUrl "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_ee6cefbd-537c-467b-98e6-478c16bfe9ce"^^xsd:string ;
+    ns1:hasTitle "The Morning After: CES 2024 kicks off with transparent displays from Samsung and LG"^^xsd:string .
+
+<http://soreOntology.com/news/TheSadTruthoftheFTC'sLocationDataPrivacySettlement> a ns1:News ;
+    ns1:hasAuthor "Dell_Cameron"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-16T12:00:00Z"^^xsd:string ;
+    ns1:hasDescription "The FTC forced a data broker, X-Mode, to stop selling “sensitive location data.” But most companies can avoid such scrutiny by doing the bare minimum, exposing the lack of protections Americans truly have."^^xsd:string ;
+    ns1:hasImageURL "https://media.wired.com/photos/659d9f89c37b6b924675772d/191:100/w_1280,c_limit/location-sec-GettyImages-521853648.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/FTC>,
+        <http://soreOntology.com/topicsItem/Location>,
+        <http://soreOntology.com/topicsItem/Sad>,
+        <http://soreOntology.com/topicsItem/Truth>,
+        <http://soreOntology.com/topicsItem/data> ;
+    ns1:hasNewsUrl "https://www.wired.com/story/ftc-xmode-outlogic-location-data-settlement/"^^xsd:string ;
+    ns1:hasTitle "The Sad Truth of the FTC's Location Data Privacy Settlement"^^xsd:string .
+
+<http://soreOntology.com/news/ThebestofCES2024> a ns1:News ;
+    ns1:hasAuthor "Engadget"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-11T22:00:54Z"^^xsd:string ;
+    ns1:hasDescription "Hello and happy new year! Once again, team Engadget has set up shop in Las Vegas for CES, living out of suitcases so that we can scour the massive show floor and occasionally injure ourselves in the process. For CES 2024, we expected to see AI everywhere, and…"^^xsd:string ;
+    ns1:hasImageURL "https://s.yimg.com/ny/api/res/1.2/VddDPmIqHN3E8PrRmLtF_A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03NDg-/https://s.yimg.com/os/creatr-uploaded-images/2024-01/51c21f70-b0c0-11ee-bd7a-c7723aa3e6f4"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/CES>,
+        <http://soreOntology.com/topicsItem/Hello>,
+        <http://soreOntology.com/topicsItem/best>,
+        <http://soreOntology.com/topicsItem/happy>,
+        <http://soreOntology.com/topicsItem/new> ;
+    ns1:hasNewsUrl "https://www.engadget.com/the-best-of-ces-2024-220054009.html"^^xsd:string ;
+    ns1:hasTitle "The best of CES 2024"^^xsd:string .
+
+<http://soreOntology.com/news/TherearetwogreatreasonstoupgradetoTheLastofUsPartIIRemastered> a ns1:News ;
+    ns1:hasAuthor "Andrew_Webster"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-16T15:00:00Z"^^xsd:string ;
+    ns1:hasDescription "The Last of Us Part 2 Remastered on the PS5 takes the original PS4 game and adds new features like a roguelike mode called No Return and playable levels that were cut from the game."^^xsd:string ;
+    ns1:hasImageURL "https://cdn.vox-cdn.com/thumbor/erB54YWyacr4J-UC8QuTzHaEjCU=/0x0:2000x1125/1200x628/filters:focal(1000x563:1001x564)/cdn.vox-cdn.com/uploads/chorus_asset/file/25221634/thumbnail_2000px_4.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Remastered>,
+        <http://soreOntology.com/topicsItem/game>,
+        <http://soreOntology.com/topicsItem/great>,
+        <http://soreOntology.com/topicsItem/reasons>,
+        <http://soreOntology.com/topicsItem/upgrade> ;
+    ns1:hasNewsUrl "https://www.theverge.com/24035730/the-last-of-us-part-2-remastered-review-ps5"^^xsd:string ;
+    ns1:hasTitle "There are two great reasons to upgrade to The Last of Us Part II Remastered"^^xsd:string .
+
+<http://soreOntology.com/news/Valve'snewguidelineswillallowformoreAIcontentingames> a ns1:News ;
+    ns1:hasAuthor "Mariella_Moon"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-10T13:45:15Z"^^xsd:string ;
+    ns1:hasDescription "Valve has introduced new rules to abide by that will allow the company to add more games with AI content to its Steam gaming platform. To start with, it's updating its content survey form for developers so that they can give the company a description of how t…"^^xsd:string ;
+    ns1:hasImageURL "https://s.yimg.com/ny/api/res/1.2/6r_WIRl2AX_Jhwxsbf6T0A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2024-01/eb00a650-afaf-11ee-b7a7-2b49909e67ca"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AI>,
+        <http://soreOntology.com/topicsItem/Valve>,
+        <http://soreOntology.com/topicsItem/allow>,
+        <http://soreOntology.com/topicsItem/content>,
+        <http://soreOntology.com/topicsItem/new> ;
+    ns1:hasNewsUrl "https://www.engadget.com/valves-new-guidelines-will-allow-for-more-ai-content-in-games-134515623.html"^^xsd:string ;
+    ns1:hasTitle "Valve's new guidelines will allow for more AI content in games"^^xsd:string .
+
+<http://soreOntology.com/news/WanttoStreamWithoutAds?That’llCostYou> a ns1:News ;
+    ns1:hasAuthor "Angela_Watercutter"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-29T20:20:30Z"^^xsd:string ;
+    ns1:hasDescription "Amazon just rolled out its ad-supported plan, the latest in a string of covert streaming price hikes. The halcyon days of commercial-free content are gone."^^xsd:string ;
+    ns1:hasImageURL "https://media.wired.com/photos/65b7e4448eea8de060c99191/191:100/w_1280,c_limit/Streaming-Price-Creep-Amazon-Rings-Of-Power-Culture-RPAZ_S1_FG_01065619_Still1531_R1.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Ads>,
+        <http://soreOntology.com/topicsItem/Amazon>,
+        <http://soreOntology.com/topicsItem/Cost>,
+        <http://soreOntology.com/topicsItem/Stream>,
+        <http://soreOntology.com/topicsItem/Want> ;
+    ns1:hasNewsUrl "https://www.wired.com/story/amazon-prime-video-ad-free-price-hikes/"^^xsd:string ;
+    ns1:hasTitle "Want to Stream Without Ads? That’ll Cost You"^^xsd:string .
+
+<http://soreOntology.com/news/WhatSoundCloudCreatedCanNeverDie> a ns1:News ;
+    ns1:hasAuthor "Jason_Parham"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-14T12:00:00Z"^^xsd:string ;
+    ns1:hasDescription "News broke this week that SoundCloud was looking to be bought. Even in the hands of different owners, its legacy—from Kehlani to “Old Town Road”—remains."^^xsd:string ;
+    ns1:hasImageURL "https://media.wired.com/photos/659f3149c7b54db9dce67934/191:100/w_1280,c_limit/Soundcloud-Trying-To-Sell-Culture-1404056593.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Created>,
+        <http://soreOntology.com/topicsItem/Die>,
+        <http://soreOntology.com/topicsItem/News>,
+        <http://soreOntology.com/topicsItem/SoundCloud>,
+        <http://soreOntology.com/topicsItem/broke> ;
+    ns1:hasNewsUrl "https://www.wired.com/story/what-soundcloud-created-can-never-die/"^^xsd:string ;
+    ns1:hasTitle "What SoundCloud Created Can Never Die"^^xsd:string .
+
+<http://soreOntology.com/news/WhySen.BrianSchatzthinkschildsafetybillsshouldtrumptheFirstAmendment> a ns1:News ;
+    ns1:hasAuthor "Nilay_Patel"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-30T17:00:00Z"^^xsd:string ;
+    ns1:hasDescription "The Democratic senator from Hawaii explains why KOSA won’t lead to harmful speech restrictions."^^xsd:string ;
+    ns1:hasImageURL "https://cdn.vox-cdn.com/thumbor/e0URQQK886G7Ld2bo0XDPtSJ2Xo=/0x0:3000x2000/1200x628/filters:focal(1500x1000:1501x1001)/cdn.vox-cdn.com/uploads/chorus_asset/file/25254957/VRG_DCD_Brian_Schatz.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Brian>,
+        <http://soreOntology.com/topicsItem/Schatz>,
+        <http://soreOntology.com/topicsItem/child>,
+        <http://soreOntology.com/topicsItem/safety>,
+        <http://soreOntology.com/topicsItem/thinks> ;
+    ns1:hasNewsUrl "https://www.theverge.com/24054658/senator-brian-schatz-congress-kosa-first-amendment-regulation-decoder-interview"^^xsd:string ;
+    ns1:hasTitle "Why Sen. Brian Schatz thinks child safety bills should trump the First Amendment"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/ASUS> a ns1:topicItemName ;
+    rdfs:label "ASUS"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Ads> a ns1:topicItemName ;
+    rdfs:label "Ads"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Alzheimer> a ns1:topicItemName ;
+    rdfs:label "Alzheimer"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Apple> a ns1:topicItemName ;
+    rdfs:label "Apple"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Art> a ns1:topicItemName ;
+    rdfs:label "Art"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Arts> a ns1:topicItemName ;
+    rdfs:label "Arts"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Beacon> a ns1:topicItemName ;
+    rdfs:label "Beacon"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Black> a ns1:topicItemName ;
+    rdfs:label "Black"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Books> a ns1:topicItemName ;
+    rdfs:label "Books"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Brian> a ns1:topicItemName ;
+    rdfs:label "Brian"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/COVID> a ns1:topicItemName ;
+    rdfs:label "COVID"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Calendar> a ns1:topicItemName ;
+    rdfs:label "Calendar"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Cost> a ns1:topicItemName ;
+    rdfs:label "Cost"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Created> a ns1:topicItemName ;
+    rdfs:label "Created"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Creative> a ns1:topicItemName ;
+    rdfs:label "Creative"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Dangerous> a ns1:topicItemName ;
+    rdfs:label "Dangerous"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Data> a ns1:topicItemName ;
+    rdfs:label "Data"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Devs> a ns1:topicItemName ;
+    rdfs:label "Devs"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Die> a ns1:topicItemName ;
+    rdfs:label "Die"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Disney> a ns1:topicItemName ;
+    rdfs:label "Disney"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Dumbest> a ns1:topicItemName ;
+    rdfs:label "Dumbest"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/FTC> a ns1:topicItemName ;
+    rdfs:label "FTC"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Fantasy> a ns1:topicItemName ;
+    rdfs:label "Fantasy"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Festival> a ns1:topicItemName ;
+    rdfs:label "Festival"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Final> a ns1:topicItemName ;
+    rdfs:label "Final"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Game> a ns1:topicItemName ;
+    rdfs:label "Game"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Gen> a ns1:topicItemName ;
+    rdfs:label "Gen"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Generated> a ns1:topicItemName ;
+    rdfs:label "Generated"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/George> a ns1:topicItemName ;
+    rdfs:label "George"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Gets> a ns1:topicItemName ;
+    rdfs:label "Gets"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Halo> a ns1:topicItemName ;
+    rdfs:label "Halo"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Hello> a ns1:topicItemName ;
+    rdfs:label "Hello"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/History> a ns1:topicItemName ;
+    rdfs:label "History"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Hormone> a ns1:topicItemName ;
+    rdfs:label "Hormone"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Huge> a ns1:topicItemName ;
+    rdfs:label "Huge"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Incentivized> a ns1:topicItemName ;
+    rdfs:label "Incentivized"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Indie> a ns1:topicItemName ;
+    rdfs:label "Indie"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Kindle> a ns1:topicItemName ;
+    rdfs:label "Kindle"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/LG> a ns1:topicItemName ;
+    rdfs:label "LG"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Lenovo> a ns1:topicItemName ;
+    rdfs:label "Lenovo"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Location> a ns1:topicItemName ;
+    rdfs:label "Location"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Massive> a ns1:topicItemName ;
+    rdfs:label "Massive"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Mavis> a ns1:topicItemName ;
+    rdfs:label "Mavis"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Medical> a ns1:topicItemName ;
+    rdfs:label "Medical"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Month> a ns1:topicItemName ;
+    rdfs:label "Month"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Morning> a ns1:topicItemName ;
+    rdfs:label "Morning"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Mystery> a ns1:topicItemName ;
+    rdfs:label "Mystery"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/News> a ns1:topicItemName ;
+    rdfs:label "News"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Obsessed> a ns1:topicItemName ;
+    rdfs:label "Obsessed"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Palworld> a ns1:topicItemName ;
+    rdfs:label "Palworld"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Peregrine> a ns1:topicItemName ;
+    rdfs:label "Peregrine"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Persona> a ns1:topicItemName ;
+    rdfs:label "Persona"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/ROG> a ns1:topicItemName ;
+    rdfs:label "ROG"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Recalls> a ns1:topicItemName ;
+    rdfs:label "Recalls"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Recap> a ns1:topicItemName ;
+    rdfs:label "Recap"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Reload> a ns1:topicItemName ;
+    rdfs:label "Reload"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Remastered> a ns1:topicItemName ;
+    rdfs:label "Remastered"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Removed> a ns1:topicItemName ;
+    rdfs:label "Removed"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Sad> a ns1:topicItemName ;
+    rdfs:label "Sad"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Scammy> a ns1:topicItemName ;
+    rdfs:label "Scammy"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Schatz> a ns1:topicItemName ;
+    rdfs:label "Schatz"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Scribe> a ns1:topicItemName ;
+    rdfs:label "Scribe"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Seeking> a ns1:topicItemName ;
+    rdfs:label "Seeking"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Self> a ns1:topicItemName ;
+    rdfs:label "Self"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Selfie> a ns1:topicItemName ;
+    rdfs:label "Selfie"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Smart> a ns1:topicItemName ;
+    rdfs:label "Smart"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Snap> a ns1:topicItemName ;
+    rdfs:label "Snap"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Solved> a ns1:topicItemName ;
+    rdfs:label "Solved"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/SoundCloud> a ns1:topicItemName ;
+    rdfs:label "SoundCloud"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Stream> a ns1:topicItemName ;
+    rdfs:label "Stream"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Stunt> a ns1:topicItemName ;
+    rdfs:label "Stunt"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Sundance> a ns1:topicItemName ;
+    rdfs:label "Sundance"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Synthetic> a ns1:topicItemName ;
+    rdfs:label "Synthetic"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/TV> a ns1:topicItemName ;
+    rdfs:label "TV"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Teacher> a ns1:topicItemName ;
+    rdfs:label "Teacher"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Toolbox> a ns1:topicItemName ;
+    rdfs:label "Toolbox"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Touchscreen> a ns1:topicItemName ;
+    rdfs:label "Touchscreen"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Truth> a ns1:topicItemName ;
+    rdfs:label "Truth"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Upgrade> a ns1:topicItemName ;
+    rdfs:label "Upgrade"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Valve> a ns1:topicItemName ;
+    rdfs:label "Valve"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Vision> a ns1:topicItemName ;
+    rdfs:label "Vision"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Want> a ns1:topicItemName ;
+    rdfs:label "Want"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Week> a ns1:topicItemName ;
+    rdfs:label "Week"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/World> a ns1:topicItemName ;
+    rdfs:label "World"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/XIV> a ns1:topicItemName ;
+    rdfs:label "XIV"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Yoga> a ns1:topicItemName ;
+    rdfs:label "Yoga"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Z> a ns1:topicItemName ;
+    rdfs:label "Z"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/allow> a ns1:topicItemName ;
+    rdfs:label "allow"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/anomaly> a ns1:topicItemName ;
+    rdfs:label "anomaly"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/armor> a ns1:topicItemName ;
+    rdfs:label "armor"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/best> a ns1:topicItemName ;
+    rdfs:label "best"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/biggest> a ns1:topicItemName ;
+    rdfs:label "biggest"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/broke> a ns1:topicItemName ;
+    rdfs:label "broke"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/cancer> a ns1:topicItemName ;
+    rdfs:label "cancer"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/child> a ns1:topicItemName ;
+    rdfs:label "child"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/chips> a ns1:topicItemName ;
+    rdfs:label "chips"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/class> a ns1:topicItemName ;
+    rdfs:label "class"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/content> a ns1:topicItemName ;
+    rdfs:label "content"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/data> a ns1:topicItemName ;
+    rdfs:label "data"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/debuts> a ns1:topicItemName ;
+    rdfs:label "debuts"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/decided> a ns1:topicItemName ;
+    rdfs:label "decided"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/doctors> a ns1:topicItemName ;
+    rdfs:label "doctors"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/dose> a ns1:topicItemName ;
+    rdfs:label "dose"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/dubbed> a ns1:topicItemName ;
+    rdfs:label "dubbed"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/easy> a ns1:topicItemName ;
+    rdfs:label "easy"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/great> a ns1:topicItemName ;
+    rdfs:label "great"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/happy> a ns1:topicItemName ;
+    rdfs:label "happy"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/landing> a ns1:topicItemName ;
+    rdfs:label "landing"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/magic> a ns1:topicItemName ;
+    rdfs:label "magic"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/making> a ns1:topicItemName ;
+    rdfs:label "making"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/moon> a ns1:topicItemName ;
+    rdfs:label "moon"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/news> a ns1:topicItemName ;
+    rdfs:label "news"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/nostalgia> a ns1:topicItemName ;
+    rdfs:label "nostalgia"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/note> a ns1:topicItemName ;
+    rdfs:label "note"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/race> a ns1:topicItemName ;
+    rdfs:label "race"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/reasons> a ns1:topicItemName ;
+    rdfs:label "reasons"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/review> a ns1:topicItemName ;
+    rdfs:label "review"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/safety> a ns1:topicItemName ;
+    rdfs:label "safety"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/selfie> a ns1:topicItemName ;
+    rdfs:label "selfie"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/spacecraft> a ns1:topicItemName ;
+    rdfs:label "spacecraft"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/speaker> a ns1:topicItemName ;
+    rdfs:label "speaker"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/stop> a ns1:topicItemName ;
+    rdfs:label "stop"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/suffering> a ns1:topicItemName ;
+    rdfs:label "suffering"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/surprising> a ns1:topicItemName ;
+    rdfs:label "surprising"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/taking> a ns1:topicItemName ;
+    rdfs:label "taking"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/thinks> a ns1:topicItemName ;
+    rdfs:label "thinks"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/thought> a ns1:topicItemName ;
+    rdfs:label "thought"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/touching> a ns1:topicItemName ;
+    rdfs:label "touching"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/transparent> a ns1:topicItemName ;
+    rdfs:label "transparent"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/upgrade> a ns1:topicItemName ;
+    rdfs:label "upgrade"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/wild> a ns1:topicItemName ;
+    rdfs:label "wild"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/bar?> a ns1:JokeTopic ;
+    rdfs:label "bar?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/boo-gers.> a ns1:JokeTopic ;
+    rdfs:label "boo-gers."^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/diets?> a ns1:JokeTopic ;
+    rdfs:label "diets?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/dress> a ns1:JokeTopic ;
+    rdfs:label "dress"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/ghost> a ns1:JokeTopic ;
+    rdfs:label "ghost"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/ghost's> a ns1:JokeTopic ;
+    rdfs:label "ghost's"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/ghosts> a ns1:JokeTopic ;
+    rdfs:label "ghosts"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/ghoulish> a ns1:JokeTopic ;
+    rdfs:label "ghoulish"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/halloween> a ns1:JokeTopic ;
+    rdfs:label "halloween"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/halloween?> a ns1:JokeTopic ;
+    rdfs:label "halloween?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/inside> a ns1:JokeTopic ;
+    rdfs:label "inside"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/kissed> a ns1:JokeTopic ;
+    rdfs:label "kissed"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/nobody.> a ns1:JokeTopic ;
+    rdfs:label "nobody."^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/nose?> a ns1:JokeTopic ;
+    rdfs:label "nose?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/pain> a ns1:JokeTopic ;
+    rdfs:label "pain"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/prom?> a ns1:JokeTopic ;
+    rdfs:label "prom?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/skeleton> a ns1:JokeTopic ;
+    rdfs:label "skeleton"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/son> a ns1:JokeTopic ;
+    rdfs:label "son"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/turkey> a ns1:JokeTopic ;
+    rdfs:label "turkey"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/ugly...> a ns1:JokeTopic ;
+    rdfs:label "ugly..."^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/vampire?> a ns1:JokeTopic ;
+    rdfs:label "vampire?"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Day> a ns1:topicItemName ;
+    rdfs:label "Day"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Frame> a ns1:topicItemName ;
+    rdfs:label "Frame"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Pro> a ns1:topicItemName ;
+    rdfs:label "Pro"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/hit> a ns1:topicItemName ;
+    rdfs:label "hit"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Amazon> a ns1:topicItemName ;
+    rdfs:label "Amazon"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Samsung> a ns1:topicItemName ;
+    rdfs:label "Samsung"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/game> a ns1:topicItemName ;
+    rdfs:label "game"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/CES> a ns1:topicItemName ;
+    rdfs:label "CES"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/new> a ns1:topicItemName ;
+    rdfs:label "new"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/AI> a ns1:topicItemName ;
+    rdfs:label "AI"^^xsd:string .
+
