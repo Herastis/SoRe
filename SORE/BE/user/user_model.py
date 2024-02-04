@@ -15,6 +15,7 @@ person_ontology = Namespace("http://visualdataweb.org/SoreOntology/personOntolog
 
 #stop words
 
+#first , last, email, status, geneder, age, workingplace, education, country, language -> get after country
 class User:
     def __init__(self, first_name, last_name, email, gender, status, interests, country, work, education, age, knows):
         self.graph = Graph()
@@ -23,15 +24,15 @@ class User:
         self.email = email
         self.gender = gender
         self.status = status
-        self.interests = interests
+        self.interests = interests #
         self.country = country
         self.work = work
         self.education = education
         self.age = age
-        self.knows = knows
+        self.knows = knows #
         print('User created')
 
-    def add_health_info(self, interests, country, language):
+    def add_health_info(self, interests, country, language): # health_interests
 
         user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}")
 
@@ -72,7 +73,7 @@ class User:
             #self.graph.add((article_uri, sore.hasTopic, Literal(topic, datatype=XSD.string)))
             i = i + 1
 
-    def add_joke(self, category):
+    def add_joke(self, category): # joke_category, email
         user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}")
 
         jokes = call_joke_api(category)
@@ -102,7 +103,7 @@ class User:
                 self.graph.add((topic_uri, RDF.type, sore.JokeTopic))
                 self.graph.add((topic_uri, RDFS.label, topic_literal))
 
-    def add_interest_news(self, interests, country, language):
+    def add_interest_news(self, interests, country, language): # interest_news_interests, country, language, email
         user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}")
 
         end_point = '/everything'  # /everything /top-headlines
@@ -150,7 +151,10 @@ class User:
     def update_interests(self, updated_interests):
         pass
 
-    def add_friends(self, knows):
+    def getUser(self):
+        pass
+
+    def add_friends(self, knows): # knows, email
         user_uri = URIRef(f"http://soreOntology.com/users/{self.first_name}_{self.last_name}")
 
         for known_email in knows:
@@ -181,7 +185,7 @@ class User:
                 self.graph.add((user_uri, person_ontology.knows, Literal(known_email)))
 
         print('here')
-        # Interests
+        # Interests #descos
         for interest in self.interests:
             interest_uri = URIRef(f"http://soreOntology.com/interestsUser/{interest}")
             self.graph.add((user_uri, person_ontology.hasInterest, interest_uri))
@@ -205,6 +209,8 @@ work = random.choice(["Student", "Teacher", "Engineer"])
 education = random.choice(["HighSchool", "Bachelor", "Master"])
 age = cst.age
 knows = ['user2@gmail.com', 'user3@gmail.com']
+
+
 def create_user(file_path, first_name, last_name, email, gender, status, news_interests, jokes_category, health_interests,  country, work, education, age, knows):
 
     User1 = User(first_name, last_name, email, gender, status, news_interests, country, work, education, age, knows)
@@ -238,4 +244,16 @@ def create_user(file_path, first_name, last_name, email, gender, status, news_in
 #file_path = './'
 #create_user(file_path, first_name, last_name, email, gender, status, news_interests,jokes_category, health_interests, country, work, education, age, knows)
 
+#after register
+User2 = User(first_name, last_name, email, gender, status, news_interests, country, work, education, age, knows)
+user_graph = User2.to_rdf()
+#print(user_graph.serialize(format="turtle"))
 
+#update_profile_to_display news jokes health
+#news_interents = list from front post
+User2.add_interest_news(news_interests, 'us', 'us')
+#print(user_graph.serialize(format="turtle"))
+# display for news tab using sparql on news topic
+
+User2.add_health_info(health_interests, 'us', 'us')
+print(user_graph.serialize(format="turtle"))
