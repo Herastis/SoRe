@@ -27,3 +27,4 @@ def execute_sparql_query(query):
         return response.json()
     else:
         return None
+
