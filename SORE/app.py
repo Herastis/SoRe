@@ -65,6 +65,13 @@ def register():
 
     return jsonify({"msg": "User registered successfully."}), 201
 
+@app.route('/profile', methods=['POST'])
+def save_profile():
+    category_jokes = request.json.get('categoryJokes', None)
+    health_interests = request.json.get('healthInterests', None)
+    news_interests = request.json.get('newsInterests', None)
+    # TO DO save profile for REGISTER and LOGIN
+
 @app.route('/login', methods=['POST'])
 def login():
     email = request.json.get('email', None)
