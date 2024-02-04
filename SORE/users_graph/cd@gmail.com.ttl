@@ -1,0 +1,1034 @@
+@prefix ns1: <http://visualdataweb.org/SoreOntology/> .
+@prefix ns2: <http://visualdataweb.org/SoreOntology/personOntology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://soreOntology.com/users/c_d> a ns2:User ;
+    ns2:firstName "c"^^xsd:string ;
+    ns2:gender "male"^^xsd:string ;
+    ns2:hasAge 32 ;
+    ns2:hasCountry "Romania"^^xsd:string ;
+    ns2:hasEducation ""^^xsd:string ;
+    ns2:hasEmail "cd@gmail.com"^^xsd:string ;
+    ns2:hasInterest <http://soreOntology.com/interestsUser/GameDevelopment>,
+        <http://soreOntology.com/interestsUser/GameReviews>,
+        <http://soreOntology.com/interestsUser/VideoGames> ;
+    ns2:hasJoke <http://soreOntology.com/joke/christmas>,
+        <http://soreOntology.com/joke/elves>,
+        <http://soreOntology.com/joke/grinchs>,
+        <http://soreOntology.com/joke/kind>,
+        <http://soreOntology.com/joke/santa>,
+        <http://soreOntology.com/joke/santa%27s>,
+        <http://soreOntology.com/joke/skeleton> ;
+    ns2:hasRecommendedItem <http://soreOntology.com/medicalNews/MedicalMysterySolved%3FHormoneTreatmentLinkedToAlzheimer%27sInShockingDiscovery-NDTV>,
+        <http://soreOntology.com/medicalNews/ThedoctorsthoughtIwassufferingfromCOVID.Turnsout%2CIhadStage4cancer.-YahooNews>,
+        <http://soreOntology.com/news/%E2%80%98ElShaddai%E2%80%99Interview%3ASawakiTakeyasuontheSwitchPort%2C%E2%80%98Starnaut%E2%80%99%2CandtheFuture>,
+        <http://soreOntology.com/news/7franquiasamadasquepodemretornarem2024>,
+        <http://soreOntology.com/news/AIgamecontrollerreadsyourmind%2Cworkingoutwhatyouwanttodobeforeyouknowyourself>,
+        <http://soreOntology.com/news/AppStories%2CEpisode367%E2%80%93AppleVisionProPreparations%2CQuestions%2CandApps>,
+        <http://soreOntology.com/news/AppStories%2CEpisode368%E2%80%93WorkflowExperiments>,
+        <http://soreOntology.com/news/CES2024%3ANvidiaGPUspowersomereallycoolAIfeatures>,
+        <http://soreOntology.com/news/CollegeAthletesWillNotBecome%E2%80%9CEmployees%E2%80%9DTomorrow>,
+        <http://soreOntology.com/news/Enshroudedupdateswillexpandthebuildingtools%2Ctweakresourcerespawningandfixprogressloss>,
+        <http://soreOntology.com/news/GTASanAndreas%3A7curiosidadessobreocl%C3%A1ssicodaRockstar>,
+        <http://soreOntology.com/news/GillianAndersonJoins%E2%80%98Tron%3AAres%E2%80%99>,
+        <http://soreOntology.com/news/IndianaJonesAndTheGreatCirclecouldbeMachineGamesandBethesda%27snewIndygame>,
+        <http://soreOntology.com/news/LeonemTekken8%3FMododecustomiza%C3%A7%C3%A3odojogomovimentaasredes>,
+        <http://soreOntology.com/news/MagicRaysofLightJoinsMacStories%2CAppleVisionPro%2CImmersiveVideoDetails%2CandJournalingWhatWeWatchwithShortcuts>,
+        <http://soreOntology.com/news/Mygameoftheyearfrom2021isavailableforFREErightnowonPC>,
+        <http://soreOntology.com/news/Netflix%E2%80%99sever-shiftingcontentmodel%3ALivesports%2Cmoregaming%2C%E2%80%98healthyblend%E2%80%99oflicensedshowsandoriginalseries>,
+        <http://soreOntology.com/news/NoestiloNintendoDS%21Novoport%C3%A1til%C3%A9osonhodosf%C3%A3sdeemula%C3%A7%C3%A3o>,
+        <http://soreOntology.com/news/Novaatualiza%C3%A7%C3%A3odoPS5banefamosatrapa%C3%A7aemjogosdetiro>,
+        <http://soreOntology.com/news/Over150%2C000playershavereturnedtoplayMonsterHunter%3AWorldonSteaminthelast24hours%E2%80%94here%27swhy>,
+        <http://soreOntology.com/news/Roboterunterh%C3%A4ltsichmitMenschenbeimgemeinsamenVideospieleabend>,
+        <http://soreOntology.com/news/Sinner%2Cdell%E2%80%99%C2%ABorgoglioitaliano%C2%BBnonfapartelafedelt%C3%A0fiscale>,
+        <http://soreOntology.com/news/Tekken8%3Arelembreahist%C3%B3riadafranquiadelutacomastrodeSuccession>,
+        <http://soreOntology.com/news/TheLastofUs2RemasteredmostrahipocrisiaecrisedeidentidadedaNaughtyDog-Opini%C3%A3o>,
+        <http://soreOntology.com/news/TheSundayPapers>,
+        <http://soreOntology.com/news/TheendofMinecraftLegends%3FMicrosofttostopupdatingblock-bustingspin-off>,
+        <http://soreOntology.com/news/Weneedtechnologythatislessimmersive%2Cnotmore>,
+        <http://soreOntology.com/news/WhyIsGameWritingSoTerrible%3F>,
+        <http://soreOntology.com/news/WhydidthepowerfulheadofNetflix%27smoviestudiojustleave%3F>,
+        <http://soreOntology.com/news/Xbox%3Ajogoscomat%C3%A995%25dedescontoparaXboxOneeSeriesS%7CX> ;
+    ns2:knows "user123@gmail.com",
+        "user2@gmail.com",
+        "user3@gmail.com",
+        "user456@gmail.com" ;
+    ns2:lastName "d"^^xsd:string ;
+    ns2:status "engaged"^^xsd:string ;
+    ns2:workingPlace "Engineering"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/GameDevelopment> a ns1:Interest ;
+    rdfs:label "GameDevelopment"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/GameReviews> a ns1:Interest ;
+    rdfs:label "GameReviews"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/VideoGames> a ns1:Interest ;
+    rdfs:label "VideoGames"^^xsd:string .
+
+<http://soreOntology.com/joke/christmas> a ns1:Joke ;
+    ns1:category "Christmas" ;
+    ns1:delivery "No Brussels!" ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/brexit?>,
+        <http://soreOntology.com/topicsJoke/christmas>,
+        <http://soreOntology.com/topicsJoke/dinner> ;
+    ns1:isSafe false ;
+    ns1:setup "How will Christmas dinner be different after Brexit?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/elves> a ns1:Joke ;
+    ns1:category "Christmas" ;
+    ns1:delivery "Elf-ies!" ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/elves>,
+        <http://soreOntology.com/topicsJoke/post>,
+        <http://soreOntology.com/topicsJoke/social> ;
+    ns1:isSafe true ;
+    ns1:setup "What do elves post on Social Media?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/grinchs> a ns1:Joke ;
+    ns1:category "Christmas" ;
+    ns1:delivery "The Who." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/band?>,
+        <http://soreOntology.com/topicsJoke/favorite>,
+        <http://soreOntology.com/topicsJoke/grinchs> ;
+    ns1:isSafe true ;
+    ns1:setup "Whats the Grinchs least favorite band?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/kind> a ns1:Joke ;
+    ns1:category "Christmas" ;
+    ns1:delivery "A Holly Davidson!" ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/kind>,
+        <http://soreOntology.com/topicsJoke/motorbike>,
+        <http://soreOntology.com/topicsJoke/santa> ;
+    ns1:isSafe true ;
+    ns1:setup "What kind of motorbike does Santa ride?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/santa> a ns1:Joke ;
+    ns1:category "Christmas" ;
+    ns1:delivery "Because it soots him!",
+        "Claustrophobia!",
+        "So he can 'ho ho ho'!" ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/'ho>,
+        <http://soreOntology.com/topicsJoke/chimney?>,
+        <http://soreOntology.com/topicsJoke/gardens?>,
+        <http://soreOntology.com/topicsJoke/santa>,
+        <http://soreOntology.com/topicsJoke/soots>,
+        <http://soreOntology.com/topicsJoke/stuck>,
+        <http://soreOntology.com/topicsJoke/suffer> ;
+    ns1:isSafe true ;
+    ns1:setup "What does Santa suffer from if he gets stuck in a chimney?",
+        "Why does Santa go down the chimney?",
+        "Why does Santa have three gardens?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/santa%27s> a ns1:Joke ;
+    ns1:category "Christmas" ;
+    ns1:delivery "Because he had a low \"elf\" esteem!",
+        "Wrap!" ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/doctor?>,
+        <http://soreOntology.com/topicsJoke/favourite>,
+        <http://soreOntology.com/topicsJoke/helper>,
+        <http://soreOntology.com/topicsJoke/santa's>,
+        <http://soreOntology.com/topicsJoke/type> ;
+    ns1:isSafe true ;
+    ns1:setup "What's Santa's favourite type of music?",
+        "Why did Santa's helper see the doctor?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/joke/skeleton> a ns1:Joke ;
+    ns1:category "Christmas" ;
+    ns1:delivery "Because he had no body to go with!" ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/christmas>,
+        <http://soreOntology.com/topicsJoke/party?>,
+        <http://soreOntology.com/topicsJoke/skeleton> ;
+    ns1:isSafe true ;
+    ns1:setup "Why couldn't the skeleton go to the Christmas party?" ;
+    ns1:type "twopart" .
+
+<http://soreOntology.com/medicalNews/MedicalMysterySolved%3FHormoneTreatmentLinkedToAlzheimer%27sInShockingDiscovery-NDTV> a ns1:Medical_and_Lifestyle ;
+    ns1:hasAuthor "undefined"^^xsd:string ;
+    ns1:hasContent "https://c.ndtvimg.com/2020-09/5u5t590g_alzheimer_625x300_21_September_20.jpg"^^xsd:string ;
+    ns1:hasDescription "The study provides the first evidence of Alzheimer's disease in living people that appears to have been medically acquired and due to transmission of the amyloid-beta protein."^^xsd:string ;
+    ns1:hasMedicalUrl "https://www.ndtv.com/science/medical-mystery-solved-hormone-treatment-linked-to-alzheimers-in-shocking-discovery-4981971"^^xsd:string ;
+    ns1:hasTitle "Medical Mystery Solved? Hormone Treatment Linked To Alzheimer's In Shocking Discovery - NDTV"^^xsd:string ;
+    ns1:hasTopic <http://soreOntology.com/topicsItem/Alzheimer>,
+        <http://soreOntology.com/topicsItem/Hormone>,
+        <http://soreOntology.com/topicsItem/Medical>,
+        <http://soreOntology.com/topicsItem/Mystery>,
+        <http://soreOntology.com/topicsItem/Solved> .
+
+<http://soreOntology.com/medicalNews/ThedoctorsthoughtIwassufferingfromCOVID.Turnsout%2CIhadStage4cancer.-YahooNews> a ns1:Medical_and_Lifestyle ;
+    ns1:hasAuthor "Kelly_Burch"^^xsd:string ;
+    ns1:hasContent "https://s.yimg.com/ny/api/res/1.2/2zTNVeJjSZYWRSAN0nMPKA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD05MDA-/https://media.zenfs.com/en/insider_articles_922/e9141536d480171d565f52340da474d6"^^xsd:string ;
+    ns1:hasDescription "Doctors thought that I had COVID, but it was actually cancer. The thought of getting back on my unicycle got me through treatment and experimental radiation ..."^^xsd:string ;
+    ns1:hasMedicalUrl "https://www.businessinsider.com/doctors-thought-diagnosis-covid-symptoms-actually-cancer-2024-2"^^xsd:string ;
+    ns1:hasTitle "The doctors thought I was suffering from COVID. Turns out, I had Stage 4 cancer. - Yahoo News"^^xsd:string ;
+    ns1:hasTopic <http://soreOntology.com/topicsItem/COVID>,
+        <http://soreOntology.com/topicsItem/cancer>,
+        <http://soreOntology.com/topicsItem/doctors>,
+        <http://soreOntology.com/topicsItem/suffering>,
+        <http://soreOntology.com/topicsItem/thought> .
+
+<http://soreOntology.com/news/%E2%80%98ElShaddai%E2%80%99Interview%3ASawakiTakeyasuontheSwitchPort%2C%E2%80%98Starnaut%E2%80%99%2CandtheFuture> a ns1:News ;
+    ns1:hasAuthor "Shaun_Musgrave"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-31T20:26:52Z"^^xsd:string ;
+    ns1:hasDescription "It's always a pleasure when we get a chance to talk to the creators behind the games, and we've gotten another great opportunity today. Sawaki Takeyasu of Crim, Inc has worked on many legendary games like Okami and Devil May Cry, but as a director he is best …"^^xsd:string ;
+    ns1:hasImageURL "None"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/El>,
+        <http://soreOntology.com/topicsItem/Sawaki>,
+        <http://soreOntology.com/topicsItem/Shaddai>,
+        <http://soreOntology.com/topicsItem/Takeyasu>,
+        <http://soreOntology.com/topicsItem/games> ;
+    ns1:hasNewsUrl "https://toucharcade.com/2024/01/31/el-shaddai-switch-interview-sawaki-takeyasu-starnaut-crim/"^^xsd:string ;
+    ns1:hasTitle "‘El Shaddai’ Interview: Sawaki Takeyasu on the Switch Port, ‘Starnaut’, and the Future"^^xsd:string .
+
+<http://soreOntology.com/news/7franquiasamadasquepodemretornarem2024> a ns1:News ;
+    ns1:hasAuthor "Diego_Borges"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-07T22:00:00Z"^^xsd:string ;
+    ns1:hasDescription "2024 promete ser um ano animado para o mundo dos videogames. Além da expectativa para o anúncio de novas versões dos atuais consoles, PS5 e Xbox Series, há também muitos rumores apontando para a chegada de novos títulos de franquias amadas, onde algumas delas…"^^xsd:string ;
+    ns1:hasImageURL "https://tm.ibxk.com.br/2024/01/01/01212142532001.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/amadas>,
+        <http://soreOntology.com/topicsItem/de>,
+        <http://soreOntology.com/topicsItem/franquias>,
+        <http://soreOntology.com/topicsItem/o>,
+        <http://soreOntology.com/topicsItem/para> ;
+    ns1:hasNewsUrl "https://www.tecmundo.com.br/voxel/275628-7-franquias-amadas-retornar-2024.htm"^^xsd:string ;
+    ns1:hasTitle "7 franquias amadas que podem retornar em 2024"^^xsd:string .
+
+<http://soreOntology.com/news/AIgamecontrollerreadsyourmind%2Cworkingoutwhatyouwanttodobeforeyouknowyourself> a ns1:News ;
+    ns1:hasAuthor "Paul_McNally"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-12T12:24:03Z"^^xsd:string ;
+    ns1:hasDescription """Remember Gameshark? If you were around at the time of the OG PlayStation the name will ring a bell. At […]
+The post AI game controller reads your mind, working out what you want to do before you know yourself appeared first on ReadWrite."""^^xsd:string ;
+    ns1:hasImageURL "https://readwrite.com/wp-content/uploads/2024/01/aishark_controller.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AI>,
+        <http://soreOntology.com/topicsItem/controller>,
+        <http://soreOntology.com/topicsItem/game>,
+        <http://soreOntology.com/topicsItem/mind>,
+        <http://soreOntology.com/topicsItem/reads> ;
+    ns1:hasNewsUrl "https://readwrite.com/ai-game-controller/"^^xsd:string ;
+    ns1:hasTitle "AI game controller reads your mind, working out what you want to do before you know yourself"^^xsd:string .
+
+<http://soreOntology.com/news/AppStories%2CEpisode367%E2%80%93AppleVisionProPreparations%2CQuestions%2CandApps> a ns1:News ;
+    ns1:hasAuthor "John_Voorhees"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-22T19:33:35Z"^^xsd:string ;
+    ns1:hasDescription "This week on AppStories, we kick Apple Vision Pro preparations into high gear, sharing the questions we still have about the device and discussing the apps developers are working on. [subscribe_to_appstories] Sponsored by: Notion – Do your most efficient work…"^^xsd:string ;
+    ns1:hasImageURL "https://cdn.macstories.net/banneras-1629219199428.png"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AppStories>,
+        <http://soreOntology.com/topicsItem/Apple>,
+        <http://soreOntology.com/topicsItem/Episode>,
+        <http://soreOntology.com/topicsItem/Pro>,
+        <http://soreOntology.com/topicsItem/Vision> ;
+    ns1:hasNewsUrl "https://www.macstories.net/linked/appstories-episode-367-apple-vision-pro-preparations-questions-and-apps/"^^xsd:string ;
+    ns1:hasTitle "AppStories, Episode 367 – Apple Vision Pro Preparations, Questions, and Apps"^^xsd:string .
+
+<http://soreOntology.com/news/AppStories%2CEpisode368%E2%80%93WorkflowExperiments> a ns1:News ;
+    ns1:hasAuthor "John_Voorhees"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-29T20:07:42Z"^^xsd:string ;
+    ns1:hasDescription "This week on AppStories, we explore workflows we’ve been trying in a variety of apps. [subscribe_to_appstories] Sponsored by: Memberful - Help your clients monetize their passion. Get started for free today! On AppStories+, Federico and John follow up last we…"^^xsd:string ;
+    ns1:hasImageURL "https://cdn.macstories.net/banneras-1629219199428.png"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AppStories>,
+        <http://soreOntology.com/topicsItem/Episode>,
+        <http://soreOntology.com/topicsItem/Experiments>,
+        <http://soreOntology.com/topicsItem/Workflow>,
+        <http://soreOntology.com/topicsItem/week> ;
+    ns1:hasNewsUrl "https://www.macstories.net/linked/appstories-episode-368-workflow-experiments/"^^xsd:string ;
+    ns1:hasTitle "AppStories, Episode 368 – Workflow Experiments"^^xsd:string .
+
+<http://soreOntology.com/news/CES2024%3ANvidiaGPUspowersomereallycoolAIfeatures> a ns1:News ;
+    ns1:hasAuthor "João_Carrasqueira"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-10T14:00:18Z"^^xsd:string ;
+    ns1:hasDescription "Nvidia's showcase at CES 2024 included some awesome AI demos and a lot of new GPUs from partners. Here's the coolest stuff we saw."^^xsd:string ;
+    ns1:hasImageURL "https://static1.xdaimages.com/wordpress/wp-content/uploads/wm/2024/01/chat-with-rtx-4-1.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AI>,
+        <http://soreOntology.com/topicsItem/CES>,
+        <http://soreOntology.com/topicsItem/GPUs>,
+        <http://soreOntology.com/topicsItem/Nvidia>,
+        <http://soreOntology.com/topicsItem/power> ;
+    ns1:hasNewsUrl "https://www.xda-developers.com/ces-2024-nvidia-gpus-ai/"^^xsd:string ;
+    ns1:hasTitle "CES 2024: Nvidia GPUs power some really cool AI features"^^xsd:string .
+
+<http://soreOntology.com/news/CollegeAthletesWillNotBecome%E2%80%9CEmployees%E2%80%9DTomorrow> a ns1:News ;
+    ns1:hasAuthor "Donna_Lopiano,_Contributor,_Donna_Lopiano,_Contributor_https://www.forbes.com/sites/donnalopiano/"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-03T12:30:00Z"^^xsd:string ;
+    ns1:hasDescription "NCAA President Charlie Baker’s December 5, 2023 proposal would create a new \"rich institutions\" subdivision within Division I that would permit institutions to provide..."^^xsd:string ;
+    ns1:hasImageURL "https://imageio.forbes.com/specials-images/imageserve/65925aa4aaeb141ff6e2e7e0/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Athletes>,
+        <http://soreOntology.com/topicsItem/College>,
+        <http://soreOntology.com/topicsItem/Employees>,
+        <http://soreOntology.com/topicsItem/Tomorrow>,
+        <http://soreOntology.com/topicsItem/institutions> ;
+    ns1:hasNewsUrl "https://www.forbes.com/sites/donnalopiano/2024/01/03/college-athletes-will-not-become-employees-tomorrow/"^^xsd:string ;
+    ns1:hasTitle "College Athletes Will Not Become “Employees” Tomorrow"^^xsd:string .
+
+<http://soreOntology.com/news/Enshroudedupdateswillexpandthebuildingtools%2Ctweakresourcerespawningandfixprogressloss> a ns1:News ;
+    ns1:hasAuthor "Edwin_Evans-Thirlwell"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-26T12:16:13Z"^^xsd:string ;
+    ns1:hasDescription "Now see here Ollie Toms, supposed guides editor of this supposed videogames website - if Enshrouded really does have \"the best building system in the survival genre\" then why does the floor of my hovel look like a petrified sneeze? I was innocently carving my…"^^xsd:string ;
+    ns1:hasImageURL "https://assetsio.reedpopcdn.com/enshrouded-salt.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Enshrouded>,
+        <http://soreOntology.com/topicsItem/building>,
+        <http://soreOntology.com/topicsItem/expand>,
+        <http://soreOntology.com/topicsItem/supposed>,
+        <http://soreOntology.com/topicsItem/updates> ;
+    ns1:hasNewsUrl "https://www.rockpapershotgun.com/enshrouded-updates-will-expand-the-building-tools-speed-up-resource-respawning-and-fix-progress-loss"^^xsd:string ;
+    ns1:hasTitle "Enshrouded updates will expand the building tools, tweak resource respawning and fix progress loss"^^xsd:string .
+
+<http://soreOntology.com/news/GTASanAndreas%3A7curiosidadessobreocl%C3%A1ssicodaRockstar> a ns1:News ;
+    ns1:hasAuthor "Valdecir_Emboava"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-30T17:00:00Z"^^xsd:string ;
+    ns1:hasDescription "Lançado em 2004 pela Rockstar, GTA San Andreas não era apenas mais um jogo na renomada série Grand Theft Auto. Situado no fictício estado de San Andreas, inspirado na Califórnia e em outros locais do oeste norte-americano, o game mergulhou os jogadores em uma…"^^xsd:string ;
+    ns1:hasImageURL "https://tm.ibxk.com.br/2024/01/29/29103948901064.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Andreas>,
+        <http://soreOntology.com/topicsItem/GTA>,
+        <http://soreOntology.com/topicsItem/San>,
+        <http://soreOntology.com/topicsItem/em>,
+        <http://soreOntology.com/topicsItem/o> ;
+    ns1:hasNewsUrl "https://www.tecmundo.com.br/voxel/279380-gta-san-andreas-7-curiosidades-classico-rockstar.htm"^^xsd:string ;
+    ns1:hasTitle "GTA San Andreas: 7 curiosidades sobre o clássico da Rockstar"^^xsd:string .
+
+<http://soreOntology.com/news/GillianAndersonJoins%E2%80%98Tron%3AAres%E2%80%99> a ns1:News ;
+    ns1:hasAuthor "Zac_Ntim"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-22T14:30:00Z"^^xsd:string ;
+    ns1:hasDescription "EXCLUSIVE: Double Emmy and Golden Globe-winning actress Gillian Anderson has signed on to join the cast of Tron: Ares, the third film in the Tron sci-fi franchise from Disney.  Anderson joins a buzzy cast that includes Jared Leto, Jodie Turner-Smith (Queen & …"^^xsd:string ;
+    ns1:hasImageURL "https://deadline.com/wp-content/uploads/2024/01/thumbnail_Richard-Phibbs.jpeg?w=681"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Anderson>,
+        <http://soreOntology.com/topicsItem/Ares>,
+        <http://soreOntology.com/topicsItem/Gillian>,
+        <http://soreOntology.com/topicsItem/Tron>,
+        <http://soreOntology.com/topicsItem/cast> ;
+    ns1:hasNewsUrl "http://deadline.com/2024/01/gillian-anderson-tron-ares-disney-1235800292/"^^xsd:string ;
+    ns1:hasTitle "Gillian Anderson Joins ‘Tron: Ares’"^^xsd:string .
+
+<http://soreOntology.com/news/IndianaJonesAndTheGreatCirclecouldbeMachineGamesandBethesda%27snewIndygame> a ns1:News ;
+    ns1:hasAuthor "Edwin_Evans-Thirlwell"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-11T12:14:36Z"^^xsd:string ;
+    ns1:hasDescription """Indiana Jones And The Great Circle appears to be the title of Bethesda and Lucasfilm's new Indiana Jones game created by Wolfenstein developers MachineGames, if a recent brace of domain registrations are any indication.
+ Read more"""^^xsd:string ;
+    ns1:hasImageURL "https://assetsio.reedpopcdn.com/indiana-jones-harrison-ford.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Circle>,
+        <http://soreOntology.com/topicsItem/Great>,
+        <http://soreOntology.com/topicsItem/Indiana>,
+        <http://soreOntology.com/topicsItem/Jones>,
+        <http://soreOntology.com/topicsItem/MachineGames> ;
+    ns1:hasNewsUrl "https://www.rockpapershotgun.com/indiana-jones-and-the-great-circle-could-be-machinegames-and-bethesdas-new-indy-game"^^xsd:string ;
+    ns1:hasTitle "Indiana Jones And The Great Circle could be MachineGames and Bethesda's new Indy game"^^xsd:string .
+
+<http://soreOntology.com/news/LeonemTekken8%3FMododecustomiza%C3%A7%C3%A3odojogomovimentaasredes> a ns1:News ;
+    ns1:hasAuthor "Valdecir_Emboava"^^xsd:string ;
+    ns1:hasDatePublished "2024-02-02T18:00:32Z"^^xsd:string ;
+    ns1:hasDescription "Tekken 8 foi lançado na última sexta-feira (26) para PlayStation 5, Xbox Series X|S e PC, trazendo um leque de possibilidades quase que infinito em seu sistema de customização de personagens. A ferramenta, inclusive, vem rendendo uma série de visuais e referê…"^^xsd:string ;
+    ns1:hasImageURL "https://tm.ibxk.com.br/2024/02/01/01100059202053.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Tekken>,
+        <http://soreOntology.com/topicsItem/customização>,
+        <http://soreOntology.com/topicsItem/de>,
+        <http://soreOntology.com/topicsItem/e>,
+        <http://soreOntology.com/topicsItem/em> ;
+    ns1:hasNewsUrl "https://www.tecmundo.com.br/voxel/279545-leon-tekken-8-modo-customizacao-jogo-movimenta-redes.htm"^^xsd:string ;
+    ns1:hasTitle "Leon em Tekken 8? Modo de customização do jogo movimenta as redes"^^xsd:string .
+
+<http://soreOntology.com/news/MagicRaysofLightJoinsMacStories%2CAppleVisionPro%2CImmersiveVideoDetails%2CandJournalingWhatWeWatchwithShortcuts> a ns1:News ;
+    ns1:hasAuthor "Devon_Dundee"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-17T20:13:07Z"^^xsd:string ;
+    ns1:hasDescription "[audio_player src=”https://traffic.libsyn.com/523780f5-37d4-4397-9a07-f454cb69eb24/mrol105final.mp3” mime_type=”audio/mpeg” total_duration=”01:27:41” caption=”“] [subscribe_to_magicraysoflight] This week on Magic Rays of Light, Sigmund and Devon are joined by…"^^xsd:string ;
+    ns1:hasImageURL "https://56243e3f6f46fe44a301-deabeb5f3878e3553d0b065ea974f9bf.ssl.cf1.rackcdn.com/256px.png"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Joins>,
+        <http://soreOntology.com/topicsItem/Light>,
+        <http://soreOntology.com/topicsItem/MacStories>,
+        <http://soreOntology.com/topicsItem/Magic>,
+        <http://soreOntology.com/topicsItem/Rays> ;
+    ns1:hasNewsUrl "https://www.macstories.net/linked/magic-rays-of-light-joins-macstories-apple-vision-pro-immersive-video-details-and-journaling-what-we-watch-with-shortcuts/"^^xsd:string ;
+    ns1:hasTitle "Magic Rays of Light Joins MacStories, Apple Vision Pro, Immersive Video Details, and Journaling What We Watch with Shortcuts"^^xsd:string .
+
+<http://soreOntology.com/news/Mygameoftheyearfrom2021isavailableforFREErightnowonPC> a ns1:News ;
+    ns1:hasAuthor "Michaelrhoglund@gmail.com_(Michael_Hoglund)"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-08T22:06:26Z"^^xsd:string ;
+    ns1:hasDescription "The Epic Games Store has released my 2021 game of the year for free on their storefront. You need to grab it and play it before it's gone!"^^xsd:string ;
+    ns1:hasImageURL "https://cdn.mos.cms.futurecdn.net/bCUN7AGZTCbVax67G2CqUD-1200-80.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/FREE>,
+        <http://soreOntology.com/topicsItem/available>,
+        <http://soreOntology.com/topicsItem/game>,
+        <http://soreOntology.com/topicsItem/right>,
+        <http://soreOntology.com/topicsItem/year> ;
+    ns1:hasNewsUrl "https://www.windowscentral.com/gaming/my-game-of-the-year-from-2021-is-available-for-free-right-now-on-pc"^^xsd:string ;
+    ns1:hasTitle "My game of the year from 2021 is available for FREE right now on PC"^^xsd:string .
+
+<http://soreOntology.com/news/Netflix%E2%80%99sever-shiftingcontentmodel%3ALivesports%2Cmoregaming%2C%E2%80%98healthyblend%E2%80%99oflicensedshowsandoriginalseries> a ns1:News ;
+    ns1:hasAuthor "Jon_Swartz"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-23T22:50:00Z"^^xsd:string ;
+    ns1:hasDescription "Netflix \"will continue to maintain a healthy blend of licensed titles and original series,\" co-CEO Ted Sarandos says."^^xsd:string ;
+    ns1:hasImageURL "https://images.mktw.net/im-327996/social"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Netflix>,
+        <http://soreOntology.com/topicsItem/blend>,
+        <http://soreOntology.com/topicsItem/healthy>,
+        <http://soreOntology.com/topicsItem/licensed>,
+        <http://soreOntology.com/topicsItem/original> ;
+    ns1:hasNewsUrl "https://www.marketwatch.com/story/netflixs-ever-shifting-content-model-live-sports-more-gaming-healthy-blend-of-licensed-shows-and-original-series-04d5fb43"^^xsd:string ;
+    ns1:hasTitle "Netflix’s ever-shifting content model: Live sports, more gaming, ‘healthy blend’ of licensed shows and original series"^^xsd:string .
+
+<http://soreOntology.com/news/NoestiloNintendoDS%21Novoport%C3%A1til%C3%A9osonhodosf%C3%A3sdeemula%C3%A7%C3%A3o> a ns1:News ;
+    ns1:hasAuthor "Valdecir_Emboava"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-15T20:30:00Z"^^xsd:string ;
+    ns1:hasDescription "Quando o assunto é videogames, a nostalgia muitas vezes se encontra com a inovação — e é exatamente essa a ideia da AYANEO, uma empresa conhecida por produzir os portáteis de emulação mais diferentões do mercado. Os novos modelos AYANEO Flip KB e AYANEO Flip …"^^xsd:string ;
+    ns1:hasImageURL "https://tm.ibxk.com.br/2024/01/15/15151756329212.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/AYANEO>,
+        <http://soreOntology.com/topicsItem/de>,
+        <http://soreOntology.com/topicsItem/emulação>,
+        <http://soreOntology.com/topicsItem/o>,
+        <http://soreOntology.com/topicsItem/é> ;
+    ns1:hasNewsUrl "https://www.tecmundo.com.br/voxel/276954-estilo-nintendo-ds-novo-portatil-sonho-fas-emulacao.htm"^^xsd:string ;
+    ns1:hasTitle "No estilo Nintendo DS! Novo portátil é o sonho dos fãs de emulação"^^xsd:string .
+
+<http://soreOntology.com/news/Novaatualiza%C3%A7%C3%A3odoPS5banefamosatrapa%C3%A7aemjogosdetiro> a ns1:News ;
+    ns1:hasAuthor "Amanda_Firmino_dos_Santos"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-26T15:00:00Z"^^xsd:string ;
+    ns1:hasDescription "A tão aguardada atualização do software de sistema 24.01-08.60.00 do PlayStation 5, lançada nesta quarta-feira (24), trouxe não apenas melhorias, mas também uma surpresa desagradável para alguns usuários. Enquanto a Sony destacava funcionalidades adicionadas …"^^xsd:string ;
+    ns1:hasImageURL "https://tm.ibxk.com.br/2024/01/24/24180200044312.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Nova>,
+        <http://soreOntology.com/topicsItem/atualização>,
+        <http://soreOntology.com/topicsItem/bane>,
+        <http://soreOntology.com/topicsItem/de>,
+        <http://soreOntology.com/topicsItem/famosa> ;
+    ns1:hasNewsUrl "https://www.tecmundo.com.br/voxel/279316-nova-atualizacao-ps5-bane-famosa-trapaca-jogos-tiro.htm"^^xsd:string ;
+    ns1:hasTitle "Nova atualização do PS5 bane famosa trapaça em jogos de tiro"^^xsd:string .
+
+<http://soreOntology.com/news/Over150%2C000playershavereturnedtoplayMonsterHunter%3AWorldonSteaminthelast24hours%E2%80%94here%27swhy> a ns1:News ;
+    ns1:hasAuthor "Alexander_Cope"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-05T19:28:59Z"^^xsd:string ;
+    ns1:hasDescription "Monster Hunter: World, one of Capcom's most successful videogames in recent memory, is witnessing a gigantic surge of players returning to hunt on Steam."^^xsd:string ;
+    ns1:hasImageURL "https://cdn.mos.cms.futurecdn.net/yopSdFCNvHeXmsjaduKpfg-1200-80.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Hunter>,
+        <http://soreOntology.com/topicsItem/Monster>,
+        <http://soreOntology.com/topicsItem/Steam>,
+        <http://soreOntology.com/topicsItem/World>,
+        <http://soreOntology.com/topicsItem/players> ;
+    ns1:hasNewsUrl "https://www.windowscentral.com/gaming/pc-gaming/over-150000-players-return-to-play-monster-hunter-world-on-steam-in-the-last-24-hours"^^xsd:string ;
+    ns1:hasTitle "Over 150,000 players have returned to play Monster Hunter: World on Steam in the last 24 hours — here's why"^^xsd:string .
+
+<http://soreOntology.com/news/Roboterunterh%C3%A4ltsichmitMenschenbeimgemeinsamenVideospieleabend> a ns1:News ;
+    ns1:hasAuthor "Oliver_Bünte"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-11T09:54:00Z"^^xsd:string ;
+    ns1:hasDescription "Zu zweit machen Videogames mehr Spaß. Gilt das auch, wenn man gegen einen sprechenden Roboter spielt?"^^xsd:string ;
+    ns1:hasImageURL "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/4/5/2/4/3/5/9/roboter_spielt_und_unterha__lt_sich-c471dc84a83279b2.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Menschen>,
+        <http://soreOntology.com/topicsItem/Roboter>,
+        <http://soreOntology.com/topicsItem/mit>,
+        <http://soreOntology.com/topicsItem/sich>,
+        <http://soreOntology.com/topicsItem/unterhält> ;
+    ns1:hasNewsUrl "https://www.heise.de/news/Roboter-unterhaelt-sich-mit-Menschen-beim-gemeinsamen-Videospieleabend-9594087.html"^^xsd:string ;
+    ns1:hasTitle "Roboter unterhält sich mit Menschen beim gemeinsamen Videospieleabend"^^xsd:string .
+
+<http://soreOntology.com/news/Sinner%2Cdell%E2%80%99%C2%ABorgoglioitaliano%C2%BBnonfapartelafedelt%C3%A0fiscale> a ns1:News ;
+    ns1:hasAuthor "Aldo_Cazzullo"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-30T01:00:33Z"^^xsd:string ;
+    ns1:hasDescription "&#44;"^^xsd:string ;
+    ns1:hasImageURL "https://images2.corriereobjects.it/methode_image/socialshare/2017/10/13/7f0dfd78-b02c-11e7-9acf-3e6278e701f3.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Sinner>,
+        <http://soreOntology.com/topicsItem/fa>,
+        <http://soreOntology.com/topicsItem/italiano>,
+        <http://soreOntology.com/topicsItem/non>,
+        <http://soreOntology.com/topicsItem/parte> ;
+    ns1:hasNewsUrl "https://www.corriere.it/lodicoalcorriere/index/29-01-2024/index.shtml"^^xsd:string ;
+    ns1:hasTitle "Sinner, dell’«orgoglio italiano» non fa parte la fedeltà fiscale"^^xsd:string .
+
+<http://soreOntology.com/news/Tekken8%3Arelembreahist%C3%B3riadafranquiadelutacomastrodeSuccession> a ns1:News ;
+    ns1:hasAuthor "Valdecir_Emboava"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-09T17:30:00Z"^^xsd:string ;
+    ns1:hasDescription "O ano de 2023 foi repleto de surpresas para os fãs de jogos de luta — e 2024 já começa com o pé direito. Tekken 8 está previsto para chegar ao PlayStation 5, Xbox Series X|S e ao PC no dia 26 de janeiro. Como estamos cada vez mais próximos da data, nada melho…"^^xsd:string ;
+    ns1:hasImageURL "https://tm.ibxk.com.br/2024/01/09/09120154793133.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Tekken>,
+        <http://soreOntology.com/topicsItem/com>,
+        <http://soreOntology.com/topicsItem/da>,
+        <http://soreOntology.com/topicsItem/de>,
+        <http://soreOntology.com/topicsItem/luta> ;
+    ns1:hasNewsUrl "https://www.tecmundo.com.br/voxel/275715-tekken-8-relembre-historia-franquia-luta-astro-succession.htm"^^xsd:string ;
+    ns1:hasTitle "Tekken 8: relembre a história da franquia de luta com astro de Succession"^^xsd:string .
+
+<http://soreOntology.com/news/TheLastofUs2RemasteredmostrahipocrisiaecrisedeidentidadedaNaughtyDog-Opini%C3%A3o> a ns1:News ;
+    ns1:hasAuthor "Mateus_Mognon"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-19T16:00:01Z"^^xsd:string ;
+    ns1:hasDescription "Poucas franquias no mundo dos games tem um poder de comoção tão grande quanto The Last of Us. Iniciada em 2013, a série de jogos ganhou uma legião de fãs com seu universo devastado, suas histórias densas e, o mais importante de tudo, seus carismáticos persona…"^^xsd:string ;
+    ns1:hasImageURL "https://tm.ibxk.com.br/2024/01/18/18110230064093.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Remastered>,
+        <http://soreOntology.com/topicsItem/de>,
+        <http://soreOntology.com/topicsItem/e>,
+        <http://soreOntology.com/topicsItem/hipocrisia>,
+        <http://soreOntology.com/topicsItem/mostra> ;
+    ns1:hasNewsUrl "https://www.tecmundo.com.br/voxel/277076-the-last-of-us-2-remastered-mostra-hipocrisia-crise-identidade-naughty-dog-opiniao.htm"^^xsd:string ;
+    ns1:hasTitle "The Last of Us 2 Remastered mostra hipocrisia e crise de identidade da Naughty Dog - Opinião"^^xsd:string .
+
+<http://soreOntology.com/news/TheSundayPapers> a ns1:News ;
+    ns1:hasAuthor "Ed_Thorn"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-07T11:00:00Z"^^xsd:string,
+        "2024-01-14T11:00:00Z"^^xsd:string,
+        "2024-01-21T11:00:00Z"^^xsd:string ;
+    ns1:hasDescription """Sundays are for coming back from Christmas and New Year in a stupor. Let's wake up with the week's best writing about games and game-related things.
+ Read more"""^^xsd:string,
+        """Sundays are for doing back mobility exercises because your body is crumbling. Let's stretch as we read the week's best writing about games and game-related things.
+ Read more"""^^xsd:string,
+        """Sundays are for searching for book recommendations. Let's browse as we also peruse the week's best writing about games and game-related things.
+ Read more"""^^xsd:string ;
+    ns1:hasImageURL "https://assetsio.reedpopcdn.com/the-sunday-papers-big.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Christmas>,
+        <http://soreOntology.com/topicsItem/Papers>,
+        <http://soreOntology.com/topicsItem/Sunday>,
+        <http://soreOntology.com/topicsItem/Sundays>,
+        <http://soreOntology.com/topicsItem/book>,
+        <http://soreOntology.com/topicsItem/coming>,
+        <http://soreOntology.com/topicsItem/exercises>,
+        <http://soreOntology.com/topicsItem/mobility>,
+        <http://soreOntology.com/topicsItem/searching> ;
+    ns1:hasNewsUrl "https://www.rockpapershotgun.com/the-sunday-papers-702"^^xsd:string,
+        "https://www.rockpapershotgun.com/the-sunday-papers-703"^^xsd:string,
+        "https://www.rockpapershotgun.com/the-sunday-papers-704"^^xsd:string ;
+    ns1:hasTitle "The Sunday Papers"^^xsd:string .
+
+<http://soreOntology.com/news/TheendofMinecraftLegends%3FMicrosofttostopupdatingblock-bustingspin-off> a ns1:News ;
+    ns1:hasAuthor "Paul_McNally"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-10T16:44:38Z"^^xsd:string ;
+    ns1:hasDescription """After less than a year of active production, it looks like the ender is nigh for spin-off Minecraft Dungeons with […]
+The post The end of Minecraft Legends? Microsoft to stop updating block-busting spin-off appeared first on ReadWrite."""^^xsd:string ;
+    ns1:hasImageURL "https://readwrite.com/wp-content/uploads/2024/01/minecraft_legends.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Legends>,
+        <http://soreOntology.com/topicsItem/Microsoft>,
+        <http://soreOntology.com/topicsItem/Minecraft>,
+        <http://soreOntology.com/topicsItem/end>,
+        <http://soreOntology.com/topicsItem/spin> ;
+    ns1:hasNewsUrl "https://readwrite.com/the-end-of-minecraft-legends-microsoft-to-stop-updating-block-busting-spin-off/"^^xsd:string ;
+    ns1:hasTitle "The end of Minecraft Legends? Microsoft to stop updating block-busting spin-off"^^xsd:string .
+
+<http://soreOntology.com/news/Weneedtechnologythatislessimmersive%2Cnotmore> a ns1:News ;
+    ns1:hasAuthor "We_need_technology_that_is_less_immersive,_not_more"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-12T14:43:52Z"^^xsd:string ;
+    ns1:hasDescription "How come so many of the most talented engineers of our time work on making our entertainment more immersive?"^^xsd:string ;
+    ns1:hasImageURL "https://filiph.net/text/imgs/are-virtual-reality-games-safe-for-kids.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/come>,
+        <http://soreOntology.com/topicsItem/immersive>,
+        <http://soreOntology.com/topicsItem/need>,
+        <http://soreOntology.com/topicsItem/talented>,
+        <http://soreOntology.com/topicsItem/technology> ;
+    ns1:hasNewsUrl "https://filiph.net/text/we-need-technology-that-is-less-immersive,-not-more.html"^^xsd:string ;
+    ns1:hasTitle "We need technology that is less immersive, not more"^^xsd:string .
+
+<http://soreOntology.com/news/WhyIsGameWritingSoTerrible%3F> a ns1:News ;
+    ns1:hasAuthor "undefined"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-27T12:18:29Z"^^xsd:string ;
+    ns1:hasDescription "Comments"^^xsd:string ;
+    ns1:hasImageURL "None"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Comments>,
+        <http://soreOntology.com/topicsItem/Game>,
+        <http://soreOntology.com/topicsItem/Terrible>,
+        <http://soreOntology.com/topicsItem/Writing> ;
+    ns1:hasNewsUrl "https://www.shamusyoung.com/twentysidedtale/?p=52945"^^xsd:string ;
+    ns1:hasTitle "Why Is Game Writing So Terrible?"^^xsd:string .
+
+<http://soreOntology.com/news/WhydidthepowerfulheadofNetflix%27smoviestudiojustleave%3F> a ns1:News ;
+    ns1:hasAuthor "Peter_Kafka"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-22T23:29:07Z"^^xsd:string ;
+    ns1:hasDescription "It would be surprising if Netflix's Scott Stuber simply grew tired of holding one of the most powerful jobs in entertainment."^^xsd:string ;
+    ns1:hasImageURL "https://i.insider.com/65aef6cfdcdb354a985a04c1?width=1200&format=jpeg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Netflix>,
+        <http://soreOntology.com/topicsItem/head>,
+        <http://soreOntology.com/topicsItem/movie>,
+        <http://soreOntology.com/topicsItem/powerful>,
+        <http://soreOntology.com/topicsItem/studio> ;
+    ns1:hasNewsUrl "https://www.businessinsider.com/netflix-movie-studio-chief-scott-stuber-just-left-why-2024-1"^^xsd:string ;
+    ns1:hasTitle "Why did the powerful head of Netflix's movie studio just leave?"^^xsd:string .
+
+<http://soreOntology.com/news/Xbox%3Ajogoscomat%C3%A995%25dedescontoparaXboxOneeSeriesS%7CX> a ns1:News ;
+    ns1:hasAuthor "Rodrigo_Estevam"^^xsd:string ;
+    ns1:hasDatePublished "2024-01-10T22:30:00Z"^^xsd:string ;
+    ns1:hasDescription "Chegamos à segunda semana do ano e nada melhor do que se preparar para o final de semana de jogatina do que dando uma conferida nas ofertas da semana para os consoles Xbox. Como de costume, trazemos para você diversos títulos com preço reduzido para Xbox One,…"^^xsd:string ;
+    ns1:hasImageURL "https://tm.ibxk.com.br/2024/01/10/10160004080264.jpg"^^xsd:string ;
+    ns1:hasJokeTopic <http://soreOntology.com/topicsItem/Xbox>,
+        <http://soreOntology.com/topicsItem/com>,
+        <http://soreOntology.com/topicsItem/de>,
+        <http://soreOntology.com/topicsItem/para>,
+        <http://soreOntology.com/topicsItem/semana> ;
+    ns1:hasNewsUrl "https://www.tecmundo.com.br/voxel/275782-xbox-jogos-95-desconto-xbox-one-series-s-x.htm"^^xsd:string ;
+    ns1:hasTitle "Xbox: jogos com até 95% de desconto para Xbox One e Series S|X"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/AYANEO> a ns1:topicItemName ;
+    rdfs:label "AYANEO"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Alzheimer> a ns1:topicItemName ;
+    rdfs:label "Alzheimer"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Anderson> a ns1:topicItemName ;
+    rdfs:label "Anderson"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Andreas> a ns1:topicItemName ;
+    rdfs:label "Andreas"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Apple> a ns1:topicItemName ;
+    rdfs:label "Apple"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Ares> a ns1:topicItemName ;
+    rdfs:label "Ares"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Athletes> a ns1:topicItemName ;
+    rdfs:label "Athletes"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/CES> a ns1:topicItemName ;
+    rdfs:label "CES"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/COVID> a ns1:topicItemName ;
+    rdfs:label "COVID"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Christmas> a ns1:topicItemName ;
+    rdfs:label "Christmas"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Circle> a ns1:topicItemName ;
+    rdfs:label "Circle"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/College> a ns1:topicItemName ;
+    rdfs:label "College"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Comments> a ns1:topicItemName ;
+    rdfs:label "Comments"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/El> a ns1:topicItemName ;
+    rdfs:label "El"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Employees> a ns1:topicItemName ;
+    rdfs:label "Employees"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Enshrouded> a ns1:topicItemName ;
+    rdfs:label "Enshrouded"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Experiments> a ns1:topicItemName ;
+    rdfs:label "Experiments"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/FREE> a ns1:topicItemName ;
+    rdfs:label "FREE"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/GPUs> a ns1:topicItemName ;
+    rdfs:label "GPUs"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/GTA> a ns1:topicItemName ;
+    rdfs:label "GTA"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Game> a ns1:topicItemName ;
+    rdfs:label "Game"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Gillian> a ns1:topicItemName ;
+    rdfs:label "Gillian"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Great> a ns1:topicItemName ;
+    rdfs:label "Great"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Hormone> a ns1:topicItemName ;
+    rdfs:label "Hormone"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Hunter> a ns1:topicItemName ;
+    rdfs:label "Hunter"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Indiana> a ns1:topicItemName ;
+    rdfs:label "Indiana"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Joins> a ns1:topicItemName ;
+    rdfs:label "Joins"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Jones> a ns1:topicItemName ;
+    rdfs:label "Jones"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Legends> a ns1:topicItemName ;
+    rdfs:label "Legends"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Light> a ns1:topicItemName ;
+    rdfs:label "Light"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/MacStories> a ns1:topicItemName ;
+    rdfs:label "MacStories"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/MachineGames> a ns1:topicItemName ;
+    rdfs:label "MachineGames"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Magic> a ns1:topicItemName ;
+    rdfs:label "Magic"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Medical> a ns1:topicItemName ;
+    rdfs:label "Medical"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Menschen> a ns1:topicItemName ;
+    rdfs:label "Menschen"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Microsoft> a ns1:topicItemName ;
+    rdfs:label "Microsoft"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Minecraft> a ns1:topicItemName ;
+    rdfs:label "Minecraft"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Monster> a ns1:topicItemName ;
+    rdfs:label "Monster"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Mystery> a ns1:topicItemName ;
+    rdfs:label "Mystery"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Nova> a ns1:topicItemName ;
+    rdfs:label "Nova"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Nvidia> a ns1:topicItemName ;
+    rdfs:label "Nvidia"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Papers> a ns1:topicItemName ;
+    rdfs:label "Papers"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Pro> a ns1:topicItemName ;
+    rdfs:label "Pro"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Rays> a ns1:topicItemName ;
+    rdfs:label "Rays"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Remastered> a ns1:topicItemName ;
+    rdfs:label "Remastered"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Roboter> a ns1:topicItemName ;
+    rdfs:label "Roboter"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/San> a ns1:topicItemName ;
+    rdfs:label "San"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Sawaki> a ns1:topicItemName ;
+    rdfs:label "Sawaki"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Shaddai> a ns1:topicItemName ;
+    rdfs:label "Shaddai"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Sinner> a ns1:topicItemName ;
+    rdfs:label "Sinner"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Solved> a ns1:topicItemName ;
+    rdfs:label "Solved"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Steam> a ns1:topicItemName ;
+    rdfs:label "Steam"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Sunday> a ns1:topicItemName ;
+    rdfs:label "Sunday"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Sundays> a ns1:topicItemName ;
+    rdfs:label "Sundays"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Takeyasu> a ns1:topicItemName ;
+    rdfs:label "Takeyasu"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Terrible> a ns1:topicItemName ;
+    rdfs:label "Terrible"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Tomorrow> a ns1:topicItemName ;
+    rdfs:label "Tomorrow"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Tron> a ns1:topicItemName ;
+    rdfs:label "Tron"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Vision> a ns1:topicItemName ;
+    rdfs:label "Vision"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Workflow> a ns1:topicItemName ;
+    rdfs:label "Workflow"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/World> a ns1:topicItemName ;
+    rdfs:label "World"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Writing> a ns1:topicItemName ;
+    rdfs:label "Writing"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Xbox> a ns1:topicItemName ;
+    rdfs:label "Xbox"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/amadas> a ns1:topicItemName ;
+    rdfs:label "amadas"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/atualização> a ns1:topicItemName ;
+    rdfs:label "atualização"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/available> a ns1:topicItemName ;
+    rdfs:label "available"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/bane> a ns1:topicItemName ;
+    rdfs:label "bane"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/blend> a ns1:topicItemName ;
+    rdfs:label "blend"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/book> a ns1:topicItemName ;
+    rdfs:label "book"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/building> a ns1:topicItemName ;
+    rdfs:label "building"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/cancer> a ns1:topicItemName ;
+    rdfs:label "cancer"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/cast> a ns1:topicItemName ;
+    rdfs:label "cast"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/come> a ns1:topicItemName ;
+    rdfs:label "come"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/coming> a ns1:topicItemName ;
+    rdfs:label "coming"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/controller> a ns1:topicItemName ;
+    rdfs:label "controller"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/customização> a ns1:topicItemName ;
+    rdfs:label "customização"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/da> a ns1:topicItemName ;
+    rdfs:label "da"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/doctors> a ns1:topicItemName ;
+    rdfs:label "doctors"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/emulação> a ns1:topicItemName ;
+    rdfs:label "emulação"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/end> a ns1:topicItemName ;
+    rdfs:label "end"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/exercises> a ns1:topicItemName ;
+    rdfs:label "exercises"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/expand> a ns1:topicItemName ;
+    rdfs:label "expand"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/fa> a ns1:topicItemName ;
+    rdfs:label "fa"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/famosa> a ns1:topicItemName ;
+    rdfs:label "famosa"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/franquias> a ns1:topicItemName ;
+    rdfs:label "franquias"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/games> a ns1:topicItemName ;
+    rdfs:label "games"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/head> a ns1:topicItemName ;
+    rdfs:label "head"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/healthy> a ns1:topicItemName ;
+    rdfs:label "healthy"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/hipocrisia> a ns1:topicItemName ;
+    rdfs:label "hipocrisia"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/immersive> a ns1:topicItemName ;
+    rdfs:label "immersive"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/institutions> a ns1:topicItemName ;
+    rdfs:label "institutions"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/italiano> a ns1:topicItemName ;
+    rdfs:label "italiano"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/licensed> a ns1:topicItemName ;
+    rdfs:label "licensed"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/luta> a ns1:topicItemName ;
+    rdfs:label "luta"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/mind> a ns1:topicItemName ;
+    rdfs:label "mind"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/mit> a ns1:topicItemName ;
+    rdfs:label "mit"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/mobility> a ns1:topicItemName ;
+    rdfs:label "mobility"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/mostra> a ns1:topicItemName ;
+    rdfs:label "mostra"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/movie> a ns1:topicItemName ;
+    rdfs:label "movie"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/need> a ns1:topicItemName ;
+    rdfs:label "need"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/non> a ns1:topicItemName ;
+    rdfs:label "non"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/original> a ns1:topicItemName ;
+    rdfs:label "original"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/parte> a ns1:topicItemName ;
+    rdfs:label "parte"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/players> a ns1:topicItemName ;
+    rdfs:label "players"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/power> a ns1:topicItemName ;
+    rdfs:label "power"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/powerful> a ns1:topicItemName ;
+    rdfs:label "powerful"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/reads> a ns1:topicItemName ;
+    rdfs:label "reads"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/right> a ns1:topicItemName ;
+    rdfs:label "right"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/searching> a ns1:topicItemName ;
+    rdfs:label "searching"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/semana> a ns1:topicItemName ;
+    rdfs:label "semana"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/sich> a ns1:topicItemName ;
+    rdfs:label "sich"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/spin> a ns1:topicItemName ;
+    rdfs:label "spin"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/studio> a ns1:topicItemName ;
+    rdfs:label "studio"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/suffering> a ns1:topicItemName ;
+    rdfs:label "suffering"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/supposed> a ns1:topicItemName ;
+    rdfs:label "supposed"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/talented> a ns1:topicItemName ;
+    rdfs:label "talented"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/technology> a ns1:topicItemName ;
+    rdfs:label "technology"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/thought> a ns1:topicItemName ;
+    rdfs:label "thought"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/unterhält> a ns1:topicItemName ;
+    rdfs:label "unterhält"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/updates> a ns1:topicItemName ;
+    rdfs:label "updates"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/week> a ns1:topicItemName ;
+    rdfs:label "week"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/year> a ns1:topicItemName ;
+    rdfs:label "year"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/é> a ns1:topicItemName ;
+    rdfs:label "é"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/'ho> a ns1:JokeTopic ;
+    rdfs:label "'ho"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/band?> a ns1:JokeTopic ;
+    rdfs:label "band?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/brexit?> a ns1:JokeTopic ;
+    rdfs:label "brexit?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/chimney?> a ns1:JokeTopic ;
+    rdfs:label "chimney?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/dinner> a ns1:JokeTopic ;
+    rdfs:label "dinner"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/doctor?> a ns1:JokeTopic ;
+    rdfs:label "doctor?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/elves> a ns1:JokeTopic ;
+    rdfs:label "elves"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/favorite> a ns1:JokeTopic ;
+    rdfs:label "favorite"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/favourite> a ns1:JokeTopic ;
+    rdfs:label "favourite"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/gardens?> a ns1:JokeTopic ;
+    rdfs:label "gardens?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/grinchs> a ns1:JokeTopic ;
+    rdfs:label "grinchs"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/helper> a ns1:JokeTopic ;
+    rdfs:label "helper"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/kind> a ns1:JokeTopic ;
+    rdfs:label "kind"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/motorbike> a ns1:JokeTopic ;
+    rdfs:label "motorbike"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/party?> a ns1:JokeTopic ;
+    rdfs:label "party?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/post> a ns1:JokeTopic ;
+    rdfs:label "post"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/santa's> a ns1:JokeTopic ;
+    rdfs:label "santa's"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/skeleton> a ns1:JokeTopic ;
+    rdfs:label "skeleton"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/social> a ns1:JokeTopic ;
+    rdfs:label "social"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/soots> a ns1:JokeTopic ;
+    rdfs:label "soots"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/stuck> a ns1:JokeTopic ;
+    rdfs:label "stuck"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/suffer> a ns1:JokeTopic ;
+    rdfs:label "suffer"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/type> a ns1:JokeTopic ;
+    rdfs:label "type"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/AI> a ns1:topicItemName ;
+    rdfs:label "AI"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/AppStories> a ns1:topicItemName ;
+    rdfs:label "AppStories"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Episode> a ns1:topicItemName ;
+    rdfs:label "Episode"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Netflix> a ns1:topicItemName ;
+    rdfs:label "Netflix"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Tekken> a ns1:topicItemName ;
+    rdfs:label "Tekken"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/com> a ns1:topicItemName ;
+    rdfs:label "com"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/e> a ns1:topicItemName ;
+    rdfs:label "e"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/em> a ns1:topicItemName ;
+    rdfs:label "em"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/game> a ns1:topicItemName ;
+    rdfs:label "game"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/para> a ns1:topicItemName ;
+    rdfs:label "para"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/christmas> a ns1:JokeTopic ;
+    rdfs:label "christmas"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/santa> a ns1:JokeTopic ;
+    rdfs:label "santa"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/o> a ns1:topicItemName ;
+    rdfs:label "o"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/de> a ns1:topicItemName ;
+    rdfs:label "de"^^xsd:string .
+

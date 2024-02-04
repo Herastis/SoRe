@@ -1,0 +1,277 @@
+@prefix ns1: <http://visualdataweb.org/SoreOntology/personOntology/> .
+@prefix ns2: <http://visualdataweb.org/SoreOntology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://soreOntology.com/users/e_f> a ns1:User ;
+    ns1:firstName "e"^^xsd:string ;
+    ns1:gender "male"^^xsd:string ;
+    ns1:hasAge 40 ;
+    ns1:hasCountry "Romania"^^xsd:string ;
+    ns1:hasEducation ""^^xsd:string ;
+    ns1:hasEmail "ef@gmail.com"^^xsd:string ;
+    ns1:hasInterest <http://soreOntology.com/interestsUser/Esports>,
+        <http://soreOntology.com/interestsUser/GameDevelopment>,
+        <http://soreOntology.com/interestsUser/GameReviews> ;
+    ns1:hasJoke <http://soreOntology.com/joke/difference>,
+        <http://soreOntology.com/joke/love>,
+        <http://soreOntology.com/joke/mermaid>,
+        <http://soreOntology.com/joke/morning>,
+        <http://soreOntology.com/joke/mushroom>,
+        <http://soreOntology.com/joke/neighbor>,
+        <http://soreOntology.com/joke/usa>,
+        <http://soreOntology.com/joke/wife>,
+        <http://soreOntology.com/joke/write> ;
+    ns1:hasRecommendedItem <http://soreOntology.com/medicalNews/MedicalMysterySolved%3FHormoneTreatmentLinkedToAlzheimer%27sInShockingDiscovery-NDTV>,
+        <http://soreOntology.com/medicalNews/ThedoctorsthoughtIwassufferingfromCOVID.Turnsout%2CIhadStage4cancer.-YahooNews> ;
+    ns1:knows "user123@gmail.com",
+        "user2@gmail.com",
+        "user3@gmail.com",
+        "user456@gmail.com" ;
+    ns1:lastName "f"^^xsd:string ;
+    ns1:status ""^^xsd:string ;
+    ns1:workingPlace "IT"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/Esports> a ns2:Interest ;
+    rdfs:label "Esports"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/GameDevelopment> a ns2:Interest ;
+    rdfs:label "GameDevelopment"^^xsd:string .
+
+<http://soreOntology.com/interestsUser/GameReviews> a ns2:Interest ;
+    rdfs:label "GameReviews"^^xsd:string .
+
+<http://soreOntology.com/joke/difference> a ns2:Joke ;
+    ns2:category "Misc" ;
+    ns2:delivery "An outlaw is wanted.",
+        "One's a heated yam, the other's a yeeted ham." ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/difference>,
+        <http://soreOntology.com/topicsJoke/hot>,
+        <http://soreOntology.com/topicsJoke/in-law>,
+        <http://soreOntology.com/topicsJoke/outlaw?>,
+        <http://soreOntology.com/topicsJoke/potato> ;
+    ns2:isSafe true ;
+    ns2:setup "What's the difference between a hot potato and a flying pig?",
+        "What's the difference between an in-law and an outlaw?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/love> a ns2:Joke ;
+    ns2:category "Misc" ;
+    ns2:delivery "Dad, come back..." ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/dad>,
+        <http://soreOntology.com/topicsJoke/jokes.>,
+        <http://soreOntology.com/topicsJoke/love> ;
+    ns2:isSafe false ;
+    ns2:setup "I used to love to tell dad jokes." ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/mermaid> a ns2:Joke ;
+    ns2:category "Misc" ;
+    ns2:delivery "Algae-bra." ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/math>,
+        <http://soreOntology.com/topicsJoke/mermaid>,
+        <http://soreOntology.com/topicsJoke/wear> ;
+    ns2:isSafe false ;
+    ns2:setup "What does the mermaid wear to math class?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/morning> a ns2:Joke ;
+    ns2:category "Misc" ;
+    ns2:delivery "I was already on the highway when I noticed I forgot my car at home." ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/accidentally>,
+        <http://soreOntology.com/topicsJoke/coffee>,
+        <http://soreOntology.com/topicsJoke/morning> ;
+    ns2:isSafe true ;
+    ns2:setup "This morning I accidentally made my coffee with Red Bull instead of water." ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/mushroom> a ns2:Joke ;
+    ns2:category "Misc" ;
+    ns2:delivery "Cause he's a fungi." ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/invited>,
+        <http://soreOntology.com/topicsJoke/mushroom>,
+        <http://soreOntology.com/topicsJoke/parties?> ;
+    ns2:isSafe true ;
+    ns2:setup "Why was the mushroom always invited to parties?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/neighbor> a ns2:Joke ;
+    ns2:category "Misc" ;
+    ns2:delivery "But the look of joy in his eyes whenever I answer him is worth the world." ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/90>,
+        <http://soreOntology.com/topicsJoke/neighbor>,
+        <http://soreOntology.com/topicsJoke/year> ;
+    ns2:isSafe false ;
+    ns2:setup """My neighbor is a 90 year old with Alzheimer's, I see him every morning and he asks me If I've seen his wife.
+Every day I have to tell this poor man that his wife died 20 years ago.
+I could have moved to another house or even ignore his question.""" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/usa> a ns2:Joke ;
+    ns2:category "Misc" ;
+    ns2:delivery "Yes, but the Constitution of the USA also guarantees freedom after the speech." ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/difference>,
+        <http://soreOntology.com/topicsJoke/freedom>,
+        <http://soreOntology.com/topicsJoke/usa> ;
+    ns2:isSafe false ;
+    ns2:setup "What is the difference between the Constitutions of the USA and the USSR? Don't both of them guarantee freedom of speech?" ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/wife> a ns2:Joke ;
+    ns2:category "Misc" ;
+    ns2:delivery "Oh wait, never mind. She was just getting the mail." ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/insecure>,
+        <http://soreOntology.com/topicsJoke/left>,
+        <http://soreOntology.com/topicsJoke/wife> ;
+    ns2:isSafe true ;
+    ns2:setup "My wife left me because I'm too insecure and paranoid." ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/joke/write> a ns2:Joke ;
+    ns2:category "Misc" ;
+    ns2:delivery "THIS ONE WAS WRITTEN IN PARIS." ;
+    ns2:hasTopic <http://soreOntology.com/topicsJoke/capitals.>,
+        <http://soreOntology.com/topicsJoke/jokes>,
+        <http://soreOntology.com/topicsJoke/write> ;
+    ns2:isSafe true ;
+    ns2:setup "I WRITE MY JOKES IN CAPITALS." ;
+    ns2:type "twopart" .
+
+<http://soreOntology.com/medicalNews/MedicalMysterySolved%3FHormoneTreatmentLinkedToAlzheimer%27sInShockingDiscovery-NDTV> a ns2:Medical_and_Lifestyle ;
+    ns2:hasAuthor "undefined"^^xsd:string ;
+    ns2:hasContent "https://c.ndtvimg.com/2020-09/5u5t590g_alzheimer_625x300_21_September_20.jpg"^^xsd:string ;
+    ns2:hasDescription "The study provides the first evidence of Alzheimer's disease in living people that appears to have been medically acquired and due to transmission of the amyloid-beta protein."^^xsd:string ;
+    ns2:hasMedicalUrl "https://www.ndtv.com/science/medical-mystery-solved-hormone-treatment-linked-to-alzheimers-in-shocking-discovery-4981971"^^xsd:string ;
+    ns2:hasTitle "Medical Mystery Solved? Hormone Treatment Linked To Alzheimer's In Shocking Discovery - NDTV"^^xsd:string ;
+    ns2:hasTopic <http://soreOntology.com/topicsItem/Alzheimer>,
+        <http://soreOntology.com/topicsItem/Hormone>,
+        <http://soreOntology.com/topicsItem/Medical>,
+        <http://soreOntology.com/topicsItem/Mystery>,
+        <http://soreOntology.com/topicsItem/Solved> .
+
+<http://soreOntology.com/medicalNews/ThedoctorsthoughtIwassufferingfromCOVID.Turnsout%2CIhadStage4cancer.-YahooNews> a ns2:Medical_and_Lifestyle ;
+    ns2:hasAuthor "Kelly_Burch"^^xsd:string ;
+    ns2:hasContent "https://s.yimg.com/ny/api/res/1.2/2zTNVeJjSZYWRSAN0nMPKA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD05MDA-/https://media.zenfs.com/en/insider_articles_922/e9141536d480171d565f52340da474d6"^^xsd:string ;
+    ns2:hasDescription "Doctors thought that I had COVID, but it was actually cancer. The thought of getting back on my unicycle got me through treatment and experimental radiation ..."^^xsd:string ;
+    ns2:hasMedicalUrl "https://www.businessinsider.com/doctors-thought-diagnosis-covid-symptoms-actually-cancer-2024-2"^^xsd:string ;
+    ns2:hasTitle "The doctors thought I was suffering from COVID. Turns out, I had Stage 4 cancer. - Yahoo News"^^xsd:string ;
+    ns2:hasTopic <http://soreOntology.com/topicsItem/COVID>,
+        <http://soreOntology.com/topicsItem/cancer>,
+        <http://soreOntology.com/topicsItem/doctors>,
+        <http://soreOntology.com/topicsItem/suffering>,
+        <http://soreOntology.com/topicsItem/thought> .
+
+<http://soreOntology.com/topicsItem/Alzheimer> a ns2:topicItemName ;
+    rdfs:label "Alzheimer"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/COVID> a ns2:topicItemName ;
+    rdfs:label "COVID"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Hormone> a ns2:topicItemName ;
+    rdfs:label "Hormone"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Medical> a ns2:topicItemName ;
+    rdfs:label "Medical"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Mystery> a ns2:topicItemName ;
+    rdfs:label "Mystery"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/Solved> a ns2:topicItemName ;
+    rdfs:label "Solved"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/cancer> a ns2:topicItemName ;
+    rdfs:label "cancer"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/doctors> a ns2:topicItemName ;
+    rdfs:label "doctors"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/suffering> a ns2:topicItemName ;
+    rdfs:label "suffering"^^xsd:string .
+
+<http://soreOntology.com/topicsItem/thought> a ns2:topicItemName ;
+    rdfs:label "thought"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/90> a ns2:JokeTopic ;
+    rdfs:label "90"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/accidentally> a ns2:JokeTopic ;
+    rdfs:label "accidentally"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/capitals.> a ns2:JokeTopic ;
+    rdfs:label "capitals."^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/coffee> a ns2:JokeTopic ;
+    rdfs:label "coffee"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/dad> a ns2:JokeTopic ;
+    rdfs:label "dad"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/freedom> a ns2:JokeTopic ;
+    rdfs:label "freedom"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/hot> a ns2:JokeTopic ;
+    rdfs:label "hot"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/in-law> a ns2:JokeTopic ;
+    rdfs:label "in-law"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/insecure> a ns2:JokeTopic ;
+    rdfs:label "insecure"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/invited> a ns2:JokeTopic ;
+    rdfs:label "invited"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/jokes> a ns2:JokeTopic ;
+    rdfs:label "jokes"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/jokes.> a ns2:JokeTopic ;
+    rdfs:label "jokes."^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/left> a ns2:JokeTopic ;
+    rdfs:label "left"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/love> a ns2:JokeTopic ;
+    rdfs:label "love"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/math> a ns2:JokeTopic ;
+    rdfs:label "math"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/mermaid> a ns2:JokeTopic ;
+    rdfs:label "mermaid"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/morning> a ns2:JokeTopic ;
+    rdfs:label "morning"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/mushroom> a ns2:JokeTopic ;
+    rdfs:label "mushroom"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/neighbor> a ns2:JokeTopic ;
+    rdfs:label "neighbor"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/outlaw?> a ns2:JokeTopic ;
+    rdfs:label "outlaw?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/parties?> a ns2:JokeTopic ;
+    rdfs:label "parties?"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/potato> a ns2:JokeTopic ;
+    rdfs:label "potato"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/usa> a ns2:JokeTopic ;
+    rdfs:label "usa"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/wear> a ns2:JokeTopic ;
+    rdfs:label "wear"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/wife> a ns2:JokeTopic ;
+    rdfs:label "wife"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/write> a ns2:JokeTopic ;
+    rdfs:label "write"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/year> a ns2:JokeTopic ;
+    rdfs:label "year"^^xsd:string .
+
+<http://soreOntology.com/topicsJoke/difference> a ns2:JokeTopic ;
+    rdfs:label "difference"^^xsd:string .
+

@@ -1,5 +1,6 @@
 from rdflib import Namespace, URIRef, Literal, Graph
 from rdflib.namespace import FOAF, RDF, XSD, OWL, RDFS
+from urllib.parse import quote
 import random
 from BE.constants import constants as cst
 from BE.news.news import news_articles
@@ -41,7 +42,9 @@ class User:
         for article in articles:
             medical_onto_URI = article['title'].replace(' ', '')
 
-            article_uri = URIRef(f"http://soreOntology.com/medicalNews/{medical_onto_URI}")
+            encoded_frequent_word = quote(medical_onto_URI)
+
+            article_uri = URIRef(f"http://soreOntology.com/medicalNews/{encoded_frequent_word}")
             self.graph.add((user_uri, person_ontology.hasRecommendedItem, article_uri))
 
             self.graph.add((article_uri, RDF.type, sore.Medical_and_Lifestyle))
@@ -76,7 +79,9 @@ class User:
         for joke_data in jokes:
             joke = Joke(**joke_data)
 
-            joke_uri = URIRef(f"http://soreOntology.com/joke/{joke.frequent_words[0]}")
+            encoded_frequent_word = quote(joke.frequent_words[0])
+
+            joke_uri = URIRef(f"http://soreOntology.com/joke/{encoded_frequent_word}")
 
             self.graph.add((user_uri, person_ontology.hasJoke, joke_uri))
             self.graph.add((joke_uri, RDF.type, sore.Joke))
@@ -107,7 +112,10 @@ class User:
         for article in articles:
 
             news_name_URI = article['title'].replace(' ', '')
-            article_uri = URIRef(f"http://soreOntology.com/news/{news_name_URI}")
+
+            encoded_frequent_word = quote(news_name_URI)
+
+            article_uri = URIRef(f"http://soreOntology.com/news/{encoded_frequent_word}")
 
             self.graph.add((user_uri, person_ontology.hasRecommendedItem, article_uri))
             # Add RDF triples for the news article
@@ -217,7 +225,7 @@ def create_user(file_path, first_name, last_name, email, gender, status, news_in
     User1.add_health_info(health_interests, 'us', 'us')
     #print(user_graph.serialize(format="turtle"))
 
-    joke_category = random.choice(category_web)
+    joke_category = random.choice(jokes_category)
 
     User1.add_joke(joke_category)
     #print(user_graph.serialize(format="turtle"))

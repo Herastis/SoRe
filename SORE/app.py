@@ -9,6 +9,7 @@ from db import db, execute_sparql_query
 from datetime import timedelta
 
 from BE.user.user_model import create_user, User
+import BE.constants.constants as cst
 
 
 app = Flask(__name__)
@@ -53,8 +54,9 @@ def register():
 
 
     jokes_category = ['Programming', 'Misc', 'Pun', 'Spooky', 'Christmas']
-    health_interests = ['treatment', 'health', 'covid']
-    news_interests = ["Art", "Technology", "Travel", "Coding", "Gaming"]
+    words_to_pick = 3
+    health_interests = random.sample(cst.interests_dictionary['Health'],words_to_pick)
+    news_interests = random.sample(cst.interests_dictionary['Gaming'],words_to_pick)
     work = random.choice(['IT', 'Engineering', 'Finance', 'Marketing', 'Sales', 'HR'])
     knows = ['user2@gmail.com', 'user3@gmail.com']
     file_path = './users_graph/'
