@@ -1,10 +1,10 @@
 from rdflib import Namespace, URIRef, Literal, Graph
 from rdflib.namespace import FOAF, RDF, XSD, OWL, RDFS
 import random
-from constants import constants as cst
-from news.news import news_articles
-from healthandlifestyle.medical_onto import medical_articles
-from joke.get_jokes import *
+from BE.constants import constants as cst
+from BE.news.news import news_articles
+from BE.healthandlifestyle.medical_onto import medical_articles
+from BE.joke.get_jokes import *
 
 path = '../SoreOntology/sore.ttl'
 
@@ -182,7 +182,6 @@ class User:
 
         return self.graph
 
-
 first_name = "John"
 last_name = "Doe"
 email = "john.doe@example.com"
@@ -194,34 +193,37 @@ work = random.choice(["Student", "Teacher", "Engineer"])
 education = random.choice(["HighSchool", "Bachelor", "Master"])
 age = cst.age
 knows = ['user2@gmail.com', 'user3@gmail.com']
+def create_user(first_name, last_name, email, gender, status, interests, country, work, education, age, knows):
 
-User1 = User(first_name, last_name, email, gender, status, interests, country, work, education, age, knows)
+    User1 = User(first_name, last_name, email, gender, status, interests, country, work, education, age, knows)
 
-user_graph = User1.to_rdf()
-# Print the resulting RDF graph
-#print(user_graph.serialize(format="turtle"))
+    user_graph = User1.to_rdf()
+    # Print the resulting RDF graph
+    #print(user_graph.serialize(format="turtle"))
 
-new_friends = ['user123@gmail.com', 'user456@gmail.com']
-User1.add_friends(new_friends)
-#print(user_graph.serialize(format="turtle"))
+    new_friends = ['user123@gmail.com', 'user456@gmail.com']
+    User1.add_friends(new_friends)
+    #print(user_graph.serialize(format="turtle"))
 
-User1.add_interest_news(interests, 'us', 'us')
-#print(user_graph.serialize(format="turtle"))
+    User1.add_interest_news(interests, 'us', 'us')
+    #print(user_graph.serialize(format="turtle"))
 
-health_interests = ['treatment', 'health', 'covid']
+    health_interests = ['treatment', 'health', 'covid']
 
-User1.add_health_info(health_interests, 'us', 'us')
-#print(user_graph.serialize(format="turtle"))
+    User1.add_health_info(health_interests, 'us', 'us')
+    #print(user_graph.serialize(format="turtle"))
 
-category_web = ['Programming', 'Misc', 'Pun', 'Spooky', 'Christmas']
-joke_category = random.choice(category_web)
+    category_web = ['Programming', 'Misc', 'Pun', 'Spooky', 'Christmas']
+    joke_category = random.choice(category_web)
 
-User1.add_joke(joke_category)
-print(user_graph.serialize(format="turtle"))
+    User1.add_joke(joke_category)
+    #print(user_graph.serialize(format="turtle"))
+    turtle_data = user_graph.serialize(format="turtle")
 
+    user_graph.serialize(f'{email}.ttl', format="turtle")
 
+    print(f"Graph saved successfully to {email}.ttl")
 
-
-
+create_user(first_name, last_name, email, gender, status, interests, country, work, education, age, knows)
 
 

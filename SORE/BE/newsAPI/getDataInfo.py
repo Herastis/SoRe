@@ -1,7 +1,7 @@
 import requests
 import spacy
 from collections import Counter
-from constants import constants as cst
+from BE.constants import constants as cst
 import random
 
 api_key = cst.api_key

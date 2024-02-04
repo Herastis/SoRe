@@ -45,6 +45,10 @@ def register():
                                 'country': country,
                                 })
 
+
+
+    User1 = User(first_name, last_name, email, gender, status, interests, country, work, education, age, knows)
+
     #User = User.create_user_graph()
     #User.set_friends()
 

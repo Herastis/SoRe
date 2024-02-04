@@ -1,8 +1,8 @@
 import spacy
 from collections import Counter
-from newsAPI.getDataInfo import get_news_articles
+from BE.newsAPI.getDataInfo import get_news_articles
 nlp = spacy.load("en_core_web_sm")
-from constants import constants as cst
+from BE.constants import constants as cst
 
 api_key = cst.api_key
 end_point = '/everything'  # /everything /top-headlines

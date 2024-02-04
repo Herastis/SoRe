@@ -1,6 +1,6 @@
 import spacy
 from collections import Counter
-from newsAPI.getDataInfo import get_news_articles
+from BE.newsAPI.getDataInfo import get_news_articles
 nlp = spacy.load("en_core_web_sm")
 
 
