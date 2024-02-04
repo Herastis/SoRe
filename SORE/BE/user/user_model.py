@@ -220,10 +220,12 @@ def create_user(first_name, last_name, email, gender, status, interests, country
     #print(user_graph.serialize(format="turtle"))
     turtle_data = user_graph.serialize(format="turtle")
 
-    user_graph.serialize(f'{email}.ttl', format="turtle")
+    file_path = "./users_graphs/"
+
+    user_graph.serialize(file_path + f'{email}.ttl', format="turtle")
 
     print(f"Graph saved successfully to {email}.ttl")
 
-create_user(first_name, last_name, email, gender, status, interests, country, work, education, age, knows)
+#create_user(first_name, last_name, email, gender, status, interests, country, work, education, age, knows)
 
 
