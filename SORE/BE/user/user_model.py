@@ -187,15 +187,19 @@ last_name = "Doe"
 email = "john.doe@example.com"
 gender = random.choice(["Male", "Female"])
 status = cst.status_options[random.randint(0, len(cst.status_options)-1)]
-interests = ["Art", "Technology", "Travel", "Coding", "Gaming"]
+#
+news_interests = ["Art", "Technology", "Travel", "Coding", "Gaming"]
+jokes_category = ['Programming', 'Misc', 'Pun', 'Spooky', 'Christmas']
+health_interests = ['treatment', 'health', 'covid']
+#
 country = random.choice(cst.european_countries)
 work = random.choice(["Student", "Teacher", "Engineer"])
 education = random.choice(["HighSchool", "Bachelor", "Master"])
 age = cst.age
 knows = ['user2@gmail.com', 'user3@gmail.com']
-def create_user(first_name, last_name, email, gender, status, interests, country, work, education, age, knows):
+def create_user(file_path, first_name, last_name, email, gender, status, news_interests, jokes_category, health_interests,  country, work, education, age, knows):
 
-    User1 = User(first_name, last_name, email, gender, status, interests, country, work, education, age, knows)
+    User1 = User(first_name, last_name, email, gender, status, news_interests, country, work, education, age, knows)
 
     user_graph = User1.to_rdf()
     # Print the resulting RDF graph
@@ -205,27 +209,25 @@ def create_user(first_name, last_name, email, gender, status, interests, country
     User1.add_friends(new_friends)
     #print(user_graph.serialize(format="turtle"))
 
-    User1.add_interest_news(interests, 'us', 'us')
+    User1.add_interest_news(news_interests, 'us', 'us')
     #print(user_graph.serialize(format="turtle"))
 
-    health_interests = ['treatment', 'health', 'covid']
+
 
     User1.add_health_info(health_interests, 'us', 'us')
     #print(user_graph.serialize(format="turtle"))
 
-    category_web = ['Programming', 'Misc', 'Pun', 'Spooky', 'Christmas']
     joke_category = random.choice(category_web)
 
     User1.add_joke(joke_category)
     #print(user_graph.serialize(format="turtle"))
     turtle_data = user_graph.serialize(format="turtle")
 
-    file_path = "./users_graphs/"
-
     user_graph.serialize(file_path + f'{email}.ttl', format="turtle")
 
     print(f"Graph saved successfully to {email}.ttl")
 
-#create_user(first_name, last_name, email, gender, status, interests, country, work, education, age, knows)
+#file_path = './'
+#create_user(file_path, first_name, last_name, email, gender, status, news_interests,jokes_category, health_interests, country, work, education, age, knows)
 
 

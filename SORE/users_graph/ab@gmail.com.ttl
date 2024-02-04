@@ -3,27 +3,25 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://soreOntology.com/users/John_Doe> a ns2:User ;
-    ns2:firstName "John"^^xsd:string ;
-    ns2:gender "Male"^^xsd:string ;
-    ns2:hasAge 38 ;
-    ns2:hasCountry "United Kingdom"^^xsd:string ;
-    ns2:hasEducation "Master"^^xsd:string ;
-    ns2:hasEmail "john.doe@example.com"^^xsd:string ;
+<http://soreOntology.com/users/a_b> a ns2:User ;
+    ns2:firstName "a"^^xsd:string ;
+    ns2:gender "male"^^xsd:string ;
+    ns2:hasAge "20a"^^xsd:integer ;
+    ns2:hasCountry "US"^^xsd:string ;
+    ns2:hasEducation "Programmer"^^xsd:string ;
+    ns2:hasEmail "ab@gmail.com"^^xsd:string ;
     ns2:hasInterest <http://soreOntology.com/interestsUser/Art>,
         <http://soreOntology.com/interestsUser/Coding>,
         <http://soreOntology.com/interestsUser/Gaming>,
         <http://soreOntology.com/interestsUser/Technology>,
         <http://soreOntology.com/interestsUser/Travel> ;
-    ns2:hasJoke <http://soreOntology.com/joke/cats>,
-        <http://soreOntology.com/joke/difference>,
-        <http://soreOntology.com/joke/lottery>,
-        <http://soreOntology.com/joke/mermaid>,
-        <http://soreOntology.com/joke/morning>,
-        <http://soreOntology.com/joke/spoken>,
-        <http://soreOntology.com/joke/tea>,
-        <http://soreOntology.com/joke/wife>,
-        <http://soreOntology.com/joke/write> ;
+    ns2:hasJoke <http://soreOntology.com/joke/ghost>,
+        <http://soreOntology.com/joke/ghost's>,
+        <http://soreOntology.com/joke/ghosts>,
+        <http://soreOntology.com/joke/kissed>,
+        <http://soreOntology.com/joke/skeleton>,
+        <http://soreOntology.com/joke/son>,
+        <http://soreOntology.com/joke/turkey> ;
     ns2:hasRecommendedItem <http://soreOntology.com/medicalNews/MedicalMysterySolved?HormoneTreatmentLinkedToAlzheimer'sInShockingDiscovery-NDTV>,
         <http://soreOntology.com/medicalNews/ThedoctorsthoughtIwassufferingfromCOVID.Turnsout,IhadStage4cancer.-YahooNews>,
         <http://soreOntology.com/medicalNews/[Removed]>,
@@ -61,9 +59,9 @@
         "user2@gmail.com",
         "user3@gmail.com",
         "user456@gmail.com" ;
-    ns2:lastName "Doe"^^xsd:string ;
-    ns2:status "Married"^^xsd:string ;
-    ns2:workingPlace "Engineer"^^xsd:string .
+    ns2:lastName "b"^^xsd:string ;
+    ns2:status "married"^^xsd:string ;
+    ns2:workingPlace "Engineering"^^xsd:string .
 
 <http://soreOntology.com/interestsUser/Art> a ns1:Interest ;
     rdfs:label "Art"^^xsd:string .
@@ -80,98 +78,74 @@
 <http://soreOntology.com/interestsUser/Travel> a ns1:Interest ;
     rdfs:label "Travel"^^xsd:string .
 
-<http://soreOntology.com/joke/cats> a ns1:Joke ;
-    ns1:category "Misc" ;
-    ns1:delivery "They have nine lives." ;
-    ns1:hasTopic <http://soreOntology.com/topicsJoke/cats>,
-        <http://soreOntology.com/topicsJoke/good>,
-        <http://soreOntology.com/topicsJoke/video> ;
+<http://soreOntology.com/joke/ghost> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "For the boos." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/bar?>,
+        <http://soreOntology.com/topicsJoke/ghost>,
+        <http://soreOntology.com/topicsJoke/inside> ;
     ns1:isSafe true ;
-    ns1:setup "Why are cats so good at video games?" ;
+    ns1:setup "Why did the ghost go inside the bar?" ;
     ns1:type "twopart" .
 
-<http://soreOntology.com/joke/difference> a ns1:Joke ;
-    ns1:category "Misc" ;
-    ns1:delivery "An outlaw is wanted.",
-        "One's a heated yam, the other's a yeeted ham." ;
-    ns1:hasTopic <http://soreOntology.com/topicsJoke/difference>,
-        <http://soreOntology.com/topicsJoke/hot>,
-        <http://soreOntology.com/topicsJoke/in-law>,
-        <http://soreOntology.com/topicsJoke/outlaw?>,
-        <http://soreOntology.com/topicsJoke/potato> ;
+<http://soreOntology.com/joke/ghost's> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "Boo-gers." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/boo-gers.>,
+        <http://soreOntology.com/topicsJoke/ghost's>,
+        <http://soreOntology.com/topicsJoke/nose?> ;
     ns1:isSafe true ;
-    ns1:setup "What's the difference between a hot potato and a flying pig?",
-        "What's the difference between an in-law and an outlaw?" ;
+    ns1:setup "What is in a ghost's nose?" ;
     ns1:type "twopart" .
 
-<http://soreOntology.com/joke/lottery> a ns1:Joke ;
-    ns1:category "Misc" ;
-    ns1:delivery "Well, I only got the first two numbers, but my lawyers are working on having them stop the count." ;
-    ns1:hasTopic <http://soreOntology.com/topicsJoke/lottery>,
-        <http://soreOntology.com/topicsJoke/today!>,
-        <http://soreOntology.com/topicsJoke/well,> ;
-    ns1:isSafe false ;
-    ns1:setup "I won the lottery today!" ;
-    ns1:type "twopart" .
-
-<http://soreOntology.com/joke/mermaid> a ns1:Joke ;
-    ns1:category "Misc" ;
-    ns1:delivery "Algae-bra." ;
-    ns1:hasTopic <http://soreOntology.com/topicsJoke/math>,
-        <http://soreOntology.com/topicsJoke/mermaid>,
-        <http://soreOntology.com/topicsJoke/wear> ;
-    ns1:isSafe false ;
-    ns1:setup "What does the mermaid wear to math class?" ;
-    ns1:type "twopart" .
-
-<http://soreOntology.com/joke/morning> a ns1:Joke ;
-    ns1:category "Misc" ;
-    ns1:delivery "I was already on the highway when I noticed I forgot my car at home." ;
-    ns1:hasTopic <http://soreOntology.com/topicsJoke/accidentally>,
-        <http://soreOntology.com/topicsJoke/coffee>,
-        <http://soreOntology.com/topicsJoke/morning> ;
+<http://soreOntology.com/joke/ghosts> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "So they can keep their ghoulish figures." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/diets?>,
+        <http://soreOntology.com/topicsJoke/ghosts>,
+        <http://soreOntology.com/topicsJoke/ghoulish> ;
     ns1:isSafe true ;
-    ns1:setup "This morning I accidentally made my coffee with Red Bull instead of water." ;
+    ns1:setup "Why do ghosts go on diets?" ;
     ns1:type "twopart" .
 
-<http://soreOntology.com/joke/spoken> a ns1:Joke ;
-    ns1:category "Misc" ;
-    ns1:delivery "Sign language." ;
-    ns1:hasTopic <http://soreOntology.com/topicsJoke/language>,
-        <http://soreOntology.com/topicsJoke/spoken>,
-        <http://soreOntology.com/topicsJoke/world?> ;
+<http://soreOntology.com/joke/kissed> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "It's a pain in the neck." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/kissed>,
+        <http://soreOntology.com/topicsJoke/pain>,
+        <http://soreOntology.com/topicsJoke/vampire?> ;
     ns1:isSafe true ;
-    ns1:setup "What is the least spoken language in the world?" ;
+    ns1:setup "What's it like to be kissed by a vampire?" ;
     ns1:type "twopart" .
 
-<http://soreOntology.com/joke/tea> a ns1:Joke ;
-    ns1:category "Misc" ;
-    ns1:delivery "The tea bag stays in the cup longer." ;
-    ns1:hasTopic <http://soreOntology.com/topicsJoke/difference>,
-        <http://soreOntology.com/topicsJoke/england>,
-        <http://soreOntology.com/topicsJoke/tea> ;
+<http://soreOntology.com/joke/skeleton> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "Because it had nobody." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/nobody.>,
+        <http://soreOntology.com/topicsJoke/prom?>,
+        <http://soreOntology.com/topicsJoke/skeleton> ;
     ns1:isSafe true ;
-    ns1:setup "What's the difference between England and a tea bag?" ;
+    ns1:setup "Why didn't the skeleton go for prom?" ;
     ns1:type "twopart" .
 
-<http://soreOntology.com/joke/wife> a ns1:Joke ;
-    ns1:category "Misc" ;
-    ns1:delivery "Oh wait, never mind. She was just getting the mail." ;
-    ns1:hasTopic <http://soreOntology.com/topicsJoke/insecure>,
-        <http://soreOntology.com/topicsJoke/left>,
-        <http://soreOntology.com/topicsJoke/wife> ;
+<http://soreOntology.com/joke/son> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "But on Halloween he went to tell the neighbors to turn down their TV and they gave him some candy." ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/halloween>,
+        <http://soreOntology.com/topicsJoke/son>,
+        <http://soreOntology.com/topicsJoke/ugly...> ;
     ns1:isSafe true ;
-    ns1:setup "My wife left me because I'm too insecure and paranoid." ;
+    ns1:setup "I'm not saying my son is ugly..." ;
     ns1:type "twopart" .
 
-<http://soreOntology.com/joke/write> a ns1:Joke ;
-    ns1:category "Misc" ;
-    ns1:delivery "THIS ONE WAS WRITTEN IN PARIS." ;
-    ns1:hasTopic <http://soreOntology.com/topicsJoke/capitals.>,
-        <http://soreOntology.com/topicsJoke/jokes>,
-        <http://soreOntology.com/topicsJoke/write> ;
+<http://soreOntology.com/joke/turkey> a ns1:Joke ;
+    ns1:category "Spooky" ;
+    ns1:delivery "A gobblin'!" ;
+    ns1:hasTopic <http://soreOntology.com/topicsJoke/dress>,
+        <http://soreOntology.com/topicsJoke/halloween?>,
+        <http://soreOntology.com/topicsJoke/turkey> ;
     ns1:isSafe true ;
-    ns1:setup "I WRITE MY JOKES IN CAPITALS." ;
+    ns1:setup "What does a turkey dress up as for Halloween?" ;
     ns1:type "twopart" .
 
 <http://soreOntology.com/medicalNews/MedicalMysterySolved?HormoneTreatmentLinkedToAlzheimer'sInShockingDiscovery-NDTV> a ns1:Medical_and_Lifestyle ;
@@ -994,86 +968,68 @@ BBC.\r
 <http://soreOntology.com/topicsItem/wild> a ns1:topicItemName ;
     rdfs:label "wild"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/accidentally> a ns1:JokeTopic ;
-    rdfs:label "accidentally"^^xsd:string .
+<http://soreOntology.com/topicsJoke/bar?> a ns1:JokeTopic ;
+    rdfs:label "bar?"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/capitals.> a ns1:JokeTopic ;
-    rdfs:label "capitals."^^xsd:string .
+<http://soreOntology.com/topicsJoke/boo-gers.> a ns1:JokeTopic ;
+    rdfs:label "boo-gers."^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/cats> a ns1:JokeTopic ;
-    rdfs:label "cats"^^xsd:string .
+<http://soreOntology.com/topicsJoke/diets?> a ns1:JokeTopic ;
+    rdfs:label "diets?"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/coffee> a ns1:JokeTopic ;
-    rdfs:label "coffee"^^xsd:string .
+<http://soreOntology.com/topicsJoke/dress> a ns1:JokeTopic ;
+    rdfs:label "dress"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/england> a ns1:JokeTopic ;
-    rdfs:label "england"^^xsd:string .
+<http://soreOntology.com/topicsJoke/ghost> a ns1:JokeTopic ;
+    rdfs:label "ghost"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/good> a ns1:JokeTopic ;
-    rdfs:label "good"^^xsd:string .
+<http://soreOntology.com/topicsJoke/ghost's> a ns1:JokeTopic ;
+    rdfs:label "ghost's"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/hot> a ns1:JokeTopic ;
-    rdfs:label "hot"^^xsd:string .
+<http://soreOntology.com/topicsJoke/ghosts> a ns1:JokeTopic ;
+    rdfs:label "ghosts"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/in-law> a ns1:JokeTopic ;
-    rdfs:label "in-law"^^xsd:string .
+<http://soreOntology.com/topicsJoke/ghoulish> a ns1:JokeTopic ;
+    rdfs:label "ghoulish"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/insecure> a ns1:JokeTopic ;
-    rdfs:label "insecure"^^xsd:string .
+<http://soreOntology.com/topicsJoke/halloween> a ns1:JokeTopic ;
+    rdfs:label "halloween"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/jokes> a ns1:JokeTopic ;
-    rdfs:label "jokes"^^xsd:string .
+<http://soreOntology.com/topicsJoke/halloween?> a ns1:JokeTopic ;
+    rdfs:label "halloween?"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/language> a ns1:JokeTopic ;
-    rdfs:label "language"^^xsd:string .
+<http://soreOntology.com/topicsJoke/inside> a ns1:JokeTopic ;
+    rdfs:label "inside"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/left> a ns1:JokeTopic ;
-    rdfs:label "left"^^xsd:string .
+<http://soreOntology.com/topicsJoke/kissed> a ns1:JokeTopic ;
+    rdfs:label "kissed"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/lottery> a ns1:JokeTopic ;
-    rdfs:label "lottery"^^xsd:string .
+<http://soreOntology.com/topicsJoke/nobody.> a ns1:JokeTopic ;
+    rdfs:label "nobody."^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/math> a ns1:JokeTopic ;
-    rdfs:label "math"^^xsd:string .
+<http://soreOntology.com/topicsJoke/nose?> a ns1:JokeTopic ;
+    rdfs:label "nose?"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/mermaid> a ns1:JokeTopic ;
-    rdfs:label "mermaid"^^xsd:string .
+<http://soreOntology.com/topicsJoke/pain> a ns1:JokeTopic ;
+    rdfs:label "pain"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/morning> a ns1:JokeTopic ;
-    rdfs:label "morning"^^xsd:string .
+<http://soreOntology.com/topicsJoke/prom?> a ns1:JokeTopic ;
+    rdfs:label "prom?"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/outlaw?> a ns1:JokeTopic ;
-    rdfs:label "outlaw?"^^xsd:string .
+<http://soreOntology.com/topicsJoke/skeleton> a ns1:JokeTopic ;
+    rdfs:label "skeleton"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/potato> a ns1:JokeTopic ;
-    rdfs:label "potato"^^xsd:string .
+<http://soreOntology.com/topicsJoke/son> a ns1:JokeTopic ;
+    rdfs:label "son"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/spoken> a ns1:JokeTopic ;
-    rdfs:label "spoken"^^xsd:string .
+<http://soreOntology.com/topicsJoke/turkey> a ns1:JokeTopic ;
+    rdfs:label "turkey"^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/tea> a ns1:JokeTopic ;
-    rdfs:label "tea"^^xsd:string .
+<http://soreOntology.com/topicsJoke/ugly...> a ns1:JokeTopic ;
+    rdfs:label "ugly..."^^xsd:string .
 
-<http://soreOntology.com/topicsJoke/today!> a ns1:JokeTopic ;
-    rdfs:label "today!"^^xsd:string .
-
-<http://soreOntology.com/topicsJoke/video> a ns1:JokeTopic ;
-    rdfs:label "video"^^xsd:string .
-
-<http://soreOntology.com/topicsJoke/wear> a ns1:JokeTopic ;
-    rdfs:label "wear"^^xsd:string .
-
-<http://soreOntology.com/topicsJoke/well,> a ns1:JokeTopic ;
-    rdfs:label "well,"^^xsd:string .
-
-<http://soreOntology.com/topicsJoke/wife> a ns1:JokeTopic ;
-    rdfs:label "wife"^^xsd:string .
-
-<http://soreOntology.com/topicsJoke/world?> a ns1:JokeTopic ;
-    rdfs:label "world?"^^xsd:string .
-
-<http://soreOntology.com/topicsJoke/write> a ns1:JokeTopic ;
-    rdfs:label "write"^^xsd:string .
+<http://soreOntology.com/topicsJoke/vampire?> a ns1:JokeTopic ;
+    rdfs:label "vampire?"^^xsd:string .
 
 <http://soreOntology.com/topicsItem/Day> a ns1:topicItemName ;
     rdfs:label "Day"^^xsd:string .
@@ -1086,9 +1042,6 @@ BBC.\r
 
 <http://soreOntology.com/topicsItem/hit> a ns1:topicItemName ;
     rdfs:label "hit"^^xsd:string .
-
-<http://soreOntology.com/topicsJoke/difference> a ns1:JokeTopic ;
-    rdfs:label "difference"^^xsd:string .
 
 <http://soreOntology.com/topicsItem/Amazon> a ns1:topicItemName ;
     rdfs:label "Amazon"^^xsd:string .

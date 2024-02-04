@@ -52,13 +52,14 @@ def register():
 
 
 
-    category_jokes = ['Programming', 'Misc', 'Pun', 'Spooky', 'Christmas']
+    jokes_category = ['Programming', 'Misc', 'Pun', 'Spooky', 'Christmas']
     health_interests = ['treatment', 'health', 'covid']
     news_interests = ["Art", "Technology", "Travel", "Coding", "Gaming"]
     work = random.choice(['IT', 'Engineering', 'Finance', 'Marketing', 'Sales', 'HR'])
-    knows = random.choice(['user2@gmail.com', 'user3@gmail.com'])
+    knows = ['user2@gmail.com', 'user3@gmail.com']
+    file_path = './users_graph/'
 
-    create_user(first_name, last_name, email, gender, status, news_interests, country, work, education, age, knows)
+    create_user(file_path, first_name, last_name, email, gender, status, news_interests,jokes_category, health_interests, country, work, education, age, knows)
 
     return jsonify({"msg": "User registered successfully."}), 201
 
