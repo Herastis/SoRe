@@ -151,13 +151,89 @@ def get_news():
     else:
         return jsonify({"error": "Could not retrieve news"}), 500
 
-@app.route('/health', methods=['GET'])
+@app.route('/health', methods=['POST'])
 def get_health():
-    return jsonify("Health")
+    #return jsonify("Health")
 
-@app.route('/humor', methods=['GET'])
+    email = request.json.get('email', None)
+
+    # de inlocuit cu cel din request
+    email = 'john.doe@example.com'
+
+    sparql_query = f"""
+    PREFIX ns1: <http://visualdataweb.org/SoreOntology/>
+    PREFIX ns2: <http://visualdataweb.org/SoreOntology/personOntology/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+    SELECT DISTINCT ?news ?title ?author ?description ?publishedAt ?urlToImage ?url
+    WHERE {{
+        ?person ns2:hasEmail "{email}" .
+        ?user ns2:hasRecommendedItem ?medicalNews .
+        ?medicalNews a ns1:Medical_and_Lifestyle .
+        ?medicalNews ns1:hasTitle ?title .
+        OPTIONAL {{ ?news ns1:hasAuthor ?author . }}
+        OPTIONAL {{ ?news ns1:hasDescription ?description . }}
+        OPTIONAL {{ ?news ns1:hasDatePublished ?publishedAt . }}
+        OPTIONAL {{ ?news ns1:hasImageURL ?urlToImage . }}
+        OPTIONAL {{ ?news ns1:hasNewsUrl ?url . }}
+    }}
+    """
+
+    results = execute_sparql_query(sparql_query)
+    if results:
+        health_items = results.get("results", {}).get("bindings", [])
+        health = [{
+            "title": item.get('title', {}).get('value', 'No Title Provided'),
+            "author": item.get('author', {}).get('value', 'No Author Provided'),
+            "description": item.get('description', {}).get('value', 'No Description Provided'),
+            "urlToImage": item.get('urlToImage', {}).get('value', None),
+            "publishedAt": item.get('publishedAt', {}).get('value', None),
+            "url": item.get('url', {}).get('value', None)
+        } for item in health_items]
+        return jsonify(health)
+    else:
+        return jsonify({"error": "Could not retrieve news"}), 500
+
+@app.route('/humor', methods=['POST'])
 def get_humor():
-    return jsonify("Humor")
+    #return jsonify("Humor")
+    email = request.json.get('email', None)
+
+    # de inlocuit cu cel din request
+    email = 'john.doe@example.com'
+
+    sparql_query = f"""
+    PREFIX ns1: <http://visualdataweb.org/SoreOntology/>
+    PREFIX ns2: <http://visualdataweb.org/SoreOntology/personOntology/>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    
+    SELECT ?joke ?category ?delivery ?setup ?hasTopic ?isSafe ?type
+    WHERE {{
+        ?user ns2:hasJoke ?joke .
+        ?joke ns1:category ?category ;
+        ns1:delivery ?delivery ;
+        ns1:setup ?setup ;
+        ns1:hasTopic ?hasTopic ;
+        ns1:isSafe ?isSafe ;
+        ns1:type ?type .
+    }}
+    """
+
+    results = execute_sparql_query(sparql_query)
+    if results:
+        joke_items = results.get("results", {}).get("bindings", [])
+        jokes = [{
+            "category": item.get('category', {}).get('value', 'No Category Provided'),
+            "delivery": item.get('delivery', {}).get('value', 'No Delivery Provided'),
+            "setup": item.get('setup', {}).get('value', 'No Setup Provided'),
+            "hasTopic": item.get('hasTopic', {}).get('value', None),
+            "isSafe": item.get('isSafe', {}).get('value', None),
+            "type": item.get('type', {}).get('value', None)
+        } for item in joke_items]
+        return jsonify(jokes)
+    else:
+        return jsonify({"error": "Could not retrieve news"}), 500
 
 @app.route('/profile', methods=['GET'])
 def get_profile():
