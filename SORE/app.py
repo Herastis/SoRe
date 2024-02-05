@@ -1,4 +1,5 @@
 import random
+from rdflib import Namespace, URIRef, Literal, Graph
 
 from flask_cors import CORS
 from flask import Flask, request, jsonify
