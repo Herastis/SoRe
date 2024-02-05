@@ -31,25 +31,3 @@ def news_articles(interests, end_point, language, country):
         top_interests.append(top_words)
 
     return arts, top_interests
-
-
-'''articles, top = news_articles(interests, end_point, language, country)
-print(top)
-for article in articles:
-    source_name = article['source']['name']
-    # Concatenating the name parts separated by spaces
-    news_name = '_'.join(source_name.split())
-    print(f'Source: {news_name}')
-    print(f"Title: {article['title']}")
-    if article['author'] is not None:
-        name = '_'.join(article['author'].split())
-    else:
-        name = ""
-    print(f"Name: {name}")
-    print(f"Description: {article['description']}")
-    print(f'Published at: {article["publishedAt"]}')
-    print(f'Picture: {article["urlToImage"]}')
-    print(f"URL: {article['url']}")
-    print(f'Content: {article["content"]}')
-    # Combine title and description text
-    text_combined = f"{article['title']} {article['description']}"'''

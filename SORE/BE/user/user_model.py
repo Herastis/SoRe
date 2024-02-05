@@ -196,7 +196,30 @@ class User:
 
             # self.graph.add((article_uri, sore.hasTopic, Literal(topic, datatype=XSD.string)))
             i = i + 1
+    def reset_user_rdf(self):
+        g, user_uri = self.get_user_rdf()
+        g = Graph()
+        # User instance
+        g.add((user_uri, RDF.type, person_ontology.User))
+        g.add((user_uri, person_ontology.firstName, Literal(self.first_name, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.lastName, Literal(self.last_name, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.gender, Literal(self.gender, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.status, Literal(self.status, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.hasAge, Literal(self.age, datatype=XSD.integer)))
+        g.add((user_uri, person_ontology.hasCountry, Literal(self.country, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.workingPlace, Literal(self.work, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.hasEducation, Literal(self.education, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.hasEmail, Literal(self.email, datatype=XSD.string)))
 
+        print('here')
+        # Interests #descos
+        for interest in self.interests:
+            interest_uri = URIRef(f"http://soreOntology.com/interestsUser/{interest}")
+            self.graph.add((user_uri, person_ontology.hasInterest, interest_uri))
+            self.graph.add((interest_uri, RDF.type, sore.Interest))
+            self.graph.add((interest_uri, RDFS.label, Literal(interest, datatype=XSD.string)))
+
+        return self.graph
 
     def add_friends(self, knows):  # knows, email
 
