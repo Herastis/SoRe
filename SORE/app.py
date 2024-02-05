@@ -47,7 +47,6 @@ def register():
                                 'age': age,
                                 'education': education,
                                 'country': country,
-                                #'work': work,
                                 })
 
 
@@ -69,9 +68,6 @@ def save_profile():
     category_jokes = request.json.get('categoryJokes', None)
     health_interests = request.json.get('healthInterests', None)
     news_interests = request.json.get('newsInterests', None)
-    # create_user
-    # update_profile_to_display()
-    # TO DO save profile for REGISTER and LOGIN
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -90,14 +86,6 @@ def login():
             'lastName': user['last_name'],
             'email': user['email']
         }), 200
-
-        #User = User.get_user_from_db()
-        #User = User.get_user_graph()
-
-        #get_news(User.graph) -> can apass pe events
-        #get_health(User.grapph) - > can apass pe lifestyle
-        #get_jokes(User.graph) -> can apass pe jokes
-
 
     return jsonify({"msg": "Incorrect email or password."}), 401
 
@@ -185,11 +173,7 @@ def get_health():
 
 @app.route('/humor', methods=['POST'])
 def get_humor():
-    #return jsonify("Humor")
     email = request.json.get('email', None)
-
-    # de inlocuit cu cel din request
-    email = 'john.doe@example.com'
 
     sparql_query = f"""
     PREFIX ns1: <http://visualdataweb.org/SoreOntology/>
@@ -198,6 +182,7 @@ def get_humor():
     
     SELECT DISTINCT ?joke ?category ?delivery ?setup ?hasTopic ?isSafe ?type
     WHERE {{
+        ?user ns2:hasEmail "{email}" .
         ?user ns2:hasJoke ?joke .
         ?joke ns1:category ?category ;
         ns1:delivery ?delivery ;
