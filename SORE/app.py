@@ -113,9 +113,6 @@ def get_people():
 def get_news():
     email = request.json.get('email', None)
 
-    # de inlocuit cu cel din request
-    email = 'john.doe@example.com'
-
     sparql_query = f"""
     PREFIX ns1: <http://visualdataweb.org/SoreOntology/>
     PREFIX ns2: <http://visualdataweb.org/SoreOntology/personOntology/>
@@ -124,7 +121,7 @@ def get_news():
 
     SELECT DISTINCT ?news ?title ?author ?description ?publishedAt ?urlToImage ?url
     WHERE {{
-      ?person ns2:hasEmail "{email}" .
+      ?user ns2:hasEmail "{email}" .
       ?user ns2:hasRecommendedItem ?news .
       ?news a ns1:News .
       ?news ns1:hasTitle ?title .
@@ -153,12 +150,7 @@ def get_news():
 
 @app.route('/health', methods=['POST'])
 def get_health():
-    #return jsonify("Health")
-
     email = request.json.get('email', None)
-
-    # de inlocuit cu cel din request
-    email = 'john.doe@example.com'
 
     sparql_query = f""" 
     PREFIX ns1: <http://visualdataweb.org/SoreOntology/>
@@ -168,7 +160,7 @@ def get_health():
     
     SELECT DISTINCT ?medicalNews ?title ?author ?description ?hasMedicalUrl
     WHERE {{
-      ?person ns2:hasEmail "{email}" .
+      ?user ns2:hasEmail "{email}" .
       ?user ns2:hasRecommendedItem ?medicalNews .
       ?medicalNews a ns1:Medical_and_Lifestyle .
       ?medicalNews ns1:hasTitle ?title .
