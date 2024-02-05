@@ -103,3 +103,5 @@ email = "ab@gmail.com"
 users_graph_directory = './users_graph/'
 new_news_interest1 = get_most_words_news(users_graph_directory,email)
 print(new_news_interest1)
+
+# def update_user_graph(email, new_news_interest):
