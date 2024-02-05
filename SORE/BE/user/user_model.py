@@ -272,7 +272,7 @@ def create_user(file_path,  first_name, last_name, email, gender, status, countr
 file_path = './'
 first_name = 'John'
 last_name = 'Smith'
-email = 'john_smith@example.com'
+email = 'mihai_iulian@example.com'
 gender = 'male'
 status = 'Single'
 country = 'United States'
@@ -281,8 +281,8 @@ interests = ['sports', 'technology', 'politics', 'AI', 'gaming']
 education = 'Bachelor'
 AGE = age
 
-'''usr = create_user(file_path,  first_name, last_name, email, gender, status, country, work, interests, education, AGE)
-g, user_uri = usr.get_user_rdf()'''
+usr = create_user(file_path,  first_name, last_name, email, gender, status, country, work, interests, education, AGE)
+g, user_uri = usr.get_user_rdf()
 
 
 def update_profile_to_display(usr, news_interests, health_interests, joke_category, country, language):
@@ -301,6 +301,6 @@ health_interests = ['covid', 'vaccine', 'treatment', 'technology']
 joke_category = 'Christmas'
 country_code = cst.country_mapping[country]
 language = cst.languages_reversed[country]
-'''update_profile_to_display(usr, news_interests , health_interests, joke_category, country, language)
+update_profile_to_display(usr, news_interests , health_interests, joke_category, country, language)
 print(g.serialize(format="turtle"))
-print(user_uri)'''
+print(user_uri)
