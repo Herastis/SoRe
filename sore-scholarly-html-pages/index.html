@@ -106,13 +106,21 @@
     <h2>Objectives</h2>
     <p> 
       The main objective was to be able to create a recommendation system based on a knowledge graph defined for a user on which we could execute SparkQL queries. This functionality has been achieved, we want to extend the application to more recommendation topics for a user, currently only having the News, Health and Wellness and Memes section. <br>
-      Behind the recommendations we have a system based on searching for the keywords behind each user. These keywords are extracted using the information already generated from a user's rdf. Also, the user's ontology is so vast that it will also contain the topics of interest specific to him, so that the graph has the most correct logic and sparkql queries can be executed on him and on a user's interests.<br>
-      To the recommendation algorithm, we want to bring a machine learning model that will be able to learn based on the information from the rdf and with the help of the keywords that we extract from the topics that the user wants to see.
+      </p>
+      <p>Behind the recommendations we have a system based on searching for the keywords behind each user. These keywords are extracted using the information already generated from a user's rdf. Also, the user's ontology is so vast that it will also contain the topics of interest specific to him, so that the graph has the most correct logic and sparkql queries can be executed on him and on a user's interests.<br>
+      </p>
+      <p>To the recommendation algorithm, we want to bring a machine learning model that will be able to learn based on the information from the rdf and with the help of the keywords that we extract from the topics that the user wants to see.
     </p>
   </section>
   
   <section id="ontology">
     <h2> SoRe Ontology</h2>
+    <p>
+      For the ontology, we chose to do the modeling in https://service.tib.eu/webvowl/. This application offers support for creating and defining own ontologies to be used in the system. We chose this platform because we managed to model a personalized graph to represent a person's ontology in a recommendation system.
+    </p>
+    <p>
+      In the attached pictures can be seen classes, individual data properties, object properties, datatype properties, domain and range restrictions on properties define the classes or data types to which the properties can be applied.
+    </p>
     <img src="./images/sore_onto_user.png">
     <img src="./images/sore_onto_item.png">
     <img src="./images/sore_onto.png">
@@ -120,6 +128,12 @@
 
   <section id = "user-ontology">
     <h2>Person ontology for an user</h2>
+    <p>
+      The presence of classes such as User and properties like hasInterest and hasRecommendedItem suggests a user-centric focus. Recommender systems often revolve around user preferences and recommended items, and the ontology seems to capture these aspects effectively.
+    </p>
+    <p>
+      The ontology for each person will be created at the register. The login and profile actions will retrieve the ontology indentified by an email and having the URI : http://soreOntology.com/users/firstname_lastname_email@example.com
+    </p>
     <img src="./images/user1.png">
     <img src="./images/user2.png">
   </section>
@@ -260,7 +274,7 @@
     </p>
     <p>
       For enriching the feed ( dashboard ) we can use data that we create or some external data for a specific topic
-      provided on Kagle https://www.kaggle.com/datasets , Instagram, Facebook, etc since the platform will recommend
+      provided on news API or other API from RAPID API since the platform will recommend
       diverse social items of interest regarding a topic
     </p>
     <p>The data that will be presented as a list in the dashboard can be of various structures, for example events and
@@ -342,7 +356,6 @@
       for example an event or news, we may discover more related events or news.
     </p>
   </section>
-  <section id="biblio-references">
     <h3>Related API </h3>
     <h2>
       https://newsapi.org/docs
@@ -355,8 +368,7 @@
     <h2>
       https://www.geeksforgeeks.org/understanding-tf-idf-term-frequency-inverse-document-frequency/
 
-    </h2>
-  </section>
+  
   
 </body>
 

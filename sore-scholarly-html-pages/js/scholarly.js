@@ -116,11 +116,6 @@ function deref () {
   let $section = document.createElement('section')
     , $h2 = document.createElement('h2')
   ;
-  $section.id = 'biblio-references';
-  $h2.textContent = 'References';
-  $section.appendChild($h2);
-  $section.appendChild($dl);
-  document.body.appendChild($section);
 }
 
 // XXX
