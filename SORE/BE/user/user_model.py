@@ -196,7 +196,30 @@ class User:
 
             # self.graph.add((article_uri, sore.hasTopic, Literal(topic, datatype=XSD.string)))
             i = i + 1
+    def reset_user_rdf(self):
+        g, user_uri = self.get_user_rdf()
+        g = Graph()
+        # User instance
+        g.add((user_uri, RDF.type, person_ontology.User))
+        g.add((user_uri, person_ontology.firstName, Literal(self.first_name, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.lastName, Literal(self.last_name, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.gender, Literal(self.gender, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.status, Literal(self.status, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.hasAge, Literal(self.age, datatype=XSD.integer)))
+        g.add((user_uri, person_ontology.hasCountry, Literal(self.country, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.workingPlace, Literal(self.work, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.hasEducation, Literal(self.education, datatype=XSD.string)))
+        g.add((user_uri, person_ontology.hasEmail, Literal(self.email, datatype=XSD.string)))
 
+        print('here')
+        # Interests #descos
+        for interest in self.interests:
+            interest_uri = URIRef(f"http://soreOntology.com/interestsUser/{interest}")
+            self.graph.add((user_uri, person_ontology.hasInterest, interest_uri))
+            self.graph.add((interest_uri, RDF.type, sore.Interest))
+            self.graph.add((interest_uri, RDFS.label, Literal(interest, datatype=XSD.string)))
+
+        return self.graph
 
     def add_friends(self, knows):  # knows, email
 
@@ -258,8 +281,8 @@ interests = ['sports', 'technology', 'politics', 'AI', 'gaming']
 education = 'Bachelor'
 AGE = age
 
-usr = create_user(file_path,  first_name, last_name, email, gender, status, country, work, interests, education, AGE)
-g, user_uri = usr.get_user_rdf()
+'''usr = create_user(file_path,  first_name, last_name, email, gender, status, country, work, interests, education, AGE)
+g, user_uri = usr.get_user_rdf()'''
 
 
 def update_profile_to_display(usr, news_interests, health_interests, joke_category, country, language):
@@ -278,53 +301,6 @@ health_interests = ['covid', 'vaccine', 'treatment', 'technology']
 joke_category = 'Christmas'
 country_code = cst.country_mapping[country]
 language = cst.languages_reversed[country]
-update_profile_to_display(usr, news_interests , health_interests, joke_category, country, language)
+'''update_profile_to_display(usr, news_interests , health_interests, joke_category, country, language)
 print(g.serialize(format="turtle"))
-print(user_uri)
-
-user_email = 'john_smith@example.com'
-
-# Define the SPARQL query
-sparql_query = f"""
-PREFIX ns1: <http://visualdataweb.org/SoreOntology/>
-PREFIX ns2: <http://visualdataweb.org/SoreOntology/personOntology/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-SELECT ?news ?title ?author ?description ?publishedAt ?urlToImage ?url
-WHERE {{
-  ?user ns2:hasEmail "{user_email}"^^xsd:string .
-  ?user ns2:hasRecommendedItem ?news .
-  ?news a ns1:News .
-  ?news ns1:hasTitle ?title .
-  OPTIONAL {{ ?news ns1:hasAuthor ?author . }}
-  OPTIONAL {{ ?news ns1:hasDescription ?description . }}
-  OPTIONAL {{ ?news ns1:hasDatePublished ?publishedAt . }}
-  OPTIONAL {{ ?news ns1:hasImageURL ?urlToImage . }}
-  OPTIONAL {{ ?news ns1:hasNewsUrl ?url . }}
-}}
-"""
-
-# Load the graph
-g.parse("john_smith@example.com.ttl", format="turtle")  # Replace "your_rdf_file.ttl" with your actual RDF file
-
-# Execute the SPARQL query
-query_results = g.query(sparql_query)
-
-# Convert the results to JSON
-news_data = []
-for result in query_results:
-    news_entry = {
-        'news': str(result['news']),
-        'title': str(result['title']),
-        'author': str(result['author']) if result['author'] else None,
-        'description': str(result['description']) if result['description'] else None,
-        'publishedAt': str(result['publishedAt']) if result['publishedAt'] else None,
-        'urlToImage': str(result['urlToImage']) if result['urlToImage'] else None,
-        'url': str(result['url']) if result['url'] else None,
-    }
-    news_data.append(news_entry)
-
-# Print the news data as JSON
-import json
-print(json.dumps(news_data, indent=2))
+print(user_uri)'''

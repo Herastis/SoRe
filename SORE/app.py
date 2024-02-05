@@ -160,7 +160,7 @@ def get_health():
     # de inlocuit cu cel din request
     email = 'john.doe@example.com'
 
-    sparql_query = f"""
+    sparql_query = f""" 
     PREFIX ns1: <http://visualdataweb.org/SoreOntology/>
     PREFIX ns2: <http://visualdataweb.org/SoreOntology/personOntology/>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

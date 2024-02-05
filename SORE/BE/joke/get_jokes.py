@@ -4,17 +4,15 @@ import requests
 from collections import Counter
 import BE.constants.constants as cst
 
+#Testing
 languages = ['en', 'de', 'es','fr','pt', 'cs']
-flags = 'nsfw,racist,sexist,explicit'
+flags = 'nsfw,sexist,explicit'
 two_joke = 'twopart'
 q = ['photo'] # ?
 category_web = ['Programming', 'Misc', 'Dark', 'Pun', 'Spooky', 'Christmas']
 category_any = 'Any'
-
 param = ['Any']
 amount = 10
-
-
 
 def call_joke_api(category):
     flags = 'nsfw,racist,sexist,explicit'
