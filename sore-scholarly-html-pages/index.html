@@ -88,51 +88,62 @@
       Recommendations can be a diverse array of items of a type, but inside our project we will define certain topics as
       types that the user may be interested in. A list of most popular topics that people search on the web is :
       <li>News</li>
-      <li>Events ( worldwide , Sports)</li>
-      <li>Music</li>
-      <li>Movies - may include Reels ( short - form videos )</li>
       <li>Health and Wellness</li>
       <li>Technology and Gadgets</li>
-      <li>Lifestyle and Travel</li>
       <li>Humor and Memes</li>
-      <li>Education and Learning </li>
 
     </p>
     <p>
       Concerning semantic web technology, OWL will be used to define a structure of knowledge.
     </p>
   </section>
-  <section id="objectvies" role="objectives">
+  <section id="objectvies"
+           role="objectives">
     <h2>Objectives</h2>
-    <p> 
-      The main objective was to be able to create a recommendation system based on a knowledge graph defined for a user on which we could execute SparkQL queries. This functionality has been achieved, we want to extend the application to more recommendation topics for a user, currently only having the News, Health and Wellness and Memes section. <br>
-      </p>
-      <p>Behind the recommendations we have a system based on searching for the keywords behind each user. These keywords are extracted using the information already generated from a user's rdf. Also, the user's ontology is so vast that it will also contain the topics of interest specific to him, so that the graph has the most correct logic and sparkql queries can be executed on him and on a user's interests.<br>
-      </p>
-      <p>To the recommendation algorithm, we want to bring a machine learning model that will be able to learn based on the information from the rdf and with the help of the keywords that we extract from the topics that the user wants to see.
+    <p>
+      The main objective was to be able to create a recommendation system based on a knowledge graph defined for a user
+      on which we could execute SparkQL queries. This functionality has been achieved, we want to extend the application
+      to more recommendation topics for a user, currently only having the News, Health and Wellness and Memes section.
+      <br>
+    </p>
+    <p>Behind the recommendations we have a system based on searching for the keywords behind each user. These keywords
+      are extracted using the information already generated from a user's rdf. Also, the user's ontology is so vast that
+      it will also contain the topics of interest specific to him, so that the graph has the most correct logic and
+      sparkql queries can be executed on him and on a user's interests.<br>
+    </p>
+    <p>To the recommendation algorithm, we want to bring a machine learning model that will be able to learn based on
+      the information from the rdf and with the help of the keywords that we extract from the topics that the user wants
+      to see.
     </p>
   </section>
-  
+
   <section id="ontology">
     <h2> SoRe Ontology</h2>
     <p>
-      For the ontology, we chose to do the modeling in https://service.tib.eu/webvowl/. This application offers support for creating and defining own ontologies to be used in the system. We chose this platform because we managed to model a personalized graph to represent a person's ontology in a recommendation system.
+      For the ontology, we chose to do the modeling in https://service.tib.eu/webvowl/. This application offers support
+      for creating and defining own ontologies to be used in the system. We chose this platform because we managed to
+      model a personalized graph to represent a person's ontology in a recommendation system.
     </p>
     <p>
-      In the attached pictures can be seen classes, individual data properties, object properties, datatype properties, domain and range restrictions on properties define the classes or data types to which the properties can be applied.
+      In the attached pictures can be seen classes, individual data properties, object properties, datatype properties,
+      domain and range restrictions on properties define the classes or data types to which the properties can be
+      applied.
     </p>
-    <img src="./images/sore_onto_user.png">
-    <img src="./images/sore_onto_item.png">
+
     <img src="./images/sore_onto.png">
   </section>
 
-  <section id = "user-ontology">
+  <section id="user-ontology">
     <h2>Person ontology for an user</h2>
     <p>
-      The presence of classes such as User and properties like hasInterest and hasRecommendedItem suggests a user-centric focus. Recommender systems often revolve around user preferences and recommended items, and the ontology seems to capture these aspects effectively.
+      The presence of classes such as User and properties like hasInterest and hasRecommendedItem suggests a
+      user-centric focus. Recommender systems often revolve around user preferences and recommended items, and the
+      ontology seems to capture these aspects effectively.
     </p>
     <p>
-      The ontology for each person will be created at the register. The login and profile actions will retrieve the ontology indentified by an email and having the URI : http://soreOntology.com/users/firstname_lastname_email@example.com
+      The ontology for each person will be created at the register. The login and profile actions will retrieve the
+      ontology indentified by an email and having the URI :
+      http://soreOntology.com/users/firstname_lastname_email@example.com
     </p>
     <img src="./images/user1.png">
     <img src="./images/user2.png">
@@ -149,28 +160,19 @@
       <p>
         The angular framework will be used for the frontend due to its modular and component-based architecture.
       </p>
-      <p> Main Angular components are:</p>
-      <p> - authentication (login and logout)</p>
+      <p> Main functionalities present in the project are:</p>
 
-      <p>Users can not access any topic page if they are not logged in</p>
-
-      - dashboard(list of interesting news, health news and humor (memes and jokes) based of user’s preferences)
-      - preference page (user can choose some favorite topics to get relevant recommendations from the website)
-
-      <p>
-        Services:
-        - authentication service (for user login, token retrieval (JWT Token), and token storage)
-      </p>
+      <p>- authentication system: ensures secure login and logout functionalities. </p>
+      <p>Acess to topic pages is restricted to authenticated users only. </p>
       <img src="./images/access-token.png"
            style="width:700px;height:400px;">
-      <p>
-        - routing (angular route guard).</p>
-      <p>
-        - people, events and places services (using HttpClient service for making HTTP requests)
-      </p>
+      <p>- homepage: selection of news, health updates, and humor based on user preferences</p>
+      <p>- profile customization: allows users to select favorite topics to receive better desired informations.</p>
+      <img src="./images/user-details.png">
+      </pre>
+
       <div>
-        <p>
-          Application has a sidenav with the topics.
+        <h4>Application has a sidenav with the topics.</h4>
         <p>-Recommended people</p>
         <p>-News</p>
         <p>-Health and Wellness</p>
@@ -178,23 +180,18 @@
         </p>
         <img src="./images/topics.jpg">
 
-        <p>
-          Each tab gives informations based on the user preferrences.</p>
+        <p>Each tab gives informations based on the user preferrences.</p>
 
         <img src="./images/news.png"
-             style="width:1000px;height:400px;">
-
-        <p>
-          This can be set after registering, but can also be editted after login by going to profile page.
-        </p>
-        <img src="./images/user-details.png">
+             style="width:800px;height:400px;">
       </div>
     </section>
     <section id="article">
       <!-- review? -->
       <h3>Backend</h3>
       <p>
-        After a successful login the user data will be saved in MongoDB. The data extracted from the MongoDB will be used to build the rdf and load it in Blazedgraph
+        After a successful login the user data will be saved in MongoDB. The data extracted from the MongoDB will be
+        used to build the rdf and load it in Blazedgraph
       </p>
       <p>
         Use Python to define RESTful APIs regarding the recommendation system.
@@ -210,32 +207,39 @@
         (and/or owlready2 for ontology-oriented programming) . With this API we want to manage SPARQL Queries , manage
         RDF data for an user and retrieve information based on user preferences considering multiple similar
         features/properties.
-</p>
-        <p>
-          The main focus of the backend is the module "user" which contains the user_model.py that models the rdf for each user.
+      </p>
+      <p>
+        The main focus of the backend is the module "user" which contains the user_model.py that models the rdf for each
+        user.
         The "User" class contains the information about the user and the items that the user has linked.
         The class is handling the user information and creates the coressponding RDF.
-        Each user will be represented by an unique email as an indentificator. 
-        </p>
-        
-      <p>
-        To store RDF data we can use the Blazegraph application and perform query over it in python.
+        Each user will be represented by an unique email as an indentificator.
       </p>
-      
 
-      <p> 
-        <h1>
-          Query example of how to get news from Blazegraph
-          <img src="./images/endpoint.png">
-        </h1>
+      <b>
+         RDF data is stored in Blazegraph and queries are performed over it in python.
+      </b>
+
+
+      <p>
+      <h1>
+        Query example of how to get news from Blazegraph
+      </h1>
+      <p>User data from our database (MongoDb) is bind to RDF data trough the common field <b>"email"</b>.</p>
+      <img src="./images/endpoint.png">
       </p>
       <p>
-        In order to have a recommendation flow, we will use sparkql operations to extract topics that are the interests attached to each user's rdf and we will also use TF-IDF's sklearn algorithm.
-        TF-IDF stands for Term Frequency Inverse Document Frequency of records. It can be defined as the calculation of how relevant a word in a series or corpus is to a text. The meaning increases proportionally to the number of times in the text a word appears but is compensated by the word frequency in the corpus (data-set).
-        
+        In order to have a recommendation flow, we will use sparkql operations to extract topics that are the interests
+        attached to each user's rdf and we will also use TF-IDF's sklearn algorithm.
+        TF-IDF stands for Term Frequency Inverse Document Frequency of records. It can be defined as the calculation of
+        how relevant a word in a series or corpus is to a text. The meaning increases proportionally to the number of
+        times in the text a word appears but is compensated by the word frequency in the corpus (data-set).
+
       </p>
       <p>
-        After we discover the topics that are similar and the keywords from the already recommended articles, we will be able to form a new list of new preferences with which to update the user through his profile. They can be displayed and edited when the user accesses his profile.
+        After we discover the topics that are similar and the keywords from the already recommended articles, we will be
+        able to form a new list of new preferences with which to update the user through his profile. They can be
+        displayed and edited when the user accesses his profile.
         For this kind of words we can apply a ML algorithm specific for each user.
       </p>
     </section>
@@ -245,13 +249,18 @@
       <p>
         MongoDB to save information about our users and items that we may create if we decide to create personal data
         for the items of a topic.
+
+        <img src="./images/mongo.png">
       </p>
       <p>
         External datasets may be used in order to create items of interest or we can create our own date and save it in
-        MongoDB.  <br>
+        MongoDB. <br>
       </p>
       <p>
-        In order to enrich the knowledge graph of each user, we used 2 types of API, more can be used to obtain information from the Internet. The calls made to the news API are made according to the preferences of each user, who will be created an RDF where all his preferences will be attached. After building the RDF, the other management operations of each user's preferences can be performed.<br>
+        In order to enrich the knowledge graph of each user, we used 2 types of API, more can be used to obtain
+        information from the Internet. The calls made to the news API are made according to the preferences of each
+        user, who will be created an RDF where all his preferences will be attached. After building the RDF, the other
+        management operations of each user's preferences can be performed.<br>
       </p>
     </section>
   </section>
@@ -356,20 +365,20 @@
       for example an event or news, we may discover more related events or news.
     </p>
   </section>
-    <h3>Related API </h3>
-    <h2>
-      https://newsapi.org/docs
+  <h3>Related API </h3>
+  <h2>
+    https://newsapi.org/docs
 
-    </h2>
-    <h2>  
-      https://service.tib.eu/webvowl/
+  </h2>
+  <h2>
+    https://service.tib.eu/webvowl/
 
-    </h2>
-    <h2>
-      https://www.geeksforgeeks.org/understanding-tf-idf-term-frequency-inverse-document-frequency/
+  </h2>
+  <h2>
+    https://www.geeksforgeeks.org/understanding-tf-idf-term-frequency-inverse-document-frequency/
 
-  
-  
+
+
 </body>
 
 </html>
