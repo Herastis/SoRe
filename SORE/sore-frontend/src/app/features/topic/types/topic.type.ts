@@ -9,4 +9,5 @@ export type TopicType = {
   hasTopic: string;
   isSafe: string;
   type: string;
+  hasMedicalUrl: string;
 }

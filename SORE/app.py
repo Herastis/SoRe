@@ -122,7 +122,7 @@ def get_news():
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-    SELECT ?news ?title ?author ?description ?publishedAt ?urlToImage ?url
+    SELECT DISTINCT ?news ?title ?author ?description ?publishedAt ?urlToImage ?url
     WHERE {{
       ?person ns2:hasEmail "{email}" .
       ?user ns2:hasRecommendedItem ?news .
@@ -165,18 +165,16 @@ def get_health():
     PREFIX ns2: <http://visualdataweb.org/SoreOntology/personOntology/>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-    SELECT DISTINCT ?news ?title ?author ?description ?publishedAt ?urlToImage ?url
+    
+    SELECT DISTINCT ?medicalNews ?title ?author ?description ?hasMedicalUrl
     WHERE {{
-        ?person ns2:hasEmail "{email}" .
-        ?user ns2:hasRecommendedItem ?medicalNews .
-        ?medicalNews a ns1:Medical_and_Lifestyle .
-        ?medicalNews ns1:hasTitle ?title .
-        OPTIONAL {{ ?news ns1:hasAuthor ?author . }}
-        OPTIONAL {{ ?news ns1:hasDescription ?description . }}
-        OPTIONAL {{ ?news ns1:hasDatePublished ?publishedAt . }}
-        OPTIONAL {{ ?news ns1:hasImageURL ?urlToImage . }}
-        OPTIONAL {{ ?news ns1:hasNewsUrl ?url . }}
+      ?person ns2:hasEmail "{email}" .
+      ?user ns2:hasRecommendedItem ?medicalNews .
+      ?medicalNews a ns1:Medical_and_Lifestyle .
+      ?medicalNews ns1:hasTitle ?title .
+      OPTIONAL {{ ?medicalNews ns1:hasAuthor ?author . }}
+      OPTIONAL {{ ?medicalNews ns1:hasDescription ?description . }}
+      OPTIONAL {{ ?medicalNews ns1:hasMedicalUrl ?url . }}
     }}
     """
 
@@ -187,9 +185,7 @@ def get_health():
             "title": item.get('title', {}).get('value', 'No Title Provided'),
             "author": item.get('author', {}).get('value', 'No Author Provided'),
             "description": item.get('description', {}).get('value', 'No Description Provided'),
-            "urlToImage": item.get('urlToImage', {}).get('value', None),
-            "publishedAt": item.get('publishedAt', {}).get('value', None),
-            "url": item.get('url', {}).get('value', None)
+            "hasMedicalUrl": item.get('hasMedicalUrl', {}).get('value', None)
         } for item in health_items]
         return jsonify(health)
     else:
@@ -208,7 +204,7 @@ def get_humor():
     PREFIX ns2: <http://visualdataweb.org/SoreOntology/personOntology/>
     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     
-    SELECT ?joke ?category ?delivery ?setup ?hasTopic ?isSafe ?type
+    SELECT DISTINCT ?joke ?category ?delivery ?setup ?hasTopic ?isSafe ?type
     WHERE {{
         ?user ns2:hasJoke ?joke .
         ?joke ns1:category ?category ;

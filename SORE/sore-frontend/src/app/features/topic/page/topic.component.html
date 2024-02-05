@@ -1,17 +1,64 @@
 <!-- <div> {{text}} </div> -->
 
-<ng-container *ngFor="let newsItem of newsItems">
-  <mat-card class = "mat-card">
-    <mat-card-header>
-      <mat-card-title>{{ newsItem.title }}</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image class="news-image" [src]="newsItem.urlToImage" alt="Image for {{ newsItem.title }}">
-    <mat-card-content>
-      <p>{{ newsItem.description }}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="like(newsItem)">Like</button>
-      <button mat-button (click)="connect(newsItem)">Connect</button>
-    </mat-card-actions>
-  </mat-card>
-</ng-container>
+<div *ngIf="currentTab === 'news'">
+  <ng-container *ngFor="let newsItem of newsItems">
+    <mat-card class="mat-card">
+      <mat-card-header>
+        <mat-card-title>{{ newsItem.title }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image
+           class="news-image"
+           [src]="newsItem.urlToImage"
+           alt="Image for {{ newsItem.title }}">
+      <mat-card-content>
+        <p>{{ newsItem.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button
+                (click)="like(newsItem)">Like</button>
+        <button mat-button
+                (click)="connect(newsItem)">Connect</button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</div>
+
+<div *ngIf="currentTab === 'health'">
+  <ng-container *ngFor="let newsItem of newsItems">
+    <mat-card class="mat-card">
+      <mat-card-header>
+        <mat-card-title>{{ newsItem.title }}</mat-card-title>
+        <mat-card-subtitle>{{ newsItem.author }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ newsItem.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <a mat-button
+           href="{{ newsItem.hasMedicalUrl }}"
+           target="_blank">Read More</a> -->
+        <button mat-button
+                (click)="like(newsItem)">Like</button>
+        <button mat-button
+                (click)="connect(newsItem)">Connect</button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</div>
+
+<div *ngIf="currentTab === 'humor'">
+  <ng-container *ngFor="let newsItem of newsItems">
+    <mat-card class="mat-card">
+      <mat-card-header>
+        <mat-card-title>{{ newsItem.category }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ newsItem.delivery }}</p>
+        <p>Topic URL: {{ newsItem.hasTopic }}</p>
+        <p>{{ newsItem.setup }}</p>
+        <p>Type: {{ newsItem.type }}</p>
+        <p>Safe: {{ newsItem.isSafe }}</p>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>
