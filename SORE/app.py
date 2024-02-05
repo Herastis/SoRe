@@ -19,8 +19,6 @@ bcrypt = Bcrypt(app)
 app.config['JWT_SECRET_KEY'] = 'your-secret-key'
 jwt = JWTManager(app)
 
-BLAZEGRAPH_URL = 'http://localhost:9999/blazegraph/namespace/yournamespace/sparql'
-
 @app.route('/register', methods=['POST'])
 def register():
     email = request.json.get('email', None)
@@ -70,6 +68,8 @@ def save_profile():
     category_jokes = request.json.get('categoryJokes', None)
     health_interests = request.json.get('healthInterests', None)
     news_interests = request.json.get('newsInterests', None)
+    # create_user
+    # update_profile_to_display()
     # TO DO save profile for REGISTER and LOGIN
 
 @app.route('/login', methods=['POST'])
@@ -86,7 +86,8 @@ def login():
         return jsonify({
             'access_token': access_token,
             'firstName': user['first_name'],
-            'lastName': user['last_name']
+            'lastName': user['last_name'],
+            'email': user['email']
         }), 200
 
         #User = User.get_user_from_db()
@@ -107,65 +108,55 @@ def get_homepage():
 def get_people():
     return jsonify("People")
 
-@app.route('/news', methods=['GET'])
+@app.route('/news', methods=['POST'])
 def get_news():
-    #return jsonify("News")
-    query = """
-        PREFIX ns1: <http://example.org/news#>
+    email = request.json.get('email', None)
 
-        SELECT ?title ?author ?description ?imageUrl WHERE {
-            ?news a ns1:NewsArticle ;
-                  ns1:hasTitle ?title ;
-                  ns1:hasAuthor ?author ;
-                  ns1:hasDescription ?description ;
-                  ns1:hasImageUrl ?imageUrl .
-        }
-        LIMIT 10
-        """
-    results = execute_sparql_query(query)
+    # de inlocuit cu cel din request
+    email = 'john.doe@example.com'
+
+    sparql_query = f"""
+    PREFIX ns1: <http://visualdataweb.org/SoreOntology/>
+    PREFIX ns2: <http://visualdataweb.org/SoreOntology/personOntology/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+    SELECT ?news ?title ?author ?description ?publishedAt ?urlToImage ?url
+    WHERE {{
+      ?person ns2:hasEmail "{email}" .
+      ?user ns2:hasRecommendedItem ?news .
+      ?news a ns1:News .
+      ?news ns1:hasTitle ?title .
+      OPTIONAL {{ ?news ns1:hasAuthor ?author . }}
+      OPTIONAL {{ ?news ns1:hasDescription ?description . }}
+      OPTIONAL {{ ?news ns1:hasDatePublished ?publishedAt . }}
+      OPTIONAL {{ ?news ns1:hasImageURL ?urlToImage . }}
+      OPTIONAL {{ ?news ns1:hasNewsUrl ?url . }}
+    }}
+    """
+
+    results = execute_sparql_query(sparql_query)
     if results:
         news_items = results.get("results", {}).get("bindings", [])
         news = [{
-            "title": item["title"]["value"],
-            "author": item["author"]["value"],
-            "description": item["description"]["value"],
-            "image": item["imageUrl"]["value"]
+            "title": item.get('title', {}).get('value', 'No Title Provided'),
+            "author": item.get('author', {}).get('value', 'No Author Provided'),
+            "description": item.get('description', {}).get('value', 'No Description Provided'),
+            "urlToImage": item.get('urlToImage', {}).get('value', None),
+            "publishedAt": item.get('publishedAt', {}).get('value', None),
+            "url": item.get('url', {}).get('value', None)
         } for item in news_items]
         return jsonify(news)
     else:
         return jsonify({"error": "Could not retrieve news"}), 500
 
-@app.route('/events', methods=['GET'])
-def get_events():
-    return jsonify("Events")
-
-@app.route('/music', methods=['GET'])
-def get_music():
-    return jsonify("Music")
-
-@app.route('/movies', methods=['GET'])
-def get_movies():
-    return jsonify("Movies")
-
 @app.route('/health', methods=['GET'])
 def get_health():
     return jsonify("Health")
 
-@app.route('/technology', methods=['GET'])
-def get_technology():
-    return jsonify("Technology")
-
-@app.route('/lifestyle', methods=['GET'])
-def get_lifestyle():
-    return jsonify("Lifestyle")
-
 @app.route('/humor', methods=['GET'])
 def get_humor():
     return jsonify("Humor")
-
-@app.route('/education', methods=['GET'])
-def get_education():
-    return jsonify("Education")
 
 @app.route('/profile', methods=['GET'])
 def get_profile():

@@ -5,7 +5,7 @@
     <mat-card-header>
       <mat-card-title>{{ newsItem.title }}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image class="news-image" [src]="newsItem.image" alt="Image for {{ newsItem.title }}">
+    <img mat-card-image class="news-image" [src]="newsItem.urlToImage" alt="Image for {{ newsItem.title }}">
     <mat-card-content>
       <p>{{ newsItem.description }}</p>
     </mat-card-content>

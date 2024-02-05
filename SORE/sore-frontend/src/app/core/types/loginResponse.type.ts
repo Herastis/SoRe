@@ -3,4 +3,5 @@ export type LoginResponseType = {
   idToken: string;
   firstName: string;
   lastName: string;
+  email: string;
 }

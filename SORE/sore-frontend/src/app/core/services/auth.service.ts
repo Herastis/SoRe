@@ -13,7 +13,7 @@ export class AuthService {
   redirectUrl = 'profile'
   public isLoggedInStatus = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient, private router: Router) { 
+  constructor(private http: HttpClient, private router: Router) {
     this.isLoggedInStatus.next(this.checkIsLoggedInStatus());
   }
 
@@ -28,6 +28,7 @@ export class AuthService {
           localStorage.setItem('access_token', response.access_token);
           localStorage.setItem('firstName', response.firstName);
           localStorage.setItem('lastName', response.lastName);
+          localStorage.setItem('email', response.email);
           this.isLoggedInStatus.next(true);
           return true;
         } else {
@@ -42,6 +43,7 @@ export class AuthService {
     localStorage.removeItem('access_token');
     localStorage.removeItem('firstName');
     localStorage.removeItem('lastName');
+    localStorage.removeItem('email');
     this.router.navigate(['/homepage']);
   }
 

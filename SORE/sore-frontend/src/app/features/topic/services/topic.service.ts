@@ -12,7 +12,9 @@ export class TopicService {
   url: string = 'http://127.0.0.1:5000';
 
   loadTopicData(topic: string): Observable<TopicType[]> {
-    return this.httpClient.get<TopicType[]>(`${this.url}/${topic}`);
+    const email = localStorage.getItem('email');
+  
+    return this.httpClient.post<TopicType[]>(`${this.url}/${topic}`, {email});
   }
 }
 
